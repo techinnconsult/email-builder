@@ -1189,6 +1189,7 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
     customPageContent = allContent.html();
 //    $('#modal-export-page form input[type="hidden"]').remove();
     newInput = $('<input type="hidden" name="pages[index]" value="">');
+    newInput = $('<input type="hidden" name="editor[index]" value="">');
     $('#modal-export-page form').prepend( newInput );
     newInput.val(adminHeader+ '<table id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#efefef; width:800px; max-width: 800px; margin: 0 auto;"><tbody><tr><td>'+innerHtml+"</td></tr></tbody></table>"+adminFooter);
 

@@ -60,27 +60,27 @@ class HTMLController extends Controller{
             }
         }
         $html =  $doc->saveHTML();
-        echo $html;
+//        echo $html;
 //        $file_name = uniqid();
 //        file_put_contents( public_path() ."/templates/".$file_name . '.html', $html);
-//        $options = new Options();
-//        $options->set('defaultFont', 'Courier');
-//        $options->set('isRemoteEnabled', TRUE);
-//        $options->set('isHtml5ParserEnabled', TRUE);
-//        //$options->set('chroot', '');
-//        $dompdf = new Dompdf($options);
-//        
-//        $dompdf->loadHtml($html);
-//
-//
-//        // (Optional) Setup the paper size and orientation
-//        $dompdf->setPaper('A4','landscape');
-//
-//        // Render the HTML as PDF
-//        $dompdf->render();
-//
-//        // Output the generated PDF to Browser
-//        $dompdf->stream();
+        $options = new Options();
+        $options->set('defaultFont', 'Courier');
+        $options->set('isRemoteEnabled', TRUE);
+        $options->set('isHtml5ParserEnabled', TRUE);
+        //$options->set('chroot', '');
+        $dompdf = new Dompdf($options);
+        
+        $dompdf->loadHtml($html);
+
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4','landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
 
     }
     
