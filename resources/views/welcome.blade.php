@@ -77,7 +77,7 @@
     .ExternalClass, .ExternalClass p, .ExternalClass span,
     .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height:100%;}
     #outlook a{ padding:0;}
-    html{width: 100%; }
+    html{background: #efefef !important; }
     h1, h2, h3, h4, h5 {
         font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;
         font-weight: 100;
@@ -87,7 +87,7 @@
            font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;
            line-height: 1.42857143;
            font-size: 14px;
-           background-color:#efefef;
+           background-color:#efefef !important;
    }
    h1, .h1 {
         font-size: 45px;
@@ -147,7 +147,6 @@
     }
     .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
 	display: block;
-	max-width: 100%;
 	height: auto;
     }
     .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
@@ -164,22 +163,35 @@
         padding: 10px;
     }
  
-    html,body {background-color: #ffffff !important; margin: 0; padding: 0; }
+    html,body { margin: 0; padding: 0; }
     table {
         border-spacing: 0;
         border-collapse: collapse;
     }
     .col-md-6 {
-            width: 50%;
+            width: 300px;
+    }
+    .col-md-6 img{
+            max-width: 280px;
     }
     .col-md-8 {
-	width: 66.66666667%;
+	width: 400px;
+    }
+    .col-md-8 img{
+	max-width: 380px;
     }
     .col-md-4 {
-            width: 33.33333333%;
+            width: 200px;
+    }
+    
+    .col-md-4 img{
+            max-width: 180px;
     }
     .col-md-3 {
-            width: 25%;
+            width: 140px;
+    }
+    .col-md-3 img{
+            max-width: 120px;
     }
     .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
             padding: 8px;
@@ -236,315 +248,10 @@
     height:auto !important;
     max-width:124px !important;
     }
-    @media only screen and (max-width: 640px){
-    body{
-    width:auto!important;
-    }
-    table[class="container"]{
-    width: 100%!important;
-    padding-left: 20px!important;
-    padding-right: 20px!important;
-    min-width:100% !important;
-    }
-    td[class="image-270px"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    }
-    td[class="image-170px"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    }
-    td[class="image-185px"] img{
-    width:185px !important;
-    height:auto !important;
-    max-width:185px !important;
-    }
-    td[class="image-124px"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    }
-    td[class="image-100-percent"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    }
-    td[class="small-image-100-percent"] img{
-    width:100% !important;
-    height:auto !important;
-    }
-    table[class="full-width"]{
-    width:100% !important;
-    min-width:100% !important;
-    }
-    table[class="full-width-text"]{
-    width:100% !important;
-    background-color:#ffffff;
-    padding-left:20px !important;
-    padding-right:20px !important;
-    }
-    table[class="full-width-text2"]{
-    width:100% !important;
-    background-color:#ffffff;
-    padding-left:20px !important;
-    padding-right:20px !important;
-    }
-    table[class="col-2-3img"]{
-    width:50% !important;
-    margin-right: 20px !important;
-    }
-    table[class="col-2-3img-last"]{
-    width:50% !important;
-    }
-    table[class="col-2-footer"]{
-    width:55% !important;
-    margin-right:20px !important;
-    }
-    table[class="col-2-footer-last"]{
-    width:40% !important;
-    }
-    table[class="col-2"]{
-    width:47% !important;
-    margin-right:20px !important;
-    }
-    table[class="col-2-last"]{
-    width:47% !important;
-    }
-    table[class="col-3"]{
-    width:29% !important;
-    margin-right:20px !important;
-    }
-    table[class="col-3-last"]{
-    width:29% !important;
-    }
-    table[class="row-2"]{
-    width:50% !important;
-    }
-    td[class="text-center"]{
-    text-align: center !important;
-    }
-    /* start clear and remove*/
-    table[class="remove"]{
-    display:none !important;
-    }
-    td[class="remove"]{
-    display:none !important;
-    }
-    /* end clear and remove*/
-    table[class="fix-box"]{
-    padding-left:20px !important;
-    padding-right:20px !important;
-    }
-    td[class="fix-box"]{
-    padding-left:20px !important;
-    padding-right:20px !important;
-    }
-    td[class="font-resize"]{
-    font-size: 18px !important;
-    line-height: 22px !important;
-    }
-    table[class="space-scale"]{
-    width:100% !important;
-    float:none !important;
-    }
-    table[class="clear-align-640"]{
-    float:none !important;
-    }
-    table[class="show-full-mobile"]{
-    display:none !important;
-    width:100% !important;
-    min-width:100% !important;
-    }
-    }
-    @media only screen and (max-width: 479px){
-    body{
-    font-size:10px !important;
-    }
-    table[class="container"]{
-    width: 100%!important;
-    padding-left: 10px!important;
-    padding-right:10px!important;
-    min-width:100% !important;
-    }
-    table[class="container2"]{
-    width: 100%!important;
-    float:none !important;
-    min-width:100% !important;
-    }
-    td[class="full-width"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    min-width:124px !important;
-    min-width:100% !important;
-    }
-    td[class="image-270px"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    min-width:124px !important;
-    }
-    td[class="image-170px"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    min-width:124px !important;
-    }
-    td[class="image-185px"] img{
-    width:185px !important;
-    height:auto !important;
-    max-width:185px !important;
-    min-width:124px !important;
-    }
-    td[class="image-124px"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    min-width:124px !important;
-    }
-    td[class="image-100-percent"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    min-width:124px !important;
-    }
-    td[class="small-image-100-percent"] img{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    min-width:124px !important;
-    }
-    table[class="full-width"]{
-    width:100% !important;
-    }
-    table[class="full-width-text"]{
-    width:100% !important;
-    background-color:#ffffff;
-    padding-left:20px !important;
-    padding-right:20px !important;
-    }
-    table[class="full-width-text2"]{
-    width:100% !important;
-    background-color:#ffffff;
-    padding-left:20px !important;
-    padding-right:20px !important;
-    }
-    table[class="col-2-footer"]{
-    width:100% !important;
-    margin-right:0px !important;
-    }
-    table[class="col-2-footer-last"]{
-    width:100% !important;
-    }
-    table[class="col-2"]{
-    width:100% !important;
-    margin-right:0px !important;
-    }
-    table[class="col-2-last"]{
-    width:100% !important;
-    }
-    table[class="col-3"]{
-    width:100% !important;
-    margin-right:0px !important;
-    }
-    table[class="col-3-last"]{
-    width:100% !important;
-    }
-    table[class="row-2"]{
-    width:100% !important;
-    }
-    table[id="col-underline"]{
-    float: none !important;
-    width: 100% !important;
-    border-bottom: 1px solid #eee;
-    }
-    td[id="col-underline"]{
-    float: none !important;
-    width: 100% !important;
-    border-bottom: 1px solid #eee;
-    }
-    td[class="col-underline"]{
-    float: none !important;
-    width: 100% !important;
-    border-bottom: 1px solid #eee;
-    }
-    /*start text center*/
-    td[class="text-center"]{
-    text-align: center !important;
-    }
-    div[class="text-center"]{
-    text-align: center !important;
-    }
-    /*end text center*/
-    /* start  clear and remove */
-    table[id="clear-padding"]{
-    padding:0 !important;
-    }
-    td[id="clear-padding"]{
-    padding:0 !important;
-    }
-    td[class="clear-padding"]{
-    padding:0 !important;
-    }
-    table[class="remove-479"]{
-    display:none !important;
-    }
-    td[class="remove-479"]{
-    display:none !important;
-    }
-    table[class="clear-align"]{
-    float:none !important;
-    }
-    /* end  clear and remove */
-    table[class="width-small"]{
-    width:100% !important;
-    }
-    table[class="fix-box"]{
-    padding-left:15px !important;
-    padding-right:15px !important;
-    }
-    td[class="fix-box"]{
-    padding-left:15px !important;
-    padding-right:15px !important;
-    }
-    td[class="font-resize"]{
-    font-size: 14px !important;
-    }
-    td[class="increase-Height"]{
-    height:10px !important;
-    }
-    td[class="increase-Height-20"]{
-    height:20px !important;
-    }
-    table[width="595"]{
-    width:100% !important;
-    }
-    table[class="show-full-mobile"]{
-    display:table !important;
-    width:100% !important;
-    min-width:100% !important;
-    }
-    }
-    @media only screen and (max-width: 320px){
-    table[class="width-small"]{
-    width:125px !important;
-    }
-    img[class="image-100-percent"]{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    min-width:124px !important;
-    }
-    }
-    td ul{list-style: initial; margin:0; padding-left:20px;}
-
-	@media only screen and (max-width: 640px){ .image-100-percent{ width:100%!important; height: auto !important; max-width: 100% !important; min-width: 124px !important;}}body{background-color:#efefef;} .default-edit-image{height:20px;} tr.tpl-repeatblock , tr.tpl-repeatblock > td{ display:block !important;} .tpl-repeatblock {padding: 0px !important;border: 1px dotted rgba(0,0,0,0.2);} table[width="595"]{width:100% !important;}
-     </style>
+    </style>
     <div class="builder-wrapper">
      
-        <table style="margin: auto;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
+        <table style="margin: auto;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody class="placeholder-container">
                 <tr class="placeholder">
                     <td class="placeholder-content col-md-12">
@@ -566,7 +273,7 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
+        <table style="margin: auto;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody class="placeholder-container">
                 <tr class="placeholder">
                     <td class="placeholder-content col-md-6">
@@ -594,7 +301,7 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
+        <table style="margin: auto;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody class="placeholder-container">
                 <tr class="placeholder">
                     <td class="placeholder-content col-md-8">
@@ -622,7 +329,7 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
+        <table style="margin: auto;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody class="placeholder-container">
                 <tr class="placeholder">
                     <td class="placeholder-content col-md-4">
@@ -650,7 +357,7 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
+        <table style="margin: auto;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody class="placeholder-container">
                 <tr class="placeholder">
                     <td class="placeholder-content col-md-4">
@@ -686,7 +393,7 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
+        <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody class="placeholder-container">
                 <tr class="placeholder">
                     <td class="placeholder-content col-md-3">
@@ -722,7 +429,7 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
+        <table style="margin: auto;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody class="placeholder-container">
                 <tr class="placeholder">
                     <td class="placeholder-content col-md-3">

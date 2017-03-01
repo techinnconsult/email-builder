@@ -925,25 +925,25 @@ function handleSortable() {
             ui.item.removeClass('ui-draggable');
             if (ui.item.hasClass('layout')) {
                 if (ui.item.data('layout') == 'one-column') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-12"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-12"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'two-column-50') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'two-column-33') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'two-column-66') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'three-column-33') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'three-column-25') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'four-column') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"> <table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"> <table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'custom') {
                     // $this.append('<div class="current-layout"></div>');
@@ -1089,11 +1089,9 @@ $('.page-content').on('click', '#export', function(e) {
 
 $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
     
-
-});
-$('#markupForm').submit(function(e){
-    var name = $('#markupForm .html-file-name').val();
-    name = name.replace(/\s+/g, '-').toLowerCase();
+//    var name = $('#markupForm .html-file-name').val();
+//    name = name.replace(/\s+/g, '-').toLowerCase();
+    
     removeEditor($(this));
     var fileName = $('.html-file-name').val();
     if(fileName == '') fileName = 'my-custom-admin';
@@ -1102,7 +1100,7 @@ $('#markupForm').submit(function(e){
     $('#hidden-small-screen-message').remove();
     var bodyClass = $('body').attr('class');
     if (fileName == '') fileName = 'my-custom-admin';
-    var adminHeader = '<!DOCTYPE html>\n' + '<html lang="en">\n' + '<head>\n' + '  <meta charset="utf-8">\n' + '  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n' + '  <meta name="description" content="admin-themes-lab">\n' + '  <meta name="author" content="themes-lab">\n' + '  <link rel="shortcut icon" href="builder/images/favicon.png" type="image/png">\n' + '  <title>Make</title>\n' + '<body class="' + bodyClass + '">';
+    var adminHeader = '<!DOCTYPE html>\n' + '<html lang="en">\n' + '<head>\n' + '   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n' + '  <link rel="shortcut icon" href="builder/images/favicon.png" type="image/png">\n' + '  <title>Make</title>\n' + '<body class="' + bodyClass + '">';
     var adminFooter =  '</body>\n' + '</html>';
     
     if ($('body').hasClass('fixed-sidebar')) {
@@ -1136,6 +1134,8 @@ $('#markupForm').submit(function(e){
     allContent.find('.loader-overlay').remove();
     allContent.find('.main-content div.row').remove();
     allContent.find('#page-builder').remove();
+    
+    
 //    allContent.find('.placeholder-handle').html('');
     allContent.find('p').css('display','block');
     allContent.find('.note-editor').remove();
@@ -1185,39 +1185,16 @@ $('#markupForm').submit(function(e){
 //    innerHtml.find('.loader-overlay').remove();
 //    innerHtml.find('script').remove();
     allContent.find('.note-codable').remove();
-    e.preventDefault();
-    $('#mainStructure img').each(function() {
-        alert($(this).attr('src'));
-        $.ajaxSetup({
-            headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
-        });
-        var token = $('meta[name=csrf-token]').attr('content') ;
-        var imageSrc = $(this).attr('src');
-        $.ajax({
-            type: "POST",
-            url: 'add',
-            data: { image: imageSrc,"title":name, "_token":token },
-            success: function( msg ) {
-                    console.log(msg);
-                if(msg == 1 || msg == 2){
-                    
-                }else{
-                    console.log(msg);
-                    $(this).attr('src',msg);
-                }
-            }
-        });
-        
-    });
     allContent.find('body').html(innerHtml);
     customPageContent = allContent.html();
 //    $('#modal-export-page form input[type="hidden"]').remove();
     newInput = $('<input type="hidden" name="pages[index]" value="">');
     $('#modal-export-page form').prepend( newInput );
-    newInput.val(adminHeader+ '<table id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#efefef; width:800px; max-width: 800px; margin: 0 auto; outline: 1px solid #efefef; box-shadow: 0px 0px 5px #E0E0E0;"><tbody><tr><td>'+innerHtml+"</td></tr></tbody></table>"+adminFooter);
-//    newInput.val('test');
-    return false;
+    newInput.val(adminHeader+ '<table id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#efefef; width:800px; max-width: 800px; margin: 0 auto;"><tbody><tr><td>'+innerHtml+"</td></tr></tbody></table>"+adminFooter);
+
 });
+//$('#markupForm').submit(function(e){
+//});
 $('.page-content').on('click', '#modal-export-page .export', function(e) {
     e.preventDefault();
     var fileName = $('.html-file-name').val();

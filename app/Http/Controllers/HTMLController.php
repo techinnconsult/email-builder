@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
+use Dompdf\Options;
 class HTMLController extends Controller{
     public function __construct()
     {
@@ -15,18 +16,72 @@ class HTMLController extends Controller{
         foreach( $input['pages'] as $page=>$content ) {
             $html .= $content;
         }
+        $doc = new \DOMDocument();
+        $doc->loadHTML($html);
+        $tags = $doc->getElementsByTagName('img');
+        foreach ($tags as $tag) {
+            $old_src = $tag->getAttribute('src');
+            $imgdata = base64_decode($old_src);
+            $extension = '';
+            $data = '';
+            $image_type = substr($old_src, 5, strpos($old_src, ';')-5);
+            if($image_type == 'image/png'){
+                $data = str_replace('data:image/png;base64,', '', $old_src);
+                $data = str_replace(' ', '+', $data);
+                $data = base64_decode($data);
+                $extension = '.png';
+            }elseif($image_type == 'image/jpeg'){
+                $data = str_replace('data:image/jpeg;base64,', '', $old_src);
+                $data = str_replace(' ', '+', $data);
+                $data = base64_decode($data);
+                $extension = '.jpeg';
+            }elseif($image_type == 'image/jpg'){
+                $data = str_replace('data:image/jpg;base64,', '', $old_src);
+                $data = str_replace(' ', '+', $data);
+                $data = base64_decode($data);
+                $extension = '.jpg';
+            }elseif($image_type == 'image/gif'){
+                $data = str_replace('data:image/gif;base64,', '', $old_src);
+                $data = str_replace(' ', '+', $data);
+                $data = base64_decode($data);
+                $extension = '.gif';
+            }
+            if($extension != ''){
+                if(!file_exists(public_path() ."/templates/images/")){
+                    mkdir(public_path() ."/templates/images/",0777,true);
+                }
+                $file_name = uniqid();
+                $file =  public_path() ."/templates/images/".$file_name . $extension;
+                $success = file_put_contents($file, $data);
+                if($success > 0){
+                    $src =  url()->to('/')."/templates/images/".$file_name.$extension;
+                }
+                $tag->setAttribute('src', $src);
+            }
+        }
+        $html =  $doc->saveHTML();
         echo $html;
-//        $dompdf = new Dompdf();
+//        $file_name = uniqid();
+//        file_put_contents( public_path() ."/templates/".$file_name . '.html', $html);
+//        $options = new Options();
+//        $options->set('defaultFont', 'Courier');
+//        $options->set('isRemoteEnabled', TRUE);
+//        $options->set('isHtml5ParserEnabled', TRUE);
+//        //$options->set('chroot', '');
+//        $dompdf = new Dompdf($options);
+//        
 //        $dompdf->loadHtml($html);
 //
+//
 //        // (Optional) Setup the paper size and orientation
-//        $dompdf->setPaper('A4', 'landscape');
+//        $dompdf->setPaper('A4','landscape');
 //
 //        // Render the HTML as PDF
 //        $dompdf->render();
 //
 //        // Output the generated PDF to Browser
 //        $dompdf->stream();
+
     }
     
     public function add( Request $request ) {
@@ -57,30 +112,19 @@ class HTMLController extends Controller{
             $extension = '.gif';
         }
         if($extension != ''){
-            $title = $input['title'];
-            if(!file_exists(public_path() ."/templates/$title/images/")){
-                mkdir(public_path() ."/templates/$title/images/",0777,true);
+            if(!file_exists(public_path() ."/templates/images/")){
+                mkdir(public_path() ."/templates/images/",0777,true);
             }
-            
-            $file =  public_path() ."/templates/$title/images/".uniqid() . $extension;
+            $file_name = uniqid();
+            $file =  public_path() ."/templates/images/".$file_name . $extension;
             $success = file_put_contents($file, $data);
             if($success > 0){
-                return $file;
+                return url()->to('/')."/templates/images/".$file_name.$extension;
             }else{
                 return 2;
             }
         }else{
             return 1;
         }
-//        $baseFromJavascript = "data:image/png;base64,BBBFBfj42Pj4"; // $_POST['base64']; //your data in base64 'data:image/png....';
-//        // We need to remove the "data:image/png;base64,"
-//        $base_to_php = explode(',', $baseFromJavascript);
-//        // the 2nd item in the base_to_php array contains the content of the image
-//        $data = base64_decode($base_to_php[1]);
-//        // here you can detect if type is png or jpg if you want
-//        $filepath = "/path/to/my-files/image.png"; // or image.jpg
-//
-//        // Save the image in a defined path
-//        file_put_contents($filepath,$data);
     }
 }
