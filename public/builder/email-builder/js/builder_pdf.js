@@ -12,38 +12,14 @@ var widgetNews = '<div class="panel"> <div class="panel-header"> <h3><i class="i
 var widgetTable = '<div class="panel"> <div class="panel-header panel-controls"> <h3><i class="icon-star"></i> Popular <strong>Domains</strong></h3> </div> <div class="panel-content widget-table"> <div class="withScroll" data-height="400"> <table class="table table-striped"> <thead> <tr> <th>Name</th> <th>Price</th> <th>Status</th> </tr> </thead> <tbody> <tr> <td>internet.com</td> <td><span class="l-through c-red">$29.99</span> <span class="p-l-10 c-green">$19.99</span></td> <td> <div class="badge badge-primary">on sale</div> </td> </tr> <tr> <td>online.com</td> <td><span class="c-primary">$19.99</span></td> <td> <div class="badge badge-success">approved</div> </td> </tr> <tr> <td>newsite.es</td> <td><span class="c-primary">$16.45</span></td> <td> <div class="badge badge-danger">pending</div> </td> </tr> <tr> <td>web.uk</td> <td><span class="c-primary">$15.00</span></td> <td> <div class="badge badge-warning badge-stock">out of stock</div> </td> </tr> <tr> <td>domain.com</td> <td><span class="c-primary">$18.40</span></td> <td> <div class="badge badge-default badge-sold">sold</div> </td> </tr> <tr> <td>mywebsite.com</td> <td><span class="l-through c-red">$22.99</span> <span class="p-l-10 c-green">$15.90</span></td> <td> <div class="badge badge-primary">on sale</div> </td> </tr> <tr> <td>intranet.com</td> <td><span class="l-through c-red">$27.99</span> <span class="p-l-10 c-green">$16.99</span></td> <td> <div class="badge badge-primary">on sale</div> </td> </tr> <tr> <td>hereiam.com</td> <td><span class="c-primary">$18.99</span></td> <td> <div class="badge badge-success">approved</div> </td> </tr> <tr> <td>johndoe.es</td> <td><span class="c-primary">$15.45</span></td> <td> <div class="badge badge-warning badge-stock">out of stock</div> </td> </tr> <tr> <td>skyblue.uk</td> <td><span class="c-primary">$14.00</span></td> <td> <div class="badge badge-danger">pending</div> </td> </tr> <tr> <td>morris.fr</td> <td><span class="c-primary">$17.40</span></td> <td> <div class="badge badge-default badge-sold">sold</div> </td> </tr> <tr> <td>justforfun.com</td> <td><span class="l-through c-red">$25.99</span> <span class="p-l-10 c-green">$18.90</span></td> <td> <div class="badge badge-primary">on sale</div> </td> </tr> </tbody> </table> </div> </div> </div>';
 var widgetCounter = '<div class="panel"><div class="panel-content widget-info"><div class="row"><div class="left"><i class="fa fa-umbrella bg-green"></i></div><div class="right"><p class="number countup" data-from="0" data-to="52000">0</p><p class="text">New robots</p></div></div></div></div>';
 
-var widgetProfile1 = '<div class="panel widget-member2"><div class="row"><div class="col-lg-2 col-xs-3"><img src="../builder/images/avatars/profil4.jpg" alt="profil 4" class="pull-left img-responsive"></div><div class="col-lg-10 col-xs-9"><div class="clearfix"><h3 class="m-t-0 member-name"><strong>John Snow</strong> <span class="member-job">Software Engineer</span></h3></div><div class="row"><div class="col-sm-12"><p><i class="fa fa-map-marker c-gray-light p-r-10"></i> Cebu Business Park, Cebu City, Philippines</p></div></div><div class="row"><div class="col-xlg-4 col-lg-6 col-sm-4"><p><i class="fa fa-skype c-gray-light p-r-10"></i> weno.camesong</p></div><div class="col-xlg-4 col-lg-6 col-sm-4 align-right"><p><i class="icon-envelope  c-gray-light p-r-10"></i> cameso@it.com</p></div><div class="col-xlg-4 col-lg-6 col-sm-4 align-right"><p><i class="icon-target c-gray-light p-r-10"></i> New York</p></div></div></div></div></div>';
-var widgetProfile2 = '<div class="panel panel-default"><div class="panel-body p-10"><div class="text-center col-xs-4"><img src="../builder/images/avatars/avatar4_big.png" class="img-responsive" alt="avatar 4"></div><div class="clearfix col-xs-8"><h2 class="c-dark w-600">Winston Bowman</h2><p class="c-gray f-16">Photographer</p><p class="c-gray"><i class="fa fa-map-marker p-r-10"></i> Trade Business Park, Ohio</p></div></div><div class="panel-footer p-t-0 p-b-0"><div class="row"><div class="col-xs-4 bg-blue p-20"><div class="text-center m-b-10"><i class="f-24 icon-speech"></i></div><div class="text-center f-16">1568</div></div><div class="col-xs-4 bg-purple p-20"><div class="text-center m-b-10"><i class="f-24 icon-users"></i></div><div class="text-center f-16">866</div></div><div class="col-xs-4 bg-primary p-20"><div class="text-center m-b-10"><i class="f-24 fa icon-heart"></i></div><div class="text-center f-16">254</div></div></div></div></div>';
-var widgetProfile3 = '<div class="panel panel-default hover-effect"><div class="panel-heading h-150 p-0"><img src="../builder/images/widgets/profil2.jpg" class="img-responsive hover-img" alt=""></div><div class="panel-body p-10"><div class="clearfix col-lg-6 col-md-12 col-sm-12"><h3 class="c-dark w-600 align-center">Anna Chain</h3><p class="c-gray f-16 align-center">Photographer</p></div><div class="col-lg-6 col-md-12 col-sm-12 p-t-20"><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-speech"></i></div><div class="text-center">1568</div></div><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-users"></i></div><div class="text-center">866</div></div><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-heart c-red"></i></div><div class="text-center">254</div></div></div></div></div>';
-var widgetProfile4 = '<div class="panel panel-default"><div class="panel-heading h-150 p-0"><img src="../builder/images/widgets/mountain.jpg" class="img-responsive" alt=""><div class="profil-name-heading text-center w-700"><div class="f-24">John Snow</div><div class="f-16">photographer</div></div></div><div class="panel-body p-10"><div class="clearfix col-xs-4"><div class="text-center f-32 w-700">1758</div><div class="text-center c-gray w-700">PHOTOS</div></div><div class="col-xs-4"><img class="widget-profil-img-center img-responsive" src="../builder/images/widgets/profil3.jpg" alt=""></div><div class="col-xs-4"><div class="text-center f-32 w-700">4557</div><div class="text-center c-gray w-700">FOLLOWERS</div></div></div></div>';
+var widgetProfile1 = '<div class="panel widget-member2"><div class="row"><div class="col-lg-2 col-xs-3"><img src="../../assets/global/images/avatars/profil4.jpg" alt="profil 4" class="pull-left img-responsive"></div><div class="col-lg-10 col-xs-9"><div class="clearfix"><h3 class="m-t-0 member-name"><strong>John Snow</strong> <span class="member-job">Software Engineer</span></h3></div><div class="row"><div class="col-sm-12"><p><i class="fa fa-map-marker c-gray-light p-r-10"></i> Cebu Business Park, Cebu City, Philippines</p></div></div><div class="row"><div class="col-xlg-4 col-lg-6 col-sm-4"><p><i class="fa fa-skype c-gray-light p-r-10"></i> weno.camesong</p></div><div class="col-xlg-4 col-lg-6 col-sm-4 align-right"><p><i class="icon-envelope  c-gray-light p-r-10"></i> cameso@it.com</p></div><div class="col-xlg-4 col-lg-6 col-sm-4 align-right"><p><i class="icon-target c-gray-light p-r-10"></i> New York</p></div></div></div></div></div>';
+var widgetProfile2 = '<div class="panel panel-default"><div class="panel-body p-10"><div class="text-center col-xs-4"><img src="../../assets/global/images/avatars/avatar4_big.png" class="img-responsive" alt="avatar 4"></div><div class="clearfix col-xs-8"><h2 class="c-dark w-600">Winston Bowman</h2><p class="c-gray f-16">Photographer</p><p class="c-gray"><i class="fa fa-map-marker p-r-10"></i> Trade Business Park, Ohio</p></div></div><div class="panel-footer p-t-0 p-b-0"><div class="row"><div class="col-xs-4 bg-blue p-20"><div class="text-center m-b-10"><i class="f-24 icon-speech"></i></div><div class="text-center f-16">1568</div></div><div class="col-xs-4 bg-purple p-20"><div class="text-center m-b-10"><i class="f-24 icon-users"></i></div><div class="text-center f-16">866</div></div><div class="col-xs-4 bg-primary p-20"><div class="text-center m-b-10"><i class="f-24 fa icon-heart"></i></div><div class="text-center f-16">254</div></div></div></div></div>';
+var widgetProfile3 = '<div class="panel panel-default hover-effect"><div class="panel-heading h-150 p-0"><img src="../../assets/global/images/widgets/profil2.jpg" class="img-responsive hover-img" alt=""></div><div class="panel-body p-10"><div class="clearfix col-lg-6 col-md-12 col-sm-12"><h3 class="c-dark w-600 align-center">Anna Chain</h3><p class="c-gray f-16 align-center">Photographer</p></div><div class="col-lg-6 col-md-12 col-sm-12 p-t-20"><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-speech"></i></div><div class="text-center">1568</div></div><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-users"></i></div><div class="text-center">866</div></div><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-heart c-red"></i></div><div class="text-center">254</div></div></div></div></div>';
+var widgetProfile4 = '<div class="panel panel-default"><div class="panel-heading h-150 p-0"><img src="../../assets/global/images/widgets/mountain.jpg" class="img-responsive" alt=""><div class="profil-name-heading text-center w-700"><div class="f-24">John Snow</div><div class="f-16">photographer</div></div></div><div class="panel-body p-10"><div class="clearfix col-xs-4"><div class="text-center f-32 w-700">1758</div><div class="text-center c-gray w-700">PHOTOS</div></div><div class="col-xs-4"><img class="widget-profil-img-center img-responsive" src="../../assets/global/images/widgets/profil3.jpg" alt=""></div><div class="col-xs-4"><div class="text-center f-32 w-700">4557</div><div class="text-center c-gray w-700">FOLLOWERS</div></div></div></div>';
 
 
 
 $(document).ready(function() {
-    $('.video-images').on('change', function(){ //on file input change
-        if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
-        {
-            $('#preview-image').html(''); //clear html of output element
-            var data = $(this)[0].files; //this file data
-            
-            $.each(data, function(index, file){ //loop though each file
-                if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type
-                    var fRead = new FileReader(); //new filereader
-                    fRead.onload = (function(file){ //trigger function on successful read
-                    return function(e) {
-                        var img = $('<img/>').addClass('thumb').attr('src', e.target.result); //create image element 
-                        $('#preview-image').append(img); //append image to output element
-                        $('#preview-image img').css('width','100%');
-                    };
-                    })(file);
-                    fRead.readAsDataURL(file); //URL representing the file's data.
-                }
-            });
-            
-        }else{
-            alert("Your browser doesn't support File API!"); //if File API is absent
-        }
-    });
     $('#import-page-builder').on('click', function(e) {
         e.preventDefault();
         createPageBuilder();
@@ -462,8 +438,8 @@ function handlePageBuilder() {
         tableStyle = 'table-' + $('.table-style').select2("val");
         if (tableStyle == 'table-default') tableStyle = '';
         if (tableTitle != '') tableTitle = '<h2><strong>' + tableTitle + '</strong></h2>';
-        tableColumns = $('.table-columns').val();
-        tableRows = $('.table-rows').val();
+        tableColumns = $('.table-columns-slide').sliderIOS('getValue');
+        tableRows = $('.table-rows-slide').sliderIOS('getValue');
         for (var i = 0; i < tableColumns; i++) {
             tableHead += '<th>' + 'Head ' + i + '</th>';
         }
@@ -485,20 +461,6 @@ function handlePageBuilder() {
         $('#table').modal('hide');
     });
 
-    $('#save-video').on('click', function() {
-        var videoTitle = $('.video-title').val();
-        var videoLink = $('.video-link').val();
-        var videoImageSrc = $('#preview-image img').attr('src');
-        $('.videoLink').attr('href',videoLink);
-        $('.videoImage').attr('src',videoImageSrc);
-        $('.videoImage').css('width','100%');
-        $('.videoLink').css('display','block');
-        $('.video-title').val('');
-        $('.video-link').val('');
-        $('#preview-image').html('');
-        $('#video').modal('hide');
-    });
-    
     /**** USER PROFILE WIDGET ****/
     $('#modal-user-profile').on('click', '.user-profile-img', function(){
         $('#modal-user-profile .user-profile-img').removeClass('active');
@@ -702,7 +664,7 @@ function handlePageBuilder() {
         removeEditor($(this));
         createEditor($(this));
     });
-    $('.builder-wrapper').on('click', '.placeholder h1, .placeholder h2, .placeholder h3,.placeholder h4, label,.placeholder button,.placeholder .table th,.placeholder .table td,.placeholder li,.placeholder li a,.placeholder .title, .placeholder .number, .placeholder small', function() {
+    $('.builder-wrapper').on('click', '.placeholder h1, .placeholder h2, .placeholder h3,.placeholder h4, label,.placeholder button,.placeholder th,.placeholder td,.placeholder li,.placeholder li a,.placeholder .title, .placeholder .number, .placeholder small', function() {
         /* Prevent to remove editor if toolbar button is clicked */
         if (!$(this).parent().parent().hasClass('note-toolbar')) {
             removeEditor($(this));
@@ -767,7 +729,7 @@ function handleDroppable() {
                     $this.append('<h3 class="summernote" data-airmode="true">I am a small Title</h3>');
                 }
                 if (ui.draggable.data('element') == 'image') {
-                    $this.append('<div class="fileinput fileinput-new" data-provides="fileinput"><div class="fileinput-new thumbnail"><img data-src="" src="builder/email-builder/images/add-picture.jpg" class="img-responsive"></div><div class="fileinput-preview fileinput-exists thumbnail"></div><div class="text-center"><span class="btn btn-default btn-file"><span class="fileinput-new">Select image...</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span><a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a></div></div>');
+                    $this.append('<div class="fileinput fileinput-new" data-provides="fileinput"><div class="fileinput-new thumbnail"><img data-src="" src="images/add-picture.jpg" class="img-responsive"></div><div class="fileinput-preview fileinput-exists thumbnail"></div><div class="text-center"><span class="btn btn-default btn-file"><span class="fileinput-new">Select image...</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span><a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a></div></div>');
                 }
                 if (!$this.parent().hasClass('active')) {
                     if ($this.children().hasClass('select-image')) {
@@ -781,19 +743,19 @@ function handleDroppable() {
             if (ui.draggable.hasClass('portlet')) {
                 $this.find('.placeholder-content-area').remove();
                 if (ui.draggable.data('portlet') == 'basic') {
-                    $this.append('<table class="panel"><tbody><tr><td class="panel-content"><h1><strong>Simple</strong> Portlets</h1><p>Example of panel with no header and footer.<br>You can edit content by clicking on text.</p></td></tr></tbody></table>');
+                    $this.append('<div class="panel"><div class="panel-content"><h1><strong>Simple</strong> Portlets</h1><p>Example of panel with no header and footer.<br>You can edit content by clicking on text.</p></div></div>');
                 }
                 if (ui.draggable.data('portlet') == 'header') {
-                    $this.append('<table class="panel"><tbody><tr><td class="panel-header bg-primary"><h3>Portlet <strong>Title</strong></h3></td></tr><tr><td class="panel-content"><p>Example of portlet with header.<br>You can edit content by clicking on text.</p></td></tr></tbody></table>');
+                    $this.append('<div class="panel"><div class="panel-header bg-primary"><h3>Portlet <strong>Title</strong></h3></div><div class="panel-content"><p>Example of portlet with header.<br>You can edit content by clicking on text.</p></div></div>');
                 }
                 if (ui.draggable.data('portlet') == 'footer-txt') {
-                    $this.append('<table class="panel"><tbody><tr><td class="panel-content"><h1>Just footer, no header.</h1><p class="m-t-40">Like for header, you can add color to footer<br>You can edit content by clicking on text.</p></td></tr><tr><td class="panel-footer bg-dark"><h3>Portlet <strong>Footer</strong></h3></td></tr></tbody></table>');
+                    $this.append('<div class="panel"><div class="panel-content"><h1>Just footer, no header.</h1><p class="m-t-40">Like for header, you can add color to footer<br>You can edit content by clicking on text.</p></div><div class="panel-footer bg-dark"><h3>Portlet <strong>Footer</strong></h3></div></div>');
                 }
                 if (ui.draggable.data('portlet') == 'footer-btn') {
-                    $this.append('<table class="panel"><tbody><tr><td class="panel-content"><h1>Just footer, no header.</h1><p class="m-t-40">Like for header, you can add color to footer<br>You can edit content by clicking on text.</p></td><td class="panel-footer clearfix"></tr><tr><td class="pull-right"><button type="button" class="btn btn-white m-r-10">Cancel</button><button type="button" class="btn btn-success">Submit</button></td></tr></tbody></table>');
+                    $this.append('<div class="panel"><div class="panel-content"><h1>Just footer, no header.</h1><p class="m-t-40">Like for header, you can add color to footer<br>You can edit content by clicking on text.</p></div><div class="panel-footer clearfix"><div class="pull-right"><button type="button" class="btn btn-white m-r-10">Cancel</button><button type="button" class="btn btn-success">Submit</button></div></div>');
                 }
                 if (ui.draggable.data('portlet') == 'header-footer') {
-                    $this.append('<table class="panel"><tbody><tr><td class="panel-header"><h3>Portlet <strong>Header</strong></h3></div><div class="panel-content"><p>Example of portlet with header and footer. You can edit content by clicking on text.</p></td></tr><tr><td class="panel-footer"><h3>Portlet <strong>Footer</strong></h3></td></tr></tbody></table>');
+                    $this.append('<div class="panel"><div class="panel-header"><h3>Portlet <strong>Header</strong></h3></div><div class="panel-content"><p>Example of portlet with header and footer. You can edit content by clicking on text.</p></div><div class="panel-footer"><h3>Portlet <strong>Footer</strong></h3></div></div>');
                 }
             }
             if (ui.draggable.hasClass('form')) {
@@ -848,10 +810,6 @@ function handleDroppable() {
                   $this.append('<table class="current-table table table-dynamic" style="display:none"></table>');
                 } 
                 $('#table').modal('show');
-            }
-            if (ui.draggable.hasClass('build-video')) {
-                $this.append('<a style="display:none" targe="_blank" class="videoLink"><img class="videoImage" border="0" src="" label="Fallback Image"></a>');
-                $('#video').modal('show');
             }
             if (ui.draggable.hasClass('build-widget')) {
                 currentWidget = ui.draggable.data('widget');
@@ -925,25 +883,25 @@ function handleSortable() {
             ui.item.removeClass('ui-draggable');
             if (ui.item.hasClass('layout')) {
                 if (ui.item.data('layout') == 'one-column') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-12"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-12"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div></div>');
                 }
                 if (ui.item.data('layout') == 'two-column-50') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-6"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-6"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div></div>');
                 }
                 if (ui.item.data('layout') == 'two-column-33') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-8"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div><div class="handle-options"><i class="fa fa-cog"></i></div></div></div></div>');
                 }
                 if (ui.item.data('layout') == 'two-column-66') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-8"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div><div class="handle-options"><i class="fa fa-cog"></i></div></div></div></div>');
                 }
                 if (ui.item.data('layout') == 'three-column-33') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div></div>');
                 }
                 if (ui.item.data('layout') == 'three-column-25') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-6"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div></div>');
                 }
                 if (ui.item.data('layout') == 'four-column') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"> <table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div></div>');
                 }
                 if (ui.item.data('layout') == 'custom') {
                     // $this.append('<div class="current-layout"></div>');
@@ -1031,11 +989,11 @@ function removeEditor(element) {
     $(this).addClass('editing');
     $('.placeholder p, .placeholder h1, .placeholder h2, .placeholder h2, .placeholder h3, .placeholder label, .placeholder button, .placeholder th, .placeholder td, .placeholder li, .placeholder li a').each(function() {
         if (!$(this).hasClass('editing')) {
-            //$(this).destroy();
+            $(this).destroy();
         }
     });
     $('.footer p').each(function() {
-        //$(this).destroy();
+        $(this).destroy();
     });
 }
 
@@ -1049,8 +1007,7 @@ function createIcheckEditor() {
 
 function handleRemove() {
     $('.page-content').on('click', '.handle-remove', function() {
-        currentElement = $(this).parent().parent().parent().parent();
-        console.log(currentElement);
+        currentElement = $(this).parent().parent();
         bootbox.confirm('Are you sure you want to remove this section?', function(result) {
             if (result === true) {
                 currentElement.addClass("animated bounceOutRight");
@@ -1088,28 +1045,401 @@ $('.page-content').on('click', '#export', function(e) {
 });
 
 $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
-    
-//    var name = $('#markupForm .html-file-name').val();
-//    name = name.replace(/\s+/g, '-').toLowerCase();
-    
     removeEditor($(this));
     var fileName = $('.html-file-name').val();
     if(fileName == '') fileName = 'my-custom-admin';
+
     $('body').removeClass('modal-open');
     $('body').removeClass('builder-page');
     $('#hidden-small-screen-message').remove();
     var bodyClass = $('body').attr('class');
     if (fileName == '') fileName = 'my-custom-admin';
-    var adminHeader = '<!DOCTYPE html>\n' + '<html lang="en">\n' + '<head>\n' + '   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n' + '  <link rel="shortcut icon" href="builder/images/favicon.png" type="image/png">\n' + '  <title>Make</title>\n' + '<body class="' + bodyClass + '">';
-    var adminFooter =  '</body>\n' + '</html>';
+    var adminHeader = '<!DOCTYPE html>\n' + '<html lang="en">\n' + '<head>\n' + '  <meta charset="utf-8">\n' + '  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">\n' + '  <meta name="description" content="admin-themes-lab">\n' + '  <meta name="author" content="themes-lab">\n' + '  <link rel="shortcut icon" href="../assets/global/images/favicon.png" type="image/png">\n' + '  <title>Make</title>\n' + '  <link href="http://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet" type="text/css">\n' + '  <link href="../assets/global/css/style.css" rel="stylesheet"> <!-- MANDATORY -->\n' + '  <link href="../assets/global/css/theme.css" rel="stylesheet"> <!-- MANDATORY -->\n' + '  <link href="../assets/global/css/ui.css" rel="stylesheet"> <!-- MANDATORY -->\n' + '  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->\n' + '  <!--[if lt IE 9]>\n' + '  <script src="../assets/global/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>\n' + '  <![endif]-->\n' + '</head>\n' + '<!-- LAYOUT: Apply "submenu-hover" class to body element to have sidebar submenu show on mouse hover -->\n' + '<!-- LAYOUT: Apply "sidebar-collapsed" class to body element to have collapsed sidebar -->\n' + '<!-- LAYOUT: Apply "sidebar-top" class to body element to have sidebar on top of the page -->\n' + '<!-- LAYOUT: Apply "sidebar-hover" class to body element to show sidebar only when your mouse is on left / right corner -->\n' + '<!-- LAYOUT: Apply "submenu-hover" class to body element to show sidebar submenu on mouse hover -->\n' + '<!-- LAYOUT: Apply "fixed-sidebar" class to body to have fixed sidebar -->\n' + '<!-- LAYOUT: Apply "fixed-topbar" class to body to have fixed topbar -->\n' + '<!-- LAYOUT: Apply "rtl" class to body to put the sidebar on the right side -->\n' + '<!-- LAYOUT: Apply "boxed" class to body to have your page with 1200px max width -->\n' + '<!-- THEME STYLE: Apply "theme-sdtl" for Sidebar Dark / Topbar Light -->\n' + '<!-- THEME STYLE: Apply  "theme sdtd" for Sidebar Dark / Topbar Dark -->\n' + '<!-- THEME STYLE: Apply "theme sltd" for Sidebar Light / Topbar Dark -->\n' + '<!-- THEME STYLE: Apply "theme sltl" for Sidebar Light / Topbar Light -->\n' + '<!-- THEME COLOR: Apply "color-default" for dark color: #2B2E33 -->\n' + '<!-- THEME COLOR: Apply "color-primary" for primary color: #319DB5 -->\n' + '<!-- THEME COLOR: Apply "color-red" for red color: #C9625F -->\n' + '<!-- THEME COLOR: Apply "color-default" for green color: #18A689 -->\n' + '<!-- THEME COLOR: Apply "color-default" for orange color: #B66D39 -->\n' + '<!-- THEME COLOR: Apply "color-default" for purple color: #6E62B5 -->\n' + '<!-- THEME COLOR: Apply "color-default" for blue color: #4A89DC -->\n' + '<!-- BEGIN BODY -->\n' + '<body class="' + bodyClass + '">\n' + '  <section>';
+    var copyright   = '      <div class="footer">\n' + '        <div class="copyright">\n' + '          <p class="pull-left sm-pull-reset"> <span>Copyright <span class="copyright">©</span> 2014 </span> <span>THEMES LAB</span>. <span>All rights reserved. </span> </p>\n' + '          <p class="pull-right sm-pull-reset"> <span><a href="#" class="m-r-10">Support</a> | <a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="#" class="m-l-10">Privacy Policy</a></span> </p>\n' + '        </div>\n' + '      </div>\n';
+    var adminFooter = '<!-- Preloader -->\n' + '  <div class="loader-overlay">\n' + '    <div class="spinner">\n' + '      <div class="bounce1"></div>\n' + '      <div class="bounce2"></div>\n' + '      <div class="bounce3"></div>\n' + '    </div>\n' + '  </div>\n' + '<a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a> \n' + '<script src="../assets/global/plugins/jquery/jquery-3.1.0.min.js"></script>\n' + '<script src="../assets/global/plugins/jquery/jquery-migrate-3.0.0.min.js"></script>\n' + '<script src="../assets/global/plugins/gsap/main-gsap.min.js"></script> <!-- HTML Animations -->\n' + '<script src="../assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>\n' + '<script src="../assets/global/plugins/jquery-block-ui/jquery.blockUI.min.js"></script> <!-- simulate synchronous behavior when using AJAX -->\n' + '<script src="../assets/global/plugins/bootbox/bootbox.min.js"></script> \n' + '<script src="../assets/global/plugins/mcustom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script> <!-- Custom Scrollbar sidebar -->\n' + '<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>\n' + '<script src="../assets/global/plugins/bootstrap-dropdown/bootstrap-hover-dropdown.min.js"></script> <!-- Show Dropdown on Mouseover -->\n' + '<script src="../assets/global/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js"></script> <!-- Animated Progress Bar -->\n' + '<script src="../assets/global/plugins/switchery/switchery.min.js"></script> <!-- IOS Switch -->\n' + '<script src="../assets/global/plugins/charts-sparkline/sparkline.min.js"></script> <!-- Charts Sparkline -->\n' + '<script src="../assets/global/plugins/retina/retina.min.js"></script> \n' + '<script src="../assets/global/plugins/jquery-cookies/jquery.cookies.min.js"></script> <!-- Jquery Cookies, for theme -->\n' + '<script src="../assets/global/plugins/bootstrap/js/jasny-bootstrap.min.js"></script> <!-- File Upload and Input Masks -->\n' + '<script src="../assets/global/plugins/select2/dist/js/select2.full.min.js"></script> <!-- Select Inputs -->\n' + '<script src="../assets/global/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script> <!-- Select Inputs -->\n' + '<script src="../assets/global/plugins/bootstrap-loading/lada.min.js"></script> <!-- Buttons Loading State -->\n' + '<script src="../assets/global/plugins/timepicker/jquery-ui-timepicker-addon.min.js"></script> <!-- Time Picker -->\n' + '<script src="../assets/global/plugins/multidatepicker/multidatespicker.min.js"></script> <!-- Multi dates Picker -->\n' + '<script src="../assets/global/plugins/colorpicker/spectrum.min.js"></script> <!-- Color Picker -->\n' + '<script src="../assets/global/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script> <!-- A mobile and touch friendly input spinner component for Bootstrap -->\n' + '<script src="../assets/global/plugins/autosize/autosize.min.js"></script> <!-- Textarea autoresize -->\n' + '<script src="../assets/global/plugins/icheck/icheck.min.js"></script> <!-- Icheck -->\n' + '<script src="../assets/global/plugins/bootstrap-editable/js/bootstrap-editable.min.js"></script> <!-- Inline Edition X-editable -->\n' + '<script src="../assets/global/plugins/bootstrap-context-menu/bootstrap-contextmenu.min.js"></script> <!-- Context Menu -->\n' + '<script src="../assets/global/plugins/prettify/prettify.min.js"></script> <!-- Show html code -->\n' + '<script src="../assets/global/plugins/slick/slick.min.js"></script> <!-- Slider -->\n' + '<script src="../assets/global/plugins/countup/countUp.min.js"></script> <!-- Animated Counter Number -->\n' + '<script src="../assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->\n' + '<script src="../assets/global/plugins/backstretch/backstretch.min.js"></script> <!-- Background Image -->\n' + '<script src="../assets/global/plugins/charts-chartjs/Chart.min.js"></script>  <!-- ChartJS Chart -->\n' + '<script src="../assets/global/plugins/summernote/summernote.js"></script>\n' + '<script src="../assets/global/plugins/bootstrap-slider/bootstrap-slider.js"></script>\n' + '<script src="../assets/global/plugins/skycons/skycons.js"></script>\n' + '<script src="../assets/global/js/sidebar_hover.js"></script>\n' + '<script src="../assets/global/js/application.js"></script> <!-- Main Application Script -->\n' + '<script src="../assets/global/js/plugins.js"></script> <!-- Main Plugin Initialization Script -->\n' + '<script src="../assets/global/js/widgets/notes.js"></script>\n' + '<script src="../assets/global/js/quickview.js"></script>\n' + '<script src="../assets/global/js/pages/search.js"></script>\n' + '<script src="../assets/admin/layout1/js/layout.js"></script>\n' + '</body>\n' + '</html>';
     
     if ($('body').hasClass('fixed-sidebar')) {
         var sidebarIsFixed = true;
         handleSidebarFluid();
         $('body').addClass('fixed-sidebar');
     }
-    var editContent = '';
-    var allContent = editContent = $('body').clone();
+    var allContent = $('body > section').clone();
+
+    var quickviewSidebar =  '</section>\n' + 
+                            '<div id="quickview-sidebar">\n' + 
+                            '  <div class="quickview-header">\n' + 
+                            '    <ul class="nav nav-tabs">\n' + 
+                            '      <li class="active"><a href="#chat" data-toggle="tab">Chat</a></li>\n' + 
+                            '      <li><a href="#notes" data-toggle="tab">Notes</a></li>\n' + 
+                            '      <li><a href="#settings" data-toggle="tab" class="settings-tab">Settings</a></li>\n' + 
+                            '    </ul>\n' + 
+                            '  </div>\n' + 
+                            '  <div class="quickview">\n' + 
+                            '    <div class="tab-content">\n' + 
+                            '      <div class="tab-pane fade active in" id="chat">\n' + 
+                            '        <div class="chat-body current">\n' + 
+                            '          <div class="chat-search">\n' + 
+                            '            <form class="form-inverse" action="#" role="search">\n' + 
+                            '              <div class="append-icon">\n' + 
+                            '                <input type="text" class="form-control" placeholder="Search contact...">\n' + 
+                            '                <i class="icon-magnifier"></i>\n' + 
+                            '              </div>\n' + 
+                            '            </form>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="chat-groups">\n' + 
+                            '            <div class="title">GROUP CHATS</div>\n' + 
+                            '            <ul>\n' + 
+                            '              <li><i class="turquoise"></i> Favorites</li>\n' + 
+                            '              <li><i class="turquoise"></i> Office Work</li>\n' + 
+                            '              <li><i class="turquoise"></i> Friends</li>\n' + 
+                            '            </ul>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="chat-list">\n' + 
+                            '            <div class="title">FAVORITES</div>\n' + 
+                            '            <ul>\n' + 
+                            '              <li class="clearfix">\n' + 
+                            '                <div class="user-img">\n' + 
+                            '                  <img src="../assets/global/images/avatars/avatar13.png" alt="avatar" />\n' +
+                            '                </div>\n' + 
+                            '                <div class="user-details">\n' + 
+                            '                  <div class="user-name">Bobby Brown</div>\n' + 
+                            '                  <div class="user-txt">On the road again...</div>\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-status">\n' + 
+                            '                  <i class="online"></i>\n' + 
+                            '                </div>\n' + 
+                            '              </li>\n' + 
+                            '              <li class="clearfix">\n' + 
+                            '                <div class="user-img">\n' + 
+                            '                  <img src="../assets/global/images/avatars/avatar5.png" alt="avatar" />\n' + 
+                            '                  <div class="pull-right badge badge-danger">3</div>\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-details">\n' + 
+                            '                  <div class="user-name">Alexa Johnson</div>\n' + 
+                            '                  <div class="user-txt">Still at the beach</div>\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-status">\n' + 
+                            '                  <i class="away"></i>\n' + 
+                            '                </div>\n' + 
+                            '              </li>\n' + 
+                            '              <li class="clearfix">\n' + 
+                            '                <div class="user-img">\n' + 
+                            '                  <img src="../assets/global/images/avatars/avatar10.png" alt="avatar" />\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-details">\n' + 
+                            '                  <div class="user-name">Bobby Brown</div>\n' + 
+                            '                  <div class="user-txt">On stage...</div>\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-status">\n' + 
+                            '                  <i class="busy"></i>\n' + 
+                            '                </div>\n' + 
+                            '              </li>\n' + 
+                            '            </ul>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="chat-list">\n' + 
+                            '            <div class="title">FRIENDS</div>\n' + 
+                            '            <ul>\n' + 
+                            '              <li class="clearfix">\n' + 
+                            '                <div class="user-img">\n' + 
+                            '                  <img src="../assets/global/images/avatars/avatar7.png" alt="avatar" />\n' + 
+                            '                  <div class="pull-right badge badge-danger">3</div>\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-details">\n' + 
+                            '                  <div class="user-name">James Miller</div>\n' + 
+                            '                  <div class="user-txt">At work...</div>\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-status">\n' + 
+                            '                  <i class="online"></i>\n' + 
+                            '                </div>\n' + 
+                            '              </li>\n' + 
+                            '              <li class="clearfix">\n' + 
+                            '                <div class="user-img">\n' + 
+                            '                  <img src="../assets/global/images/avatars/avatar11.png" alt="avatar" />\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-details">\n' + 
+                            '                  <div class="user-name">Fred Smith</div>\n' + 
+                            '                  <div class="user-txt">Waiting for tonight</div>\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-status">\n' + 
+                            '                  <i class="offline"></i>\n' + 
+                            '                </div>\n' + 
+                            '              </li>\n' + 
+                            '              <li class="clearfix">\n' + 
+                            '                <div class="user-img">\n' + 
+                            '                  <img src="../assets/global/images/avatars/avatar8.png" alt="avatar" />\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-details">\n' + 
+                            '                  <div class="user-name">Ben Addams</div>\n' + 
+                            '                  <div class="user-txt">On my way to NYC</div>\n' + 
+                            '                </div>\n' + 
+                            '                <div class="user-status">\n' + 
+                            '                  <i class="offline"></i>\n' + 
+                            '                </div>\n' + 
+                            '              </li>\n' + 
+                            '            </ul>\n' + 
+                            '          </div>\n' + 
+                            '        </div>\n' + 
+                            '        <div class="chat-conversation">\n' + 
+                            '          <div class="conversation-header">\n' + 
+                            '            <div class="user clearfix">\n' + 
+                            '              <div class="chat-back">\n' + 
+                            '                <i class="icon-action-undo"></i>\n' + 
+                            '              </div>\n' + 
+                            '              <div class="user-details">\n' + 
+                            '                <div class="user-name">James Miller</div>\n' + 
+                            '                <div class="user-txt">On the road again...</div>\n' + 
+                            '              </div>\n' + 
+                            '            </div>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="conversation-body">\n' + 
+                            '            <ul>\n' + 
+                            '              <li class="img">\n' + 
+                            '                <div class="chat-detail">\n' + 
+                            '                  <span class="chat-date">today, 10:38pm</span>\n' + 
+                            '                  <div class="conversation-img">\n' + 
+                            '                    <img src="../assets/global/images/avatars/avatar4.png" alt="avatar 4"/>\n' + 
+                            '                  </div>\n' + 
+                            '                  <div class="chat-bubble">\n' + 
+                            '                    <span>Hi you!</span>\n' + 
+                            '                  </div>\n' + 
+                            '                </div>\n' + 
+                            '              </li>\n' + 
+                            '              <li class="img">\n' + 
+                            '                <div class="chat-detail">\n' + 
+                            '                  <span class="chat-date">today, 10:45pm</span>\n' + 
+                            '                  <div class="conversation-img">\n' + 
+                            '                    <img src="../assets/global/images/avatars/avatar4.png" alt="avatar 4"/>\n' + 
+                            '                  </div>\n' + 
+                            '                  <div class="chat-bubble">\n' + 
+                            '                    <span>Are you there?</span>\n' + 
+                            '                  </div>\n' + 
+                            '                </div>\n' + 
+                            '              </li>\n' + 
+                            '              <li class="img">\n' + 
+                            '                <div class="chat-detail">\n' + 
+                            '                  <span class="chat-date">today, 10:51pm</span>\n' + 
+                            '                  <div class="conversation-img">\n' + 
+                            '                    <img src="../assets/global/images/avatars/avatar4.png" alt="avatar 4"/>\n' + 
+                            '                  </div>\n' + 
+                            '                  <div class="chat-bubble">\n' + 
+                            '                    <span>Send me a message when you come back.</span>\n' + 
+                            '                  </div>\n' + 
+                            '                </div>\n' + 
+                            '              </li>\n' + 
+                            '            </ul>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="conversation-message">\n' + 
+                            '            <input type="text" placeholder="Your message..." class="form-control form-white send-message" />\n' + 
+                            '            <div class="item-footer clearfix">\n' + 
+                            '              <div class="footer-actions">\n' + 
+                            '                <i class="icon-rounded-marker"></i>\n' + 
+                            '                <i class="icon-rounded-camera"></i>\n' + 
+                            '                <i class="icon-rounded-paperclip-oblique"></i>\n' + 
+                            '                <i class="icon-rounded-alarm-clock"></i>\n' + 
+                            '              </div>\n' + 
+                            '            </div>\n' + 
+                            '          </div>\n' + 
+                            '        </div>\n' + 
+                            '      </div>\n' + 
+                            '      <div class="tab-pane fade" id="notes">\n' + 
+                            '        <div class="list-notes current withScroll">\n' + 
+                            '          <div class="notes ">\n' + 
+                            '            <div class="row">\n' + 
+                            '              <div class="col-md-12">\n' + 
+                            '                <div id="add-note">\n' + 
+                            '                  <i class="fa fa-plus"></i>ADD A NEW NOTE\n' + 
+                            '                </div>\n' + 
+                            '              </div>\n' + 
+                            '            </div>\n' + 
+                            '            <div id="notes-list">\n' + 
+                            '              <div class="note-item media current fade in">\n' + 
+                            '                <button class="close">×</button>\n' + 
+                            '                <div>\n' + 
+                            '                  <div>\n' + 
+                            '                    <p class="note-name">Reset my account password</p>\n' + 
+                            '                  </div>\n' + 
+                            '                  <p class="note-desc hidden">Break security reasons.</p>\n' + 
+                            '                  <p><small>Tuesday 6 May, 3:52 pm</small></p>\n' + 
+                            '                </div>\n' + 
+                            '              </div>\n' + 
+                            '              <div class="note-item media fade in">\n' + 
+                            '                <button class="close">×</button>\n' + 
+                            '                <div>\n' + 
+                            '                  <div>\n' + 
+                            '                    <p class="note-name">Call John</p>\n' + 
+                            '                  </div>\n' + 
+                            '                  <p class="note-desc hidden">He have my laptop!</p>\n' + 
+                            '                  <p><small>Thursday 8 May, 2:28 pm</small></p>\n' + 
+                            '                </div>\n' + 
+                            '              </div>\n' + 
+                            '              <div class="note-item media fade in">\n' + 
+                            '                <button class="close">×</button>\n' + 
+                            '                <div>\n' + 
+                            '                  <div>\n' + 
+                            '                    <p class="note-name">Buy a car</p>\n' + 
+                            '                  </div>\n' + 
+                            '                  <p class="note-desc hidden">I\'m done with the bus</p>\n' + 
+                            '                  <p><small>Monday 12 May, 3:43 am</small></p>\n' + 
+                            '                </div>\n' + 
+                            '              </div>\n' + 
+                            '              <div class="note-item media fade in">\n' + 
+                            '                <button class="close">×</button>\n' + 
+                            '                <div>\n' + 
+                            '                  <div>\n' + 
+                            '                    <p class="note-name">Don\'t forget my notes</p>\n' + 
+                            '                  </div>\n' + 
+                            '                  <p class="note-desc hidden">I have to read them...</p>\n' + 
+                            '                  <p><small>Wednesday 5 May, 6:15 pm</small></p>\n' + 
+                            '                </div>\n' + 
+                            '              </div>\n' + 
+                            '              <div class="note-item media current fade in">\n' + 
+                            '                <button class="close">×</button>\n' + 
+                            '                <div>\n' + 
+                            '                  <div>\n' + 
+                            '                    <p class="note-name">Reset my account password</p>\n' + 
+                            '                  </div>\n' + 
+                            '                  <p class="note-desc hidden">Break security reasons.</p>\n' + 
+                            '                  <p><small>Tuesday 6 May, 3:52 pm</small></p>\n' + 
+                            '                </div>\n' + 
+                            '              </div>\n' + 
+                            '              <div class="note-item media fade in">\n' + 
+                            '                <button class="close">×</button>\n' + 
+                            '                <div>\n' + 
+                            '                  <div>\n' + 
+                            '                    <p class="note-name">Call John</p>\n' + 
+                            '                  </div>\n' + 
+                            '                  <p class="note-desc hidden">He have my laptop!</p>\n' + 
+                            '                  <p><small>Thursday 8 May, 2:28 pm</small></p>\n' + 
+                            '                </div>\n' + 
+                            '              </div>\n' + 
+                            '              <div class="note-item media fade in">\n' + 
+                            '                <button class="close">×</button>\n' + 
+                            '                <div>\n' + 
+                            '                  <div>\n' + 
+                            '                    <p class="note-name">Buy a car</p>\n' + 
+                            '                  </div>\n' + 
+                            '                  <p class="note-desc hidden">I\'m done with the bus</p>\n' + 
+                            '                  <p><small>Monday 12 May, 3:43 am</small></p>\n' + 
+                            '                </div>\n' + 
+                            '              </div>\n' + 
+                            '              <div class="note-item media fade in">\n' + 
+                            '                <button class="close">×</button>\n' + 
+                            '                <div>\n' + 
+                            '                  <div>\n' + 
+                            '                    <p class="note-name">Don\'t forget my notes</p>\n' + 
+                            '                  </div>\n' + 
+                            '                  <p class="note-desc hidden">I have to read them...</p>\n' + 
+                            '                  <p><small>Wednesday 5 May, 6:15 pm</small></p>\n' + 
+                            '                </div>\n' + 
+                            '              </div>\n' + 
+                            '            </div>\n' + 
+                            '          </div>\n' + 
+                            '        </div>\n' + 
+                            '        <div class="detail-note note-hidden-sm">\n' + 
+                            '          <div class="note-header clearfix">\n' + 
+                            '            <div class="note-back">\n' + 
+                            '              <i class="icon-action-undo"></i>\n' + 
+                            '            </div>\n' + 
+                            '            <div class="note-edit">Edit Note</div>\n' + 
+                            '            <div class="note-subtitle">title on first line</div>\n' + 
+                            '          </div>\n' + 
+                            '          <div id="note-detail">\n' + 
+                            '            <div class="note-write">\n' + 
+                            '              <textarea class="form-control" placeholder="Type your note here"></textarea>\n' + 
+                            '            </div>\n' + 
+                            '          </div>\n' + 
+                            '        </div>\n' + 
+                            '      </div>\n' + 
+                            '      <div class="tab-pane fade" id="settings">\n' + 
+                            '        <div class="settings">\n' + 
+                            '          <div class="title">ACCOUNT SETTINGS</div>\n' + 
+                            '          <div class="setting">\n' + 
+                            '            <span> Show Personal Statut</span>\n' + 
+                            '            <label class="switch pull-right">\n' + 
+                            '            <input type="checkbox" class="switch-input" checked>\n' + 
+                            '            <span class="switch-label" data-on="On" data-off="Off"></span>\n' + 
+                            '            <span class="switch-handle"></span>\n' + 
+                            '            </label>\n' + 
+                            '            <p class="setting-info">Lorem ipsum dolor sit amet consectetuer.</p>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="setting">\n' + 
+                            '            <span> Show my Picture</span>\n' + 
+                            '            <label class="switch pull-right">\n' + 
+                            '            <input type="checkbox" class="switch-input" checked>\n' + 
+                            '            <span class="switch-label" data-on="On" data-off="Off"></span>\n' + 
+                            '            <span class="switch-handle"></span>\n' + 
+                            '            </label>\n' + 
+                            '            <p class="setting-info">Lorem ipsum dolor sit amet consectetuer.</p>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="setting">\n' + 
+                            '            <span> Show my Location</span>\n' + 
+                            '            <label class="switch pull-right">\n' + 
+                            '            <input type="checkbox" class="switch-input">\n' + 
+                            '            <span class="switch-label" data-on="On" data-off="Off"></span>\n' + 
+                            '            <span class="switch-handle"></span>\n' + 
+                            '            </label>\n' + 
+                            '            <p class="setting-info">Lorem ipsum dolor sit amet consectetuer.</p>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="title">CHAT</div>\n' + 
+                            '          <div class="setting">\n' + 
+                            '            <span> Show User Image</span>\n' + 
+                            '            <label class="switch pull-right">\n' + 
+                            '            <input type="checkbox" class="switch-input" checked>\n' + 
+                            '            <span class="switch-label" data-on="On" data-off="Off"></span>\n' + 
+                            '            <span class="switch-handle"></span>\n' + 
+                            '            </label>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="setting">\n' + 
+                            '            <span> Show Fullname</span>\n' + 
+                            '            <label class="switch pull-right">\n' + 
+                            '            <input type="checkbox" class="switch-input" checked>\n' + 
+                            '            <span class="switch-label" data-on="On" data-off="Off"></span>\n' + 
+                            '            <span class="switch-handle"></span>\n' + 
+                            '            </label>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="setting">\n' + 
+                            '            <span> Show Location</span>\n' + 
+                            '            <label class="switch pull-right">\n' + 
+                            '            <input type="checkbox" class="switch-input">\n' + 
+                            '            <span class="switch-label" data-on="On" data-off="Off"></span>\n' + 
+                            '            <span class="switch-handle"></span>\n' + 
+                            '            </label>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="setting">\n' + 
+                            '            <span> Show Unread Count</span>\n' + 
+                            '            <label class="switch pull-right">\n' + 
+                            '            <input type="checkbox" class="switch-input" checked>\n' + 
+                            '            <span class="switch-label" data-on="On" data-off="Off"></span>\n' + 
+                            '            <span class="switch-handle"></span>\n' + 
+                            '            </label>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="title">STATISTICS</div>\n' + 
+                            '          <div class="settings-chart">\n' + 
+                            '            <div class="clearfix">\n' + 
+                            '              <div class="chart-title">Stat 1</div>\n' + 
+                            '              <div class="chart-number">82%</div>\n' + 
+                            '            </div>\n' + 
+                            '            <div class="progress">\n' + 
+                            '              <div class="progress-bar progress-bar-primary setting1" data-transitiongoal="82"></div>\n' + 
+                            '            </div>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="settings-chart">\n' + 
+                            '            <div class="clearfix">\n' + 
+                            '              <div class="chart-title">Stat 2</div>\n' + 
+                            '              <div class="chart-number">43%</div>\n' + 
+                            '            </div>\n' + 
+                            '            <div class="progress">\n' + 
+                            '              <div class="progress-bar progress-bar-primary setting2" data-transitiongoal="43"></div>\n' + 
+                            '            </div>\n' + 
+                            '          </div>\n' + 
+                            '          <div class="m-t-30" style="width:100%">\n' + 
+                            '            <canvas id="setting-chart" height="300"></canvas>\n' + 
+                            '          </div>\n' + 
+                            '        </div>\n' + 
+                            '      </div>\n' + 
+                            '    </div>\n' + 
+                            '  </div>\n' + 
+                            '</div>';
 
     allContent.find('#ip-container').remove();
     allContent.find('.builder').remove();
@@ -1131,15 +1461,8 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
         var newsrc = $(this).attr('src').replace('../../assets/','../assets/');
         $(this).attr('src', newsrc);
     });
-    allContent.find('.topbar').remove();
-    allContent.find('.loader-overlay').remove();
-    allContent.find('.main-content div.row').remove();
+
     allContent.find('#page-builder').remove();
-    
-    
-//    allContent.find('.placeholder-handle').html('');
-    allContent.find('p').css('display','block');
-    allContent.find('.note-editor').remove();
     allContent.find('.placeholder-handle').remove();
     allContent.find('.form-sortable-btn').remove();
     allContent.find('.export-page').remove();
@@ -1174,35 +1497,23 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
     allContent.find('.sidebar-inner').removeClass('mCS_destroyed').removeClass('');
     allContent.find('.logopanel').removeAttr('style');
     allContent.find('.sidebar-top').removeAttr('style');
-    allContent.find('table.placeholder-content-area').removeAttr('style');
     allContent.find('.topbar').removeAttr('style');
     allContent.find('.main-content').removeAttr('style');
     allContent.find('.page-content').removeAttr('style');
-//    allContent.find('.placeholder-content-area').remove();
-    allContent.find('.note-dialog').remove();
-    allContent.find('.note-popover').remove();
-    allContent.find('.note-toolbar').remove();
-    var innerHtml = allContent.find('.page-content').html();
-//    innerHtml.find('.loader-overlay').remove();
-//    innerHtml.find('script').remove();
-    allContent.find('.note-codable').remove();
-    allContent.find('body').html(innerHtml);
+    allContent.find('.placeholder-content-area').remove();
     customPageContent = allContent.html();
-//    $('#modal-export-page form input[type="hidden"]').remove();
+
+    $('#modal-export-page form input[type="hidden"]').remove();
     newInput = $('<input type="hidden" name="pages[index]" value="">');
-    editorInput = $('<input type="hidden" name="editor[index]" value="">');
     $('#modal-export-page form').prepend( newInput );
-    $('#modal-export-page form').prepend( editorInput );
-    editorInput.val(editContent.html());
-    newInput.val(adminHeader+ '<table id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#efefef; width:800px; max-width: 800px; margin: 0 auto;"><tbody><tr><td>'+innerHtml+"</td></tr></tbody></table>"+adminFooter);
+    newInput.val(adminHeader + customPageContent + quickviewSidebar + adminFooter);
 
 });
-//$('#markupForm').submit(function(e){
-//});
+
 $('.page-content').on('click', '#modal-export-page .export', function(e) {
     e.preventDefault();
     var fileName = $('.html-file-name').val();
-//    fileName = '';
+    fileName = '';
 
     if (sidebarIsFixed == true) handleSidebarFixed();
     $('#modal-export-page').modal('hide');

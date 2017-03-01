@@ -19,6 +19,7 @@ Route::post('/preview', 'HTMLController@preview');
 Auth::routes();
 Route::group(['middleware' => 'guest'], function () {
     Route::post('/preview', 'HTMLController@preview');
-    Route::post('/add/', 'HTMLController@add');
+    Route::get('/html/templates/', 'HTMLController@templates');
+    Route::get('/pdf/', 'PDFController@index');
 });
 Route::get('/home', 'HomeController@index');

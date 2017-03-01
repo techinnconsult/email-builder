@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\Request as Req;
 use Illuminate\Support\Facades\DB;
 use Dompdf\Dompdf;
 use Dompdf\Options;
-class HTMLController extends Controller{
+class PDFController extends Controller{
     public function __construct()
     {
         $this->middleware('web');
     }
-    
-    public function functionName($param) {
-        
+    public function index()
+    {
+        return view('pdf');
     }
     public function preview(Request $request){
         $input = $request->all();
@@ -85,7 +85,7 @@ class HTMLController extends Controller{
             ->whereRaw('templates.html_file != "" ')
             ->orderBy('templates.title', 'asc')
             ->get();
-        return view('templates',['template' => $templates]);
+        return view('template',['templates' => $templates]);
 //        $options = new Options();
 //        $options->set('defaultFont', 'Courier');
 //        $options->set('isRemoteEnabled', FALSE);
@@ -115,48 +115,5 @@ class HTMLController extends Controller{
             ->orderBy('templates.title', 'asc')
             ->get();
         return view('templates',['template' => $templates]);
-    }
-    public function add( Request $request ) {
-        $input = $request->all();
-        $imgdata = base64_decode($input['image']);
-        $extension = '';
-        $data = '';
-        $image_type = substr($input['image'], 5, strpos($input['image'], ';')-5);
-        if($image_type == 'image/png'){
-            $data = str_replace('data:image/png;base64,', '', $input['image']);
-            $data = str_replace(' ', '+', $data);
-            $data = base64_decode($data);
-            $extension = '.png';
-        }elseif($image_type == 'image/jpeg'){
-            $data = str_replace('data:image/jpeg;base64,', '', $input['image']);
-            $data = str_replace(' ', '+', $data);
-            $data = base64_decode($data);
-            $extension = '.jpeg';
-        }elseif($image_type == 'image/jpg'){
-            $data = str_replace('data:image/jpg;base64,', '', $input['image']);
-            $data = str_replace(' ', '+', $data);
-            $data = base64_decode($data);
-            $extension = '.jpg';
-        }elseif($image_type == 'image/gif'){
-            $data = str_replace('data:image/gif;base64,', '', $input['image']);
-            $data = str_replace(' ', '+', $data);
-            $data = base64_decode($data);
-            $extension = '.gif';
-        }
-        if($extension != ''){
-            if(!file_exists(public_path() ."/templates/images/")){
-                mkdir(public_path() ."/templates/images/",0777,true);
-            }
-            $file_name = uniqid();
-            $file =  public_path() ."/templates/images/".$file_name . $extension;
-            $success = file_put_contents($file, $data);
-            if($success > 0){
-                return url()->to('/')."/templates/images/".$file_name.$extension;
-            }else{
-                return 2;
-            }
-        }else{
-            return 1;
-        }
     }
 }
