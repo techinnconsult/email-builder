@@ -60,6 +60,7 @@
                     <div data-element="title-h1" class="element">Big Title h1</div>
                     <div data-element="title-h2" class="element">Medium Title h2</div>
                     <div data-element="title-h3" class="element">Small Title h3</div>
+                    <div data-element="angular-title" class="element">Angular Title %%%email_text%</div>
                     <div data-element="video" class="element build-video">Video</div>
                 </div>
                 <div class="tab-pane fade" id="tables">

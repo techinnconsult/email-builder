@@ -73,6 +73,9 @@ class HTMLController extends Controller{
             }
         }
         $html =  $doc->saveHTML();
+        if(!file_exists(public_path() ."/templates/".$folder_name."/")){
+            mkdir(public_path() ."/templates/".$folder_name."/",0777,true);
+        }
         file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '.html', $html);
         file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '-edit.html', $html_editor);
         $html_id = DB::table('templates')->insertGetId(['title' => $title,

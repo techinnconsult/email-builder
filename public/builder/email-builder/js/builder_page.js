@@ -766,6 +766,9 @@ function handleDroppable() {
                 if (ui.draggable.data('element') == 'title-h3') {
                     $this.append('<h3 class="summernote" data-airmode="true">I am a small Title</h3>');
                 }
+                if (ui.draggable.data('element') == 'angular-title') {
+                    $this.append('<h3 class="summernote" data-airmode="true">%%email%%</h3>');
+                }
                 if (ui.draggable.data('element') == 'image') {
                     $this.append('<div class="fileinput fileinput-new" data-provides="fileinput"><div class="fileinput-new thumbnail"><img data-src="" src="builder/email-builder/images/add-picture.jpg" class="img-responsive"></div><div class="fileinput-preview fileinput-exists thumbnail"></div><div class="text-center"><span class="btn btn-default btn-file"><span class="fileinput-new">Select image...</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span><a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a></div></div>');
                 }
