@@ -17,7 +17,7 @@ class PDFController extends Controller{
     {
         return view('pdf');
     }
-    public function preview(Request $request){
+    public function previewPdf(Request $request){
         $input = $request->all();
         $title = $input['html-file-name'];
         $folder_name = strtolower(str_replace(' ', '-', $title));
@@ -26,9 +26,10 @@ class PDFController extends Controller{
         foreach( $input['pages'] as $page=>$content ) {
             $html .= $content;
         }
-        foreach( $input['editor'] as $editor=>$editor_content ) {
-            $html_editor .= $editor_content;
-        }
+//        foreach( $input['editor'] as $editor=>$editor_content ) {
+//            $html_editor .= $editor_content;
+//        }
+        libxml_use_internal_errors(true);
         $doc = new \DOMDocument();
         $doc->loadHTML($html);
         $tags = $doc->getElementsByTagName('img');
@@ -69,41 +70,41 @@ class PDFController extends Controller{
                 if($success > 0){
                     $src =  url()->to('/')."/templates/".$folder_name."/images/".$file_name.$extension;
                 }
-                $tag->setAttribute('src', $src);
+                $tag->setAttribute('src', $file);
             }
         }
         $html =  $doc->saveHTML();
-        file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '.html', $html);
-        file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '-edit.html', $html_editor);
-        $html_id = DB::table('templates')->insertGetId(['title' => $title,
-            'html_file' => $folder_name, 'pdf_file' => '',
-            'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);
+//        file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '-pdf.html', $html);
+//        file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '-pdf-edit.html', $html_editor);
+//        $html_id = DB::table('templates')->insertGetId(['title' => $title,
+//            'html_file' => $folder_name, 'pdf_file' => '',
+//            'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);
         
-        $templates = DB::table('templates')
-            ->select('templates.*')
-            ->where('templates.visitor', $request->ip())
-            ->whereRaw('templates.html_file != "" ')
-            ->orderBy('templates.title', 'asc')
-            ->get();
-        return view('template',['templates' => $templates]);
-//        $options = new Options();
-//        $options->set('defaultFont', 'Courier');
-//        $options->set('isRemoteEnabled', FALSE);
-//        $options->set('isHtml5ParserEnabled', TRUE);
-//        //$options->set('chroot', '');
-//        $dompdf = new Dompdf($options);
-//        
-//        $dompdf->loadHtml($html);
-//
-//
-//        // (Optional) Setup the paper size and orientation
-//        $dompdf->setPaper('A4','landscape');
-//
-//        // Render the HTML as PDF
-//        $dompdf->render();
-//
-//        // Output the generated PDF to Browser
-//        $dompdf->stream();
+//        $templates = DB::table('templates')
+//            ->select('templates.*')
+//            ->where('templates.visitor', $request->ip())
+//            ->whereRaw('templates.html_file != "" ')
+//            ->orderBy('templates.title', 'asc')
+//            ->get();
+//        return view('template',['templates' => $templates]);
+        $options = new Options();
+        $options->set('defaultFont', 'Courier');
+        $options->set('isRemoteEnabled', TRUE);
+        $options->set('isHtml5ParserEnabled', TRUE);
+        //$options->set('chroot', '');
+        $dompdf = new Dompdf($options);
+        
+        $dompdf->loadHtml($html);
+
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4','landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
 
     }
     

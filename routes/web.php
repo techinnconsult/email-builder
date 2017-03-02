@@ -21,5 +21,6 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/preview', 'HTMLController@preview');
     Route::get('/html/templates/', 'HTMLController@templates');
     Route::get('/pdf/', 'PDFController@index');
+    Route::post('/previewPdf', 'PDFController@previewPdf');
 });
 Route::get('/home', 'HomeController@index');
