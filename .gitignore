@@ -1,6 +1,7 @@
 /node_modules
 /storage
 /public/templates
+/public/html
 /vendor
 /.idea
 Homestead.json

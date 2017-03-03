@@ -21,17 +21,18 @@ After run this command "Laravel Development Server" Started if all configuration
  
 You can convert html to pdf by following command. 
 
-php artisan html:pdf
+php artisan html:pdf 1
+
+If you add "1" it means all foles in /storage/html/ will be converted to pdf. If you give any specific filename like temp then you need to add following command
+
+php artisan html:pdf temp
 
 You have to place all html files on following path
 
-/public/html/
+/storage/html/
 
-That command pick all pdf and put them on following path
+All PDF will be exported to following path
 
-/public/html/pdf/
+/storage/pdf/
 
 All PDF have random names, they stored in database.   
-
-
-

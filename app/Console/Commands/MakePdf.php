@@ -14,14 +14,14 @@ class MakePdf extends Command
      *
      * @var string
      */
-    protected $signature = 'html:pdf {filename}';
+    protected $signature = 'html:pdf {filename} {--1}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Convert HTML to PDF from following path public/html/';
+    protected $description = 'Convert HTML to PDF from following path storage/html/';
 
     /**
      * Create a new command instance.
@@ -44,23 +44,52 @@ class MakePdf extends Command
         $options->set('defaultFont', 'Courier');
         $options->set('isRemoteEnabled', TRUE);
         $options->set('isHtml5ParserEnabled', TRUE);
-        $path = public_path();
+        $path = storage_path();
         $options->set('chroot', $path.'/html/');
         //$options->set('chroot', '');
+        $filename = $this->argument('filename');
         $dompdf = new Dompdf($options);
-        
-        $dompdf->loadHtmlFile(public_path().'/html/'.$this->argument('filename').'.html');
+        $thelist = '';
+        if(!file_exists($path."/export/")){
+            mkdir($path."/export/",0755);
+        }
+        if($filename == 1){
+            if ($handle = opendir($path.'/html/')) {
+                while (false !== ($file = readdir($handle)))
+                {
+                    if ($file != "." && $file != ".." && strtolower(substr($file, strrpos($file, '.') + 1)) == 'html')
+                    {
+                        $dompdf->loadHtmlFile($path.'/html/'.$file);
 
 
-        // (Optional) Setup the paper size and orientation
-        $dompdf->setPaper('A4','landscape');
+                        // (Optional) Setup the paper size and orientation
+                        $dompdf->setPaper('A4','landscape');
 
-        // Render the HTML as PDF
-        $dompdf->render();
-        
-        $file_to_save = $path."/html/".$this->argument('filename').".pdf";
-        $output = $dompdf->output();
-        file_put_contents($file_to_save, $output);
-        echo 'Please see pdf on following path /public/html/'.$this->argument('filename').".pdf";
+                        // Render the HTML as PDF
+                        $dompdf->render();
+                        
+                        $file_to_save = $path."/export/". uniqid() .".pdf";
+                        $output = $dompdf->output();  
+                        file_put_contents($file_to_save, $output);
+                    }
+                }
+                closedir($handle);
+            }
+        }else{
+            $dompdf->loadHtmlFile($path.'/html/'.$this->argument('filename').'.html');
+
+
+            // (Optional) Setup the paper size and orientation
+            $dompdf->setPaper('A4','landscape');
+
+            // Render the HTML as PDF
+            $dompdf->render();
+
+            $file_to_save = $path."/html/".$this->argument('filename').".pdf";
+            $output = $dompdf->output();  
+            file_put_contents($file_to_save, $output);
+        }
+//        
+        echo 'Please see pdf on following path /storage/export/';
     }
 }
