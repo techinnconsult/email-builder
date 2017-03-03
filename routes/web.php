@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,12 +21,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/html/templates/', 'HTMLController@templates');
     Route::get('/pdf/', 'PDFController@index');
     Route::post('/previewPdf', 'PDFController@previewPdf');
+    Route::get('/export/{file_name}', 'ExportController@export');
 });
-Route::get('/export', function () {
-    $exitCode = Artisan::call('html:pdf', [
-        'filename' => 1, '--1' => 'default'
-    ]);
 
-    //
-});
 Route::get('/home', 'HomeController@index');

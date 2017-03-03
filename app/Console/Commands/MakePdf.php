@@ -44,7 +44,7 @@ class MakePdf extends Command
     {
         $path = storage_path();
         if(!file_exists($path."/export/")){
-            mkdir($path."/export/",0755);
+            mkdir($path."/export/",0777);
         }
         $filename = $this->argument('filename');
                         
@@ -86,7 +86,15 @@ class MakePdf extends Command
                 closedir($handle);
             }
         }else{
-            $dompdf->loadHtmlFile($path.'/templates/'.$this->argument('filename').'.blade.php');
+            $html = file_get_contents($path.'/templates/'.$this->argument('filename').'.blade.php');           
+            $options = new Options();
+            $options->set('defaultFont', 'Courier');
+            $options->set('isRemoteEnabled', TRUE);
+            $options->set('isHtml5ParserEnabled', TRUE);
+            $options->set('chroot', $path.'/templates/');
+            //$options->set('chroot', '');
+            $dompdf = new Dompdf($options);
+            $dompdf->loadHtml($html);
 
 
             // (Optional) Setup the paper size and orientation
@@ -94,7 +102,7 @@ class MakePdf extends Command
 
             // Render the HTML as PDF
             $dompdf->render();
-            $filename - uniqid();
+            $filename = uniqid();
             $file_to_save = $path."/export/".$filename.".pdf";
             $output = $dompdf->output();  
             if(file_put_contents($file_to_save, $output)){
