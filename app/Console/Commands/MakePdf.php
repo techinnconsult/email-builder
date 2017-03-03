@@ -6,6 +6,8 @@ use Illuminate\Console\Command;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request as Req;
 
 class MakePdf extends Command
 {
@@ -67,10 +69,15 @@ class MakePdf extends Command
 
                         // Render the HTML as PDF
                         $dompdf->render();
-                        
-                        $file_to_save = $path."/export/". uniqid() .".pdf";
+                        $filename = uniqid();
+                        $file_to_save = $path."/export/". $filename .".pdf";
                         $output = $dompdf->output();  
-                        file_put_contents($file_to_save, $output);
+                        if(file_put_contents($file_to_save, $output)){
+                            $html_id = DB::table('pdf_log')->insertGetId(['pdf_file_name' => $filename,
+                                    'html_file_path' => $path.'/html/'.$file,'pdf_file_path' => $path."/export/". $filename .".pdf" ,
+                                    'visitor' => Req::ip(), 'created_at' => date('Y-m-d H:i:s')]);
+                        }
+                        
                     }
                 }
                 closedir($handle);
@@ -84,10 +91,14 @@ class MakePdf extends Command
 
             // Render the HTML as PDF
             $dompdf->render();
-
-            $file_to_save = $path."/html/".$this->argument('filename').".pdf";
+            $filename - uniqid();
+            $file_to_save = $path."/export/".$filename.".pdf";
             $output = $dompdf->output();  
-            file_put_contents($file_to_save, $output);
+            if(file_put_contents($file_to_save, $output)){
+                $html_id = DB::table('pdf_log')->insertGetId(['pdf_file_name' => $filename,
+                        'html_file_path' => $path.'/html/'.$this->argument('filename').".html",'pdf_file_path' => $path."/export/". $filename .".pdf" ,
+                        'visitor' => Req::ip(), 'created_at' => date('Y-m-d H:i:s')]);
+            }
         }
 //        
         echo 'Please see pdf on following path /storage/export/';
