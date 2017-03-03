@@ -23,4 +23,11 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/pdf/', 'PDFController@index');
     Route::post('/previewPdf', 'PDFController@previewPdf');
 });
+Route::get('/export', function () {
+    $exitCode = Artisan::call('html:pdf', [
+        'filename' => 1, '--1' => 'default'
+    ]);
+
+    //
+});
 Route::get('/home', 'HomeController@index');

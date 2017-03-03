@@ -1116,7 +1116,11 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
 
     allContent.find('#ip-container').remove();
     allContent.find('.builder').remove();
-
+    
+    allContent.find('.note-codable').remove();
+    allContent.find('.note-handle').remove();
+    allContent.find('.note-dropzone').remove();
+    
     /* Fix URL and SRC attribute for export */
     allContent.find('.sidebar a').each(function(){
         var newurl = $(this).attr('href').replace('../../admin/','');
@@ -1139,9 +1143,8 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
     allContent.find('.main-content div.row').remove();
     allContent.find('#page-builder').remove();
     
-    
-//    allContent.find('.placeholder-handle').html('');
-    allContent.find('p').css('display','block');
+    allContent.find('.note-editor p').unwrap();
+    allContent.find('.note-editor img').unwrap();
     allContent.find('.note-editor').remove();
     allContent.find('.placeholder-handle').remove();
     allContent.find('.form-sortable-btn').remove();
@@ -1188,8 +1191,9 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
     var innerHtml = allContent.find('.page-content').html();
 //    innerHtml.find('.loader-overlay').remove();
 //    innerHtml.find('script').remove();
-    allContent.find('.note-codable').remove();
+    
     allContent.find('body').html(innerHtml);
+    
     customPageContent = allContent.html();
 //    $('#modal-export-page form input[type="hidden"]').remove();
     newInput = $('<input type="hidden" name="pages[index]" value="">');

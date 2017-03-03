@@ -26,9 +26,9 @@ class HTMLController extends Controller{
         foreach( $input['pages'] as $page=>$content ) {
             $html .= $content;
         }
-        foreach( $input['editor'] as $editor=>$editor_content ) {
-            $html_editor .= $editor_content;
-        }
+//        foreach( $input['editor'] as $editor=>$editor_content ) {
+//            $html_editor .= $editor_content;
+//        }
         $doc = new \DOMDocument();
         $doc->loadHTML($html);
         $tags = $doc->getElementsByTagName('img');
@@ -73,11 +73,10 @@ class HTMLController extends Controller{
             }
         }
         $html =  $doc->saveHTML();
-        if(!file_exists(public_path() ."/templates/".$folder_name."/")){
-            mkdir(public_path() ."/templates/".$folder_name."/",0777,true);
+        if(!file_exists(resource_path() ."/views/templates/")){
+            mkdir(resource_path() ."/views/templates/",0777,true);
         }
-        file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '.html', $html);
-        file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '-edit.html', $html_editor);
+        file_put_contents( resource_path() ."/views/templates/".$folder_name . '.blade.php', $html);
         $html_id = DB::table('templates')->insertGetId(['title' => $title,
             'html_file' => $folder_name, 'pdf_file' => '',
             'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);

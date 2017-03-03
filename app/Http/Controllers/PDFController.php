@@ -74,11 +74,15 @@ class PDFController extends Controller{
             }
         }
         $html =  $doc->saveHTML();
-//        file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '-pdf.html', $html);
-//        file_put_contents( public_path() ."/templates/".$folder_name."/".$folder_name . '-pdf-edit.html', $html_editor);
-//        $html_id = DB::table('templates')->insertGetId(['title' => $title,
-//            'html_file' => $folder_name, 'pdf_file' => '',
-//            'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);
+        
+        if(!file_exists(storage_path() ."/templates/")){
+            mkdir(storage_path() ."/templates/",0777,true);
+        }
+        file_put_contents(storage_path() ."/templates/".$folder_name . '.blade.php', $html);
+        $html_id = DB::table('templates')->insertGetId(['title' => $title,
+            'html_file' => '', 'pdf_file' => $folder_name,
+            'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);
+        
         
 //        $templates = DB::table('templates')
 //            ->select('templates.*')
@@ -104,7 +108,7 @@ class PDFController extends Controller{
         $dompdf->render();
 
         // Output the generated PDF to Browser
-        $dompdf->stream();
+        $dompdf->stream(uniqid().".pdf");
 
     }
     

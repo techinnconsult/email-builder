@@ -23,7 +23,7 @@ class MakePdf extends Command
      *
      * @var string
      */
-    protected $description = 'Convert HTML to PDF from following path storage/html/';
+    protected $description = 'Convert HTML to PDF from following path storage/templates/';
 
     /**
      * Create a new command instance.
@@ -42,26 +42,29 @@ class MakePdf extends Command
      */
     public function handle()
     {
-        $options = new Options();
-        $options->set('defaultFont', 'Courier');
-        $options->set('isRemoteEnabled', TRUE);
-        $options->set('isHtml5ParserEnabled', TRUE);
         $path = storage_path();
-        $options->set('chroot', $path.'/html/');
-        //$options->set('chroot', '');
-        $filename = $this->argument('filename');
-        $dompdf = new Dompdf($options);
-        $thelist = '';
         if(!file_exists($path."/export/")){
             mkdir($path."/export/",0755);
         }
+        $filename = $this->argument('filename');
+                        
         if($filename == 1){
-            if ($handle = opendir($path.'/html/')) {
+            if ($handle = opendir($path.'/templates/')) {
                 while (false !== ($file = readdir($handle)))
                 {
-                    if ($file != "." && $file != ".." && strtolower(substr($file, strrpos($file, '.') + 1)) == 'html')
+                    if ($file != "." && $file != ".." && strtolower(substr($file, strrpos($file, '.') + 1)) == 'php')
                     {
-                        $dompdf->loadHtmlFile($path.'/html/'.$file);
+                        $html = file_get_contents($path.'/templates/'.$file);
+                        
+                        $options = new Options();
+                        $options->set('defaultFont', 'Courier');
+                        $options->set('isRemoteEnabled', TRUE);
+                        $options->set('isHtml5ParserEnabled', TRUE);
+                        $options->set('chroot', $path.'/templates/');
+                        //$options->set('chroot', '');
+                        $dompdf = new Dompdf($options);
+                        
+                        $dompdf->loadHtml($html);
 
 
                         // (Optional) Setup the paper size and orientation
@@ -74,7 +77,7 @@ class MakePdf extends Command
                         $output = $dompdf->output();  
                         if(file_put_contents($file_to_save, $output)){
                             $html_id = DB::table('pdf_log')->insertGetId(['pdf_file_name' => $filename,
-                                    'html_file_path' => $path.'/html/'.$file,'pdf_file_path' => $path."/export/". $filename .".pdf" ,
+                                    'html_file_path' => $path.'/templates/'.$file,'pdf_file_path' => $path."/export/". $filename .".pdf" ,
                                     'visitor' => Req::ip(), 'created_at' => date('Y-m-d H:i:s')]);
                         }
                         
@@ -83,7 +86,7 @@ class MakePdf extends Command
                 closedir($handle);
             }
         }else{
-            $dompdf->loadHtmlFile($path.'/html/'.$this->argument('filename').'.html');
+            $dompdf->loadHtmlFile($path.'/templates/'.$this->argument('filename').'.blade.php');
 
 
             // (Optional) Setup the paper size and orientation
@@ -96,7 +99,7 @@ class MakePdf extends Command
             $output = $dompdf->output();  
             if(file_put_contents($file_to_save, $output)){
                 $html_id = DB::table('pdf_log')->insertGetId(['pdf_file_name' => $filename,
-                        'html_file_path' => $path.'/html/'.$this->argument('filename').".html",'pdf_file_path' => $path."/export/". $filename .".pdf" ,
+                        'html_file_path' => $path.'/templates/'.$this->argument('filename').".blase.php",'pdf_file_path' => $path."/export/". $filename .".pdf" ,
                         'visitor' => Req::ip(), 'created_at' => date('Y-m-d H:i:s')]);
             }
         }

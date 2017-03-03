@@ -1079,6 +1079,10 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
     });
 
 
+    allContent.find('.note-codable').remove();
+    allContent.find('.note-handle').remove();
+    allContent.find('.note-dropzone').remove();
+    
     allContent.find('.topbar img').each(function(){
         var newsrc = $(this).attr('src').replace('../../assets/','../assets/');
         $(this).attr('src', newsrc);
