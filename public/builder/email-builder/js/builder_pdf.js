@@ -452,13 +452,15 @@ function handlePageBuilder() {
     $('#save-table').on('click', function() {
         var tableHead = tableColumn = tableRow = '';
         var tableTitle = $('.table-title').val();
-        tableStyle = 'table-' + $('.table-style').select2("val");
-        if (tableStyle == 'table-default') tableStyle = '';
+        tableStyle = 'table-' + $('.table-style').val();
         if (tableTitle != '') tableTitle = '<h2><strong>' + tableTitle + '</strong></h2>';
         tableColumns = $('.table-columns').val();
         tableRows = $('.table-rows').val();
-        for (var i = 0; i < tableColumns; i++) {
-            tableHead += '<th>' + 'Head ' + i + '</th>';
+        alert(tableStyle);
+        if(tableStyle != 'table-striped-cols'){
+            for (var i = 0; i < tableColumns; i++) {
+                tableHead += '<th>' + 'Head ' + i + '</th>';
+            }
         }
         for (var j = 0; j < tableRows; j++) {
             tableRow += '<tr>';
@@ -467,6 +469,7 @@ function handlePageBuilder() {
             }
             tableRow += '</tr>';
         }
+        if (tableStyle == 'table-default' || tableStyle == 'table-striped-cols') tableStyle = '';
         $('.current-table').before(tableTitle);
         $('.current-table').addClass(tableStyle);
         $('.current-table').append('<thead><tr>' + tableHead + '</tr></thead><tbody>' + tableRow + '</tbody>');

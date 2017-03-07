@@ -342,9 +342,10 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Table Style</label>
-                        <select class="table-style form-control" data-placeholder="Choose table style...">
+                        <select style="width:100%" class="table-style form-control" data-placeholder="Choose table style...">
                             <option value="default">Default</option>
                             <option value="striped">Stripped row</option>
+                            <option value="striped-cols">Stripped columns</option>
                             <option value="hover">Hover table</option>
                             <option value="bordered">Bordered</option>
                         </select>
