@@ -456,7 +456,6 @@ function handlePageBuilder() {
         if (tableTitle != '') tableTitle = '<h2><strong>' + tableTitle + '</strong></h2>';
         tableColumns = $('.table-columns').val();
         tableRows = $('.table-rows').val();
-        alert(tableStyle);
         if(tableStyle != 'table-striped-cols'){
             for (var i = 0; i < tableColumns; i++) {
                 tableHead += '<th>' + 'Head ' + i + '</th>';

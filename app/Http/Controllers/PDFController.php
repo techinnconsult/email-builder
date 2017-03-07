@@ -74,14 +74,14 @@ class PDFController extends Controller{
             }
         }
         $html =  $doc->saveHTML();
-        echo $html;
-//        if(!file_exists(storage_path() ."/templates/")){
-//            mkdir(storage_path() ."/templates/",0777,true);
-//        }
-//        file_put_contents(storage_path() ."/templates/".$folder_name . '.blade.php', $html);
-//        $html_id = DB::table('templates')->insertGetId(['title' => $title,
-//            'html_file' => '', 'pdf_file' => $folder_name,
-//            'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);
+//        echo $html;
+        if(!file_exists(storage_path() ."/templates/")){
+            mkdir(storage_path() ."/templates/",0777,true);
+        }
+        file_put_contents(storage_path() ."/templates/".$folder_name . '.blade.php', $html);
+        $html_id = DB::table('templates')->insertGetId(['title' => $title,
+            'html_file' => '', 'pdf_file' => $folder_name,
+            'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);
         
         
 //        $templates = DB::table('templates')
@@ -91,24 +91,24 @@ class PDFController extends Controller{
 //            ->orderBy('templates.title', 'asc')
 //            ->get();
 //        return view('template',['templates' => $templates]);
-//        $options = new Options();
-//        $options->set('defaultFont', 'Courier');
-//        $options->set('isRemoteEnabled', TRUE);
-//        $options->set('isHtml5ParserEnabled', TRUE);
-//        //$options->set('chroot', '');
-//        $dompdf = new Dompdf($options);
-//        
-//        $dompdf->loadHtml($html);
-//
-//
-//        // (Optional) Setup the paper size and orientation
-//        $dompdf->setPaper('A4','landscape');
-//
-//        // Render the HTML as PDF
-//        $dompdf->render();
-//
-//        // Output the generated PDF to Browser
-//        $dompdf->stream(uniqid().".pdf");
+        $options = new Options();
+        $options->set('defaultFont', 'Courier');
+        $options->set('isRemoteEnabled', TRUE);
+        $options->set('isHtml5ParserEnabled', TRUE);
+        //$options->set('chroot', '');
+        $dompdf = new Dompdf($options);
+        
+        $dompdf->loadHtml($html);
+
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4','landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream(uniqid().".pdf");
 
     }
     
