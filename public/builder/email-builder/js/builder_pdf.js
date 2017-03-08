@@ -461,7 +461,7 @@ function handlePageBuilder() {
             for (var i = 0; i < tableColumns; i++) {
                 tableHead += '<th>' + 'Head ' + i + '</th>';
             }
-            if(tablePayButton == 1){
+            if($('.pay-button').is(':checked')){
                 tableHead += '<th> Actions </th>';
             }
         }
@@ -470,7 +470,7 @@ function handlePageBuilder() {
             for (var k = 0; k < tableColumns; k++) {
                 tableRow += '<td>' + 'Row ' + k + '</td>';
             }
-            if(tablePayButton == 1){
+            if($('.pay-button').is(':checked')){
                 tableRow += '<td> <a href="{link' + k + '}"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
             }
             tableRow += '</tr>';

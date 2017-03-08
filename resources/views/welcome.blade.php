@@ -14,6 +14,7 @@
                 <li class="width-16p"><a href="#portlets" data-toggle="tab"><span class="text-center">Panels</span></a></li>
                 <li class="width-16p"><a href="#text" data-toggle="tab"><span class="text-center">Text &amp; Images</span></a></li>
                 <li class="width-16p"><a href="#tables" data-toggle="tab"><span class="text-center">Tables</span></a></li>
+                <li class="width-16p"><a href="#misc" data-toggle="tab"><span class="text-center">Other Tags</span></a></li>
             </ul>
             <div class="tab-content clearfix">
                 <div class="tab-pane fade in active" id="layout">
@@ -65,6 +66,11 @@
                 </div>
                 <div class="tab-pane fade" id="tables">
                     <div data-table="table" class="build-table">Table Basic</div>
+                </div>
+                <div class="tab-pane fade" id="misc">
+                    <div data-element="divider" class="element">Divider</div>
+                    <div data-element="social" class="element">Social Media</div>
+                    <div data-element="payButton" class="element">Link Button</div>
                 </div>
             </div>
         </div>
@@ -486,24 +492,25 @@
                     <h4 class="modal-title"><strong>Form</strong> Table</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group m-t-10">
+                    <div class="form-group m-t-12">
                         <label class="control-label">Table Title <small>optionnal</small></label>
                         <div class="append-icon">
                             <input type="text" class="table-title form-control form-white" />
                             <i class="icon-pencil"></i>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-t-12">
                         <label class="control-label">Table Style</label>
-                        <select class="table-style form-control" data-placeholder="Choose table style...">
+                        <select style="width:100%" class="table-style form-control" data-placeholder="Choose table style...">
                             <option value="default">Default</option>
                             <option value="striped">Stripped row</option>
+                            <option value="striped-cols">Stripped columns</option>
                             <option value="hover">Hover table</option>
                             <option value="bordered">Bordered</option>
                         </select>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
+                    <div class="form-group m-t-12">
+                        <div class="m-t-6">
                             <div class="form-group">
                                 <label class="control-label">Number of Columns</label>
                                 <div class="append-icon">
@@ -512,13 +519,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                                <label class="control-label">Number of Rows</label>
-                                <div class="append-icon">
-                                    <input type="amount" class="table-rows form-control form-white" />
-                                    <i class="icon-grid"></i>
-                                </div>
+                        <div class="m-t-6">
+                            <label class="control-label">Number of Rows</label>
+                            <div class="append-icon">
+                                <input type="amount" class="table-rows form-control form-white" />
+                                <i class="icon-grid"></i>
+                            </div>
                         </div>
+                    </div>
+                    <div class="form-group m-t-12">
+                        <label for="pay-button" class="control-label">Include Pay Button?
+                            &nbsp<input id="pay-button" value="1" type="checkbox" class="pay-button form-control form-white" />
+                        </label>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -658,6 +670,119 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel</button>
                     <button type="button" id="save-bg-color" class="btn btn-primary btn-embossed">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="color-picker" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- MODAL BACKGROUND COLOR -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icons-office-52"></i>
+                    </button>
+                    <h4 class="modal-title">Change <strong>Divider Color</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="colors-list">
+                        <li class="white active"></li>
+                        <li class="primary"></li>
+                        <li class="dark"></li>
+                        <li class="red"></li>
+                        <li class="green"></li>
+                        <li class="blue"></li>
+                        <li class="aero"></li>
+                        <li class="gray"></li>
+                        <li class="orange"></li>
+                        <li class="pink"></li>
+                        <li class="purple"></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="colorsVal" value="" />
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="save-divider-color" class="btn btn-primary btn-embossed">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="payButtonPop" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- MODAL BACKGROUND COLOR -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icons-office-52"></i>
+                    </button>
+                    <h4 class="modal-title">Add <strong>Pay Button</strong></h4>
+                </div>
+                <div class="form-group m-t-10 form-link">
+                    <label class="control-label">Pay Button Link:</label>
+                    <div class="append-icon">
+                        <input required="" type="text" name="pay-link-button" class="pay-link-button html-file-name form-control form-white required" />
+                        <i class="icon-link-url"></i>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="save-pay-link" class="btn btn-primary btn-embossed">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="social-media" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- MODAL SOCIAL MEDIA -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icons-office-52"></i>
+                    </button>
+                    <h4 class="modal-title">Add <strong>Social Media</strong> Links</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="after-add-more">
+                        <div class="form-group m-t-10 form-link">
+                            <label class="control-label">Social Media Link:</label>
+                            <div class="append-icon">
+                                <input required="" type="text" id="social-link" name="html-file-name" class="html-file-name form-control form-white required" />
+                                <i class="icon-link-url"></i>
+                            </div>
+                        </div>
+                        <div class="form-group m-t-10 form-link">
+                            <label class="control-label">Select Social Media:</label>
+                            <div class="input-group">
+                                <select id="social-image" style="width:100%" name="social-media-type">
+                                <?php 
+                                    $dirname = public_path()."/social-logos/";
+                                    $images = scandir($dirname);
+                                    $ignore = Array(".", "..");
+                                    foreach($images as $curimg){
+                                        if(!in_array($curimg, $ignore)) {
+                                            ?>
+                                            <option value="<?php echo url()->to('/').'/social-logos/'.$curimg; ?>">
+                                                <?php $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $curimg); echo $withoutExt; ?>
+                                            </option>
+                                <?php
+                                        }
+                                    }
+                                ?>
+                                </select>
+                                <div class="input-group-btn"> 
+                                    <button class="btn btn-success add-more-social" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="socialMediaWrapper">
+                        <ul id="socialMediaLinks" style="list-style:none;">
+
+                        </ul>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <input type="hidden" name="colorsVal" value="" />
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="save-social-media" class="btn btn-primary btn-embossed">Save</button>
                 </div>
             </div>
         </div>

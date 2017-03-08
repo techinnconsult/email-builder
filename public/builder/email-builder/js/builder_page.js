@@ -20,6 +20,16 @@ var widgetProfile4 = '<div class="panel panel-default"><div class="panel-heading
 
 
 $(document).ready(function() {
+    $(".add-more-social").on('click',function(){ 
+        var social_link = $('#social-link').val();
+        var social_image = $('#social-image').val();
+        if(social_link == ''){
+            alert('Please add link');
+        }else{
+            $('#socialMediaLinks').append('<li style="float:left;margin-right:20px;"><a href="'+social_link+'" targe="_blank"><img src="'+social_image+'" style="width:80px" /></a></li>');
+        }
+        $('#social-link').val('');
+    });
     $('.video-images').on('change', function(){ //on file input change
         if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
         {
@@ -456,24 +466,37 @@ function handlePageBuilder() {
             $('.table-columns-slide, .table-rows-slide').sliderIOS();
         }, 200);
     });
+    $('#save-social-media').on('click', function() {
+        $('.social').html($('#socialMediaWrapper').html()+'<br style="clear:both" />');
+        $('#social-media').modal('hide');
+    });
     $('#save-table').on('click', function() {
         var tableHead = tableColumn = tableRow = '';
         var tableTitle = $('.table-title').val();
-        tableStyle = 'table-' + $('.table-style').select2("val");
-        if (tableStyle == 'table-default') tableStyle = '';
+        var tablePayButton = $('.pay-button').val();
+        tableStyle = 'table-' + $('.table-style').val();
         if (tableTitle != '') tableTitle = '<h2><strong>' + tableTitle + '</strong></h2>';
         tableColumns = $('.table-columns').val();
         tableRows = $('.table-rows').val();
-        for (var i = 0; i < tableColumns; i++) {
-            tableHead += '<th>' + 'Head ' + i + '</th>';
+        if(tableStyle != 'table-striped-cols'){
+            for (var i = 0; i < tableColumns; i++) {
+                tableHead += '<th>' + 'Head ' + i + '</th>';
+            }
+            if($('.pay-button').is(':checked')){
+                tableHead += '<th> Actions </th>';
+            }
         }
         for (var j = 0; j < tableRows; j++) {
             tableRow += '<tr>';
             for (var k = 0; k < tableColumns; k++) {
                 tableRow += '<td>' + 'Row ' + k + '</td>';
             }
+            if($('.pay-button').is(':checked')){
+                tableRow += '<td> <a href="{link' + k + '}"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
+            }
             tableRow += '</tr>';
         }
+        if (tableStyle == 'table-default' || tableStyle == 'table-striped-cols') tableStyle = '';
         $('.current-table').before(tableTitle);
         $('.current-table').addClass(tableStyle);
         $('.current-table').append('<thead><tr>' + tableHead + '</tr></thead><tbody>' + tableRow + '</tbody>');
@@ -483,6 +506,27 @@ function handlePageBuilder() {
         $('.current-table').css('display', '').removeClass('current-table');
         $('.table-title').val('');
         $('#table').modal('hide');
+    });
+    $('#save-pay-link').on('click', function() {
+        var link = $('.pay-link-button').val();
+        $('.linkButton').html('<a href="' + link + '"><img src="builder/images/pay-now-button.png" style="width:200px;" /></a>');
+        $('#payButtonPop').modal('hide');
+    });
+    
+    $('#save-divider-color').on('click', function() {
+//        $('.colors-list li').removeClass('active');
+    var color = '';
+        $( ".colors-list li" ).each(function( index ) {
+            if(($( this).hasClass( "active" ))){
+               $(this).removeClass('active');
+               color = $(this).attr('class');
+            }
+        });
+        $('.divider').css('border-top', '1px solid '+color);
+        $('.divider').css('width','100%');
+        $('.divider').css('margin-top','12px');
+        $('.divider').css('height','0px;');
+        $('#color-picker').modal('hide');
     });
 
     $('#save-video').on('click', function() {
@@ -771,6 +815,18 @@ function handleDroppable() {
                 }
                 if (ui.draggable.data('element') == 'image') {
                     $this.append('<div class="fileinput fileinput-new" data-provides="fileinput"><div class="fileinput-new thumbnail"><img data-src="" src="builder/email-builder/images/add-picture.jpg" class="img-responsive"></div><div class="fileinput-preview fileinput-exists thumbnail"></div><div class="text-center"><span class="btn btn-default btn-file"><span class="fileinput-new">Select image...</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span><a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a></div></div>');
+                }
+                if (ui.draggable.data('element') == 'divider') {
+                    $this.append('<div class="divider" style="border-top: 1px solid #FFF;width:100%;margin-top:12px;height:0px;">&nbsp</div>');
+                    $('#color-picker').modal('show');
+                }
+                if (ui.draggable.data('element') == 'social') {
+                    $this.append('<p style="float:right;" class="social">&nbsp</p>');
+                    $('#social-media').modal('show');
+                }
+                if (ui.draggable.data('element') == 'payButton') {
+                    $this.append('<p class="linkButton">&nbsp</p>');
+                    $('#payButtonPop').modal('show');
                 }
                 if (!$this.parent().hasClass('active')) {
                     if ($this.children().hasClass('select-image')) {
