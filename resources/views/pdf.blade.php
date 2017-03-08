@@ -66,6 +66,7 @@
                     <div data-element="title-h1" class="element">Big Title h1</div>
                     <div data-element="title-h2" class="element">Medium Title h2</div>
                     <div data-element="title-h3" class="element">Small Title h3</div>
+                    <div data-element="video" class="element build-video">Video/Image with link</div>
                 </div>
                 <div class="tab-pane fade" id="tables">
                     <div data-table="table" class="build-table">Table Basic</div>
@@ -2210,6 +2211,48 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
                     <button type="button" id="save-social-media" class="btn btn-primary btn-embossed">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="video" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- MODAL VIDO -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icons-office-52"></i>
+                    </button>
+                    <h4 class="modal-title"><strong>Add</strong> Video/Image with link</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group m-t-10">
+                        <label class="control-label">Video/Image Title <small>optionnal</small></label>
+                        <div class="append-icon">
+                            <input type="text" class="video-title form-control form-white" />
+                            <i class="icon-pencil"></i>
+                        </div>
+                    </div>
+                    <div class="form-group m-t-10">
+                        <label class="control-label">Link </label>
+                        <div class="append-icon">
+                            <input type="text" class="video-link form-control form-white" />
+                            <i class="icon-link"></i>
+                        </div>
+                    </div>
+                    <div class="form-group m-t-10">
+                        <label class="control-label">Upload Image <small>optionnal</small></label>
+                        <div class="append-icon">
+                            <input type="file" class="video-images form-control form-white" />
+                            <i class="icon-file"></i>
+                        </div>
+                    </div>
+                    <div id='preview-image' class="form-group m-t-10">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Close</button>
+                    <button type="button" id="save-video" class="btn btn-primary btn-embossed">Save changes</button>
                 </div>
             </div>
         </div>

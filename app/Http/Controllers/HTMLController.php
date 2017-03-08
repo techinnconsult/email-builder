@@ -100,4 +100,8 @@ class HTMLController extends Controller{
             ->get();
         return view('templates',['template' => $templates]);
     }
+    public function previewHtml($template_id) {
+       
+        return view('templates.'.$template_id);
+    }
 }

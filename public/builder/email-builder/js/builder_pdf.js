@@ -30,6 +30,30 @@ $(document).ready(function() {
         }
         $('#social-link').val('');
     });
+    $('.video-images').on('change', function(){ //on file input change
+        if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
+        {
+            $('#preview-image').html(''); //clear html of output element
+            var data = $(this)[0].files; //this file data
+            
+            $.each(data, function(index, file){ //loop though each file
+                if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type
+                    var fRead = new FileReader(); //new filereader
+                    fRead.onload = (function(file){ //trigger function on successful read
+                    return function(e) {
+                        var img = $('<img/>').addClass('thumb').attr('src', e.target.result); //create image element 
+                        $('#preview-image').append(img); //append image to output element
+                        $('#preview-image img').css('width','100%');
+                    };
+                    })(file);
+                    fRead.readAsDataURL(file); //URL representing the file's data.
+                }
+            });
+            
+        }else{
+            alert("Your browser doesn't support File API!"); //if File API is absent
+        }
+    });
     $('#import-page-builder').on('click', function(e) {
         e.preventDefault();
         createPageBuilder();
@@ -448,6 +472,19 @@ function handlePageBuilder() {
     $('#save-social-media').on('click', function() {
         $('.social').html($('#socialMediaWrapper').html()+'<br style="clear:both" />');
         $('#social-media').modal('hide');
+    });
+    $('#save-video').on('click', function() {
+        var videoTitle = $('.video-title').val();
+        var videoLink = $('.video-link').val();
+        var videoImageSrc = $('#preview-image img').attr('src');
+        $('.videoLink').attr('href',videoLink);
+        $('.videoImage').attr('src',videoImageSrc);
+        $('.videoImage').css('width','100%');
+        $('.videoLink').css('display','block');
+        $('.video-title').val('');
+        $('.video-link').val('');
+        $('#preview-image').html('');
+        $('#video').modal('hide');
     });
     $('#save-table').on('click', function() {
         var tableHead = tableColumn = tableRow = '';
@@ -869,6 +906,10 @@ function handleDroppable() {
                   $this.append('<table class="current-table table table-dynamic" style="display:none"></table>');
                 } 
                 $('#table').modal('show');
+            }
+            if (ui.draggable.hasClass('build-video')) {
+                $this.append('<p><a style="display:none" targe="_blank" class="videoLink"><img class="videoImage" border="0" src="" label="Fallback Image"></a></p>');
+                $('#video').modal('show');
             }
             if (ui.draggable.hasClass('build-widget')) {
                 currentWidget = ui.draggable.data('widget');

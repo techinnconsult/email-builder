@@ -26,7 +26,7 @@
                             <tr>
                                 <td>{{$t->title}}</td>
                                 <td class="text-right">
-                                    <a class="edit btn btn-sm btn-default" target="_blank" href="{{ URL::to('/templates/' . $t->html_file.'/'.$t->html_file.'.html') }}">
+                                    <a class="edit btn btn-sm btn-default" target="_blank" href="{{ URL::to('/html/preview/' . $t->html_file) }}">
                                         <i class="glyphicon glyphicon-cloud-download"></i>
                                     </a>
                                 </td>
