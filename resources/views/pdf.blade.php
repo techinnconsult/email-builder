@@ -73,6 +73,7 @@
                 <div class="tab-pane fade" id="misc">
                     <div data-element="divider" class="element">Divider</div>
                     <div data-element="social" class="element">Social Media</div>
+                    <div data-element="payButton" class="element">Link Button</div>
                 </div>
                 <div class="tab-pane fade" id="widgets">
                     <div data-widget="news" class="build-widget">News</div>
@@ -333,14 +334,14 @@
                     <h4 class="modal-title"><strong>Form</strong> Table</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group m-t-10">
+                    <div class="form-group m-t-12">
                         <label class="control-label">Table Title <small>optionnal</small></label>
                         <div class="append-icon">
                             <input type="text" class="table-title form-control form-white" />
                             <i class="icon-pencil"></i>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-t-12">
                         <label class="control-label">Table Style</label>
                         <select style="width:100%" class="table-style form-control" data-placeholder="Choose table style...">
                             <option value="default">Default</option>
@@ -350,8 +351,8 @@
                             <option value="bordered">Bordered</option>
                         </select>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
+                    <div class="form-group m-t-12">
+                        <div class="m-t-6">
                             <div class="form-group">
                                 <label class="control-label">Number of Columns</label>
                                 <div class="append-icon">
@@ -360,13 +361,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                                <label class="control-label">Number of Rows</label>
-                                <div class="append-icon">
-                                    <input type="amount" class="table-rows form-control form-white" />
-                                    <i class="icon-grid"></i>
-                                </div>
+                        <div class="m-t-6">
+                            <label class="control-label">Number of Rows</label>
+                            <div class="append-icon">
+                                <input type="amount" class="table-rows form-control form-white" />
+                                <i class="icon-grid"></i>
+                            </div>
                         </div>
+                    </div>
+                    <div class="form-group m-t-12">
+                        <label for="pay-button" class="control-label">Include Pay Button?
+                            &nbsp<input id="pay-button" value="1" type="checkbox" class="pay-button form-control form-white" />
+                        </label>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -2127,6 +2133,29 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="payButtonPop" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- MODAL BACKGROUND COLOR -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icons-office-52"></i>
+                    </button>
+                    <h4 class="modal-title">Add <strong>Pay Button</strong></h4>
+                </div>
+                <div class="form-group m-t-10 form-link">
+                    <label class="control-label">Pay Button Link:</label>
+                    <div class="append-icon">
+                        <input required="" type="text" name="pay-link-button" class="pay-link-button html-file-name form-control form-white required" />
+                        <i class="icon-link-url"></i>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="save-pay-link" class="btn btn-primary btn-embossed">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="social-media" tabindex="-1" role="dialog" aria-hidden="true">
         <!-- MODAL SOCIAL MEDIA -->
         <div class="modal-dialog">
@@ -2165,7 +2194,7 @@
                                 ?>
                                 </select>
                                 <div class="input-group-btn"> 
-                                    <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                                    <button class="btn btn-success add-more-social" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
                                 </div>
                             </div>
                         </div>

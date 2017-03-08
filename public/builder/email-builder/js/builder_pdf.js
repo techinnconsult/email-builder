@@ -20,7 +20,7 @@ var widgetProfile4 = '<div class="panel panel-default"><div class="panel-heading
 
 
 $(document).ready(function() {
-    $(".add-more").click(function(){ 
+    $(".add-more-social").on('click',function(){ 
         var social_link = $('#social-link').val();
         var social_image = $('#social-image').val();
         if(social_link == ''){
@@ -452,6 +452,7 @@ function handlePageBuilder() {
     $('#save-table').on('click', function() {
         var tableHead = tableColumn = tableRow = '';
         var tableTitle = $('.table-title').val();
+        var tablePayButton = $('.pay-button').val();
         tableStyle = 'table-' + $('.table-style').val();
         if (tableTitle != '') tableTitle = '<h2><strong>' + tableTitle + '</strong></h2>';
         tableColumns = $('.table-columns').val();
@@ -460,11 +461,17 @@ function handlePageBuilder() {
             for (var i = 0; i < tableColumns; i++) {
                 tableHead += '<th>' + 'Head ' + i + '</th>';
             }
+            if(tablePayButton == 1){
+                tableHead += '<th> Actions </th>';
+            }
         }
         for (var j = 0; j < tableRows; j++) {
             tableRow += '<tr>';
             for (var k = 0; k < tableColumns; k++) {
                 tableRow += '<td>' + 'Row ' + k + '</td>';
+            }
+            if(tablePayButton == 1){
+                tableRow += '<td> <a href="{link' + k + '}"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
             }
             tableRow += '</tr>';
         }
@@ -479,6 +486,12 @@ function handlePageBuilder() {
         $('.table-title').val('');
         $('#table').modal('hide');
     });
+    $('#save-pay-link').on('click', function() {
+        var link = $('.pay-link-button').val();
+        $('.linkButton').html('<a href="' + link + '"><img src="builder/images/pay-now-button.png" style="width:200px;" /></a>');
+        $('#payButtonPop').modal('hide');
+    });
+    
     $('#save-divider-color').on('click', function() {
 //        $('.colors-list li').removeClass('active');
     var color = '';
@@ -773,6 +786,10 @@ function handleDroppable() {
                     $this.append('<p style="float:right;" class="social">&nbsp</p>');
                     $('#social-media').modal('show');
                 }
+                if (ui.draggable.data('element') == 'payButton') {
+                    $this.append('<p class="linkButton">&nbsp</p>');
+                    $('#payButtonPop').modal('show');
+                }
                 if (!$this.parent().hasClass('active')) {
                     if ($this.children().hasClass('select-image')) {
                         $this.parent().find('.placeholder-content-area').height($this.height() - 14);
@@ -1024,6 +1041,7 @@ function createEditorAirMode(element) {
             ["style", ["style"]],
             ['color', ['color']],
             ['font', ['bold', 'underline', 'clear']],
+            ['insert', ['link', 'picture', 'hr']],
             ['para', ['ul', 'paragraph']]
           ]
     });
