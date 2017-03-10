@@ -3301,6 +3301,7 @@ body:not(.sidebar-collapsed) .sidebar .sidebar-inner .nav-sidebar > li.nav-paren
   }
   .sidebar-top:not(.fixed-sidebar) .sidebar {
     position: absolute;
+    top: 0;
   }
   .sidebar-top .nav-sidebar > li.nav-hover > a {
     background: #202226 !important;

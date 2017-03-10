@@ -2,6 +2,7 @@
 /storage
 /public/templates
 /public/html
+/resources/views/templates
 /vendor
 /.idea
 Homestead.json

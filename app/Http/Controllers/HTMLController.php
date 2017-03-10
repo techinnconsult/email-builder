@@ -17,7 +17,7 @@ class HTMLController extends Controller{
     public function functionName($param) {
         
     }
-    public function preview(Request $request){
+    public function save(Request $request){
         $input = $request->all();
         $title = $input['html-file-name'];
         $folder_name = strtolower(str_replace(' ', '-', $title));
@@ -26,9 +26,9 @@ class HTMLController extends Controller{
         foreach( $input['pages'] as $page=>$content ) {
             $html .= $content;
         }
-//        foreach( $input['editor'] as $editor=>$editor_content ) {
-//            $html_editor .= $editor_content;
-//        }
+        foreach( $input['editor'] as $editor=>$editor_content ) {
+            $html_editor .= $editor_content;
+        }
         $doc = new \DOMDocument();
         $doc->loadHTML($html);
         $tags = $doc->getElementsByTagName('img');
@@ -70,17 +70,60 @@ class HTMLController extends Controller{
                     $src =  url()->to('/')."/templates/".$folder_name."/images/".$file_name.$extension;
                 }
                 $tag->setAttribute('src', $src);
+            }else{
+                $old_src = $tag->getAttribute('src');
+                $tag->setAttribute('src', url()->to('/')."/".$old_src);
             }
         }
         $html =  $doc->saveHTML();
-        if(!file_exists(resource_path() ."/views/templates/")){
-            mkdir(resource_path() ."/views/templates/",0777,true);
+        $resource_path_email = resource_path() ."/views/templates/email/";
+        $resource_path_email_edit = storage_path() ."/edit-templates/email/";
+        if(!file_exists($resource_path_email)){
+            mkdir($resource_path_email,0777,true);
         }
-        file_put_contents( resource_path() ."/views/templates/".$folder_name . '.blade.php', $html);
-        $html_id = DB::table('templates')->insertGetId(['title' => $title,
-            'html_file' => $folder_name, 'pdf_file' => '',
-            'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);
-        
+        if(!file_exists($resource_path_email_edit)){
+            mkdir($resource_path_email_edit,0777,true);
+        }
+        if(isset($input['id'])){
+            if(file_exists($resource_path_email.$input['html_file'] . '.blade.php')){
+                unlink($resource_path_email.$input['html_file'] . '.blade.php');
+            }
+            if(file_exists($resource_path_email_edit.$input['html_file'] . '.html')){
+                unlink($resource_path_email_edit.$input['html_file'] . '.html');
+            }
+        }
+        file_put_contents($resource_path_email.$folder_name . '.blade.php', $html);
+        chmod($resource_path_email.$folder_name . '.blade.php', 0777);
+        file_put_contents($resource_path_email_edit.$folder_name . '.html', $html_editor);
+        chmod($resource_path_email_edit.$folder_name . '.html', 0777);
+        if( isset($input['html_file'])){
+            $update_folder_name =  $input['html_file'];
+            $single_template = DB::table('templates')
+                ->select('templates.*')
+                ->where('templates.visitor', $request->ip())
+                ->where('templates.id', $input['id'])
+                ->whereRaw('templates.html_file != "" ')
+                ->orderBy('templates.title', 'asc')
+                ->get()->first();
+        }else{
+            $update_folder_name = $folder_name;
+            $single_template = DB::table('templates')
+                ->select('templates.*')
+                ->where('templates.visitor', $request->ip())
+                ->where('templates.html_file', $update_folder_name)
+                ->whereRaw('templates.html_file != "" ')
+                ->orderBy('templates.title', 'asc')
+                ->get()->first();
+        }
+        if(count($single_template) == 0 && !isset($input['id'])){
+            $html_id = DB::table('templates')->insertGetId(['title' => $title,
+                'html_file' => $folder_name, 'pdf_file' => '',
+                'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);
+        }else{
+            DB::table('templates')
+            ->where('id', $single_template->id)
+            ->update(['title' => "$title",'html_file' => "$folder_name",'updated_at' => date('Y-m-d H:i:s')]);
+        }
         $templates = DB::table('templates')
             ->select('templates.*')
             ->where('templates.visitor', $request->ip())
@@ -88,7 +131,6 @@ class HTMLController extends Controller{
             ->orderBy('templates.title', 'asc')
             ->get();
         return view('templates',['template' => $templates]);
-
     }
     
     public function templates() {
@@ -100,8 +142,42 @@ class HTMLController extends Controller{
             ->get();
         return view('templates',['template' => $templates]);
     }
+    
+    public function edit($template_title) {
+        $templates = DB::table('templates')
+            ->select('templates.*')
+            ->where('templates.html_file', $template_title)
+            ->where('templates.visitor', Req::ip())
+            ->whereRaw('templates.html_file != "" ')
+            ->orderBy('templates.title', 'asc')
+            ->get()->first();
+        $resource_path_email_edit = storage_path() ."/edit-templates/email/";
+        $edit_html = file_get_contents($resource_path_email_edit.$template_title . '.html');
+        return view('email.edit',['template' => $templates,'edit_html' => $edit_html]);
+    }
+    
     public function previewHtml($template_id) {
-       
-        return view('templates.'.$template_id);
+        return view('templates.email.'.$template_id);
+    }
+    
+    public function delete($template_id){
+        $single_template = DB::table('templates')
+            ->select('templates.*')
+            ->where('templates.visitor', Req::ip())
+            ->where('templates.id', $template_id)
+            ->whereRaw('templates.html_file != "" ')
+            ->orderBy('templates.title', 'asc')
+            ->get()->first();
+        
+        $resource_path_email = resource_path() ."/views/templates/email/";
+        $resource_path_email_edit = storage_path() ."/edit-templates/email/";
+        if(file_exists($resource_path_email.$single_template->html_file . '.blade.php')){
+            unlink($resource_path_email.$single_template->html_file . '.blade.php');
+        }
+        if(file_exists($resource_path_email_edit.$single_template->pdf_file . '.html')){
+            unlink($resource_path_email_edit.$single_template->pdf_file . '.html');
+        }
+        DB::table('templates')->where('id', $template_id)->delete();
+        return redirect()->action('HTMLController@templates');
     }
 }

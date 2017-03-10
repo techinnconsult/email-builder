@@ -2,7 +2,7 @@
 <div class="sidebar">
     <div class="logopanel">
         <h1>
-            <a href="../dashboard.html"></a>
+            <a href="{{ URL::to('/') }}"></a>
         </h1>
     </div>
 </div>
@@ -20,12 +20,9 @@
         <div class="topbar">
             <div class="header-left">
                 <div class="topnav">
-                    <a class="menutoggle" href="#" data-toggle="sidebar-collapsed"><span class="menu__handle"><span>Menu</span></span></a>
-                    <ul class="nav nav-icons">
-                        <li><a href="#" class="toggle-sidebar-top"><span class="icon-user-following"></span></a></li>
-                        <li><a href="../mailbox.html"><span class="octicon octicon-mail-read"></span></a></li>
-                        <li><a href="#"><span class="octicon octicon-flame"></span></a></li>
-                        <li><a href="index.html"><span class="octicon octicon-rocket"></span></a></li>
+                    <ul class="header-menu nav navbar-nav">
+                        <li><a href="{{ URL::to('/html/templates') }}"><i class="octicon octicon-mail"></i> Email Builder</a></li>
+                        <li><a href="{{ URL::to('/pdf/templates') }}"><i class="octicon octicon-browser"></i> PDF Builder</a></li>
                     </ul>
                 </div>
             </div>

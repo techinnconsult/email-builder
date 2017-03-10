@@ -6,9 +6,16 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "anam/phantomjs-linux-x86-binary": "^2.1",
+        "anam/phantommagick": "^1.0",
         "barryvdh/laravel-dompdf": "^0.8.0",
+        "elibyy/tcpdf-laravel": "^5.4",
+        "h4cc/wkhtmltoimage-i386": "0.12.x",
+        "h4cc/wkhtmltopdf-i386": "0.12.x",
+        "knplabs/knp-snappy": "^0.4.3",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "mpdf/mpdf": "^6.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -26,7 +26,7 @@ $(document).ready(function() {
         if(social_link == ''){
             alert('Please add link');
         }else{
-            $('#socialMediaLinks').append('<li style="float:left;margin-right:20px;"><a href="'+social_link+'" targe="_blank"><img src="'+social_image+'" style="width:80px" /></a></li>');
+            $('#socialMediaLinks').append('<a href="'+social_link+'" targe="_blank"><img src="'+social_image+'" style="width:80px" /></a>');
         }
         $('#social-link').val('');
     });
@@ -281,6 +281,7 @@ function handlePageBuilder() {
     $('.close-modal').on('click', function() {
         $('.current-form').remove();
         $('.current-table').remove();
+        $('.current-youtube').remove();
         $('.current-layout').remove();
     });
     $('#form-settings input').on('ifChecked', function(event) {
@@ -492,7 +493,7 @@ function handlePageBuilder() {
                 tableRow += '<td>' + 'Row ' + k + '</td>';
             }
             if($('.pay-button').is(':checked')){
-                tableRow += '<td> <a href="{link' + k + '}"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
+                tableRow += '<td> <a href="{link' + k + '}"><img src="builder/images/buy_now_button.jpg" style="width:100px;" /></a></td>';
             }
             tableRow += '</tr>';
         }
@@ -509,7 +510,7 @@ function handlePageBuilder() {
     });
     $('#save-pay-link').on('click', function() {
         var link = $('.pay-link-button').val();
-        $('.linkButton').html('<a href="' + link + '"><img src="builder/images/pay-now-button.png" style="width:200px;" /></a>');
+        $('.linkButton').html('<a href="' + link + '"><img src="builder/images/buy_now_button.jpg" style="width:200px;" /></a>');
         $('#payButtonPop').modal('hide');
     });
     
@@ -525,6 +526,7 @@ function handlePageBuilder() {
         $('.divider').css('border-top', '1px solid '+color);
         $('.divider').css('width','100%');
         $('.divider').css('margin-top','12px');
+        $('.divider').css('margin-botom','20px');
         $('.divider').css('height','0px;');
         $('#color-picker').modal('hide');
     });
@@ -533,13 +535,13 @@ function handlePageBuilder() {
         var videoTitle = $('.video-title').val();
         var videoLink = $('.video-link').val();
         var videoImageSrc = $('#preview-image img').attr('src');
-        $('.videoLink').attr('href',videoLink);
-        $('.videoImage').attr('src',videoImageSrc);
-        $('.videoImage').css('width','100%');
-        $('.videoLink').css('display','block');
         $('.video-title').val('');
         $('.video-link').val('');
+        $('.current-youtube').append('<a href="'+videoLink+'" targe="_blank" class="videoLink"><img class="videoImage" border="0" src="'+videoImageSrc+'" label="Fallback Image"></a><br style="clear:both" />');
         $('#preview-image').html('');
+        
+        $('.current-youtube').css('display', '').removeClass('current-youtube');
+        
         $('#video').modal('hide');
     });
     
@@ -821,7 +823,7 @@ function handleDroppable() {
                     $('#color-picker').modal('show');
                 }
                 if (ui.draggable.data('element') == 'social') {
-                    $this.append('<p style="float:right;" class="social">&nbsp</p>');
+                    $this.append('<div class="social">&nbsp</div>');
                     $('#social-media').modal('show');
                 }
                 if (ui.draggable.data('element') == 'payButton') {
@@ -909,7 +911,7 @@ function handleDroppable() {
                 $('#table').modal('show');
             }
             if (ui.draggable.hasClass('build-video')) {
-                $this.append('<a style="display:none" targe="_blank" class="videoLink"><img class="videoImage" border="0" src="" label="Fallback Image"></a>');
+                $this.append('<div style="display:none" class="current-youtube"></div>');
                 $('#video').modal('show');
             }
             if (ui.draggable.hasClass('build-widget')) {
@@ -1167,9 +1169,9 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
         handleSidebarFluid();
         $('body').addClass('fixed-sidebar');
     }
-    var editContent = '';
-    var allContent = editContent = $('body').clone();
-
+    
+    var allContent = $('body').clone();
+    var allContentEdit = $('body > section').clone().find('#page-content').html();
     allContent.find('#ip-container').remove();
     allContent.find('.builder').remove();
     
@@ -1256,7 +1258,7 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
     editorInput = $('<input type="hidden" name="editor[index]" value="">');
     $('#modal-export-page form').prepend( newInput );
     $('#modal-export-page form').prepend( editorInput );
-    editorInput.val(editContent.html());
+    editorInput.val(allContentEdit);
     newInput.val(adminHeader+ '<table id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#efefef; width:800px; max-width: 800px; margin: 0 auto;"><tbody><tr><td>'+innerHtml+"</td></tr></tbody></table>"+adminFooter);
 
 });

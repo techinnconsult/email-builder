@@ -3,10 +3,12 @@
 <!-- BEGIN PAGE CONTENT -->
 <div class="page-content page-builder">
     <div id="hidden-small-screen-message">
-        <h2 class="m-t-40"><strong>Page Builder</strong> is not available on small screen.</h2>
+        <h2 class="m-t-40"><strong>Email Builder</strong> is not available on small screen.</h2>
         <p>Editor is not adapted to screen smaller than 1024px.</p>
         <p>For that reason, page builder is only visible on screen bigger.</p>
     </div>
+    
+    <div id="page-content">
     <div id="page-builder" class="bg-primary">
         <div class="tabs tabs-linetriangle">
             <ul class="nav nav-tabs">
@@ -482,6 +484,7 @@
         </table>
     </div>
     <div style="clear: both;height: 100px;"></div>
+    </div>
     <div class="modal fade" id="table" tabindex="-1" role="dialog" aria-hidden="true">
         <!-- MODAL TABLE -->
         <div class="modal-dialog">
@@ -614,14 +617,14 @@
     </div>
     <div class="modal fade" id="modal-export-page" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <!-- MODALS EXPORT PAGE -->
-        <form action="{{url('/preview')}}" id="markupForm" method="post">
+        <form action="{{url('/email/save')}}" id="markupForm" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="markup" value="" id="markupField">
             <div class="modal-dialog" style="width:500px">
                 <div class="modal-content">
                     <div class="modal-header bg-primary">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="icons-office-52"></i></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Export My Page Template</h4>
+                        <h4 class="modal-title" id="myModalLabel">Export My Email Template</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group m-t-10 form-link">
@@ -634,7 +637,7 @@
                     </div>
                     <div class="modal-footer t-center">
                         <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary" id="save-export">Export my Page</button>
+                        <button type="submit" class="btn btn-primary" id="save-export">Export my Email</button>
                         <div class="alert alert-info m-t-20 p-10">
                             <p class="f-13">After uploading your template, copy and past your file inside admin folder, with other admin pages.</p>
                         </div>
@@ -773,9 +776,9 @@
                         </div>
                     </div>
                     <div id="socialMediaWrapper">
-                        <ul id="socialMediaLinks" style="list-style:none;">
+                        <div id="socialMediaLinks" style="list-style:none;">
 
-                        </ul>
+                        </div>
                     </div>
                     <div style="clear:both"></div>
                 </div>
@@ -788,7 +791,7 @@
         </div>
     </div>
     <div class="export-page">
-        <a href="#" id="export" class="btn btn-dark btn-square btn-embossed">Export Page Template</a>
+        <a href="#" id="export" class="btn btn-dark btn-square btn-embossed">Export Email Template</a>
     </div>
 </div>
 <!-- END PAGE CONTENT -->
