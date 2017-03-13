@@ -96,7 +96,7 @@
     </div>
     <div style="display: none;" class="modal fade" id="modal-export-page" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <!-- MODALS EXPORT PAGE -->
-        <form action="{{url('/save')}}" id="markupForm" method="post">
+        <form action="{{url('/save')}}" target="_blank" id="markupForm" method="post">
             <input type="hidden" name="markup" value="" id="markupField">
             <input type="hidden" value="{{$template->id}}" name="id" >
             <input type="hidden" value="{{$template->pdf_file}}" name="pdf_file" >
@@ -118,10 +118,7 @@
                     </div>
                     <div class="modal-footer t-center">
                         <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary" id="save-export">Export my PDF</button>
-                        <div class="alert alert-info m-t-20 p-10">
-                            <p class="f-13">After uploading your template, copy and past your file inside admin folder, with other admin pages.</p>
-                        </div>
+                        <button type="submit" class="btn btn-primary" id="save-export">Preview my PDF</button>
                     </div>
                 </div>
             </div>
@@ -1941,7 +1938,8 @@
         </div>
     </div>
     <div class="export-page">
-        <a href="#" id="export" class="btn btn-dark btn-square btn-embossed">Export PDF Template</a>
+        <a href="#" id="export" class="btn btn-dark btn-square btn-embossed">Preview PDF Template</a>
+        <a href="{{url('/pdf/download/'.$template->pdf_file)}}" id="export" class="btn btn-dark btn-square btn-embossed">Download PDF Template</a>
     </div>
 </div>
 <!-- END PAGE CONTENT -->

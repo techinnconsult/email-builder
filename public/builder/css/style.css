@@ -11035,6 +11035,10 @@ thead .fc-widget-header {
   cursor: pointer;
   width: 100%;
 }
+.page-builder .handle-background {
+  cursor: pointer;
+  width: 100%;
+}
 .page-builder .handle-remove:hover i {
   color: #ffffff;
 }

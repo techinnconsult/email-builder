@@ -1,8 +1,9 @@
 /node_modules
-/storage
+/storage/framework
+/storage/logs
+/storage/export
 /public/templates
 /public/html
-/resources/views/templates
 /vendor
 /.idea
 Homestead.json

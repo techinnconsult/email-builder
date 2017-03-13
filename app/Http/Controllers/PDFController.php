@@ -125,13 +125,8 @@ class PDFController extends Controller{
             ->where('id', $single_template->id)
             ->update(['title' => "$title",'pdf_file' => "$folder_name",'updated_at' => date('Y-m-d H:i:s')]);
         }
-        $templates = DB::table('templates')
-            ->select('templates.*')
-            ->where('templates.visitor', Req::ip())
-            ->whereRaw('templates.pdf_file != "" ')
-            ->orderBy('templates.title', 'asc')
-            ->get();
-        return view('templates-pdf',['template' => $templates]);
+        
+        return view('templates.pdf.'.$folder_name);
 //        $options = new Options();
 //        $options->set('defaultFont', 'Courier');
 //        $options->set('isRemoteEnabled', TRUE);

@@ -391,7 +391,7 @@
     </div>
     <div class="modal fade" id="modal-export-page" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <!-- MODALS EXPORT PAGE -->
-        <form action="{{url('/save')}}" id="markupForm" method="post">
+        <form action="{{url('/save')}}" target="_blank" id="markupForm" method="post">
             <input type="hidden" name="markup" value="" id="markupField">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="modal-dialog" style="width:500px">
@@ -412,9 +412,6 @@
                     <div class="modal-footer t-center">
                         <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-primary" id="save-export">Export my PDF</button>
-                        <div class="alert alert-info m-t-20 p-10">
-                            <p class="f-13">After uploading your template, copy and past your file inside admin folder, with other admin pages.</p>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -16,20 +16,47 @@ var widgetProfile1 = '<div class="panel widget-member2"><div class="row"><div cl
 var widgetProfile2 = '<div class="panel panel-default"><div class="panel-body p-10"><div class="text-center col-xs-4"><img src="../builder/images/avatars/avatar4_big.png" class="img-responsive" alt="avatar 4"></div><div class="clearfix col-xs-8"><h2 class="c-dark w-600">Winston Bowman</h2><p class="c-gray f-16">Photographer</p><p class="c-gray"><i class="fa fa-map-marker p-r-10"></i> Trade Business Park, Ohio</p></div></div><div class="panel-footer p-t-0 p-b-0"><div class="row"><div class="col-xs-4 bg-blue p-20"><div class="text-center m-b-10"><i class="f-24 icon-speech"></i></div><div class="text-center f-16">1568</div></div><div class="col-xs-4 bg-purple p-20"><div class="text-center m-b-10"><i class="f-24 icon-users"></i></div><div class="text-center f-16">866</div></div><div class="col-xs-4 bg-primary p-20"><div class="text-center m-b-10"><i class="f-24 fa icon-heart"></i></div><div class="text-center f-16">254</div></div></div></div></div>';
 var widgetProfile3 = '<div class="panel panel-default hover-effect"><div class="panel-heading h-150 p-0"><img src="../builder/images/widgets/profil2.jpg" class="img-responsive hover-img" alt=""></div><div class="panel-body p-10"><div class="clearfix col-lg-6 col-md-12 col-sm-12"><h3 class="c-dark w-600 align-center">Anna Chain</h3><p class="c-gray f-16 align-center">Photographer</p></div><div class="col-lg-6 col-md-12 col-sm-12 p-t-20"><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-speech"></i></div><div class="text-center">1568</div></div><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-users"></i></div><div class="text-center">866</div></div><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-heart c-red"></i></div><div class="text-center">254</div></div></div></div></div>';
 var widgetProfile4 = '<div class="panel panel-default"><div class="panel-heading h-150 p-0"><img src="../builder/images/widgets/mountain.jpg" class="img-responsive" alt=""><div class="profil-name-heading text-center w-700"><div class="f-24">John Snow</div><div class="f-16">photographer</div></div></div><div class="panel-body p-10"><div class="clearfix col-xs-4"><div class="text-center f-32 w-700">1758</div><div class="text-center c-gray w-700">PHOTOS</div></div><div class="col-xs-4"><img class="widget-profil-img-center img-responsive" src="../builder/images/widgets/profil3.jpg" alt=""></div><div class="col-xs-4"><div class="text-center f-32 w-700">4557</div><div class="text-center c-gray w-700">FOLLOWERS</div></div></div></div>';
+var currentRow = '';
 
-
-
+function changeColor(selectColor){
+    $('.selectedRowBg').val(selectColor);
+}
+function changeDividerColor(selectColor){
+    $('.dividerColor').val(selectColor);
+}
 $(document).ready(function() {
+    
+    $("#pay-button").change(function(){
+        var tableRows = $('.table-rows').val();
+        if(tableRows > 0){
+            if($('#pay-button').is(':checked')){
+                for(var i = 1; i <= tableRows; i++){
+                    $('#linksBoxes').append('<div class="form-group m-t-12">\n\
+                                                <label class="control-label">Btton Link #'+i+' <small>optionnal</small></label>\n\
+                                                <div class="append-icon">\n\
+                                                    <input type="text" class="table-link'+i+' form-control form-white" /> \n\
+                                                    <i class="icon-pencil"></i>\n\
+                                                </div>\n\
+                                            </div>');
+                }
+            }else{
+                 $('#linksBoxes').html('');
+            }
+        }else{
+            $('#linksBoxes').html('');
+        }
+    });
     $(".add-more-social").on('click',function(){ 
         var social_link = $('#social-link').val();
         var social_image = $('#social-image').val();
         if(social_link == ''){
             alert('Please add link');
         }else{
-            $('#socialMediaLinks').append('<a href="'+social_link+'" targe="_blank"><img src="'+social_image+'" style="width:80px" /></a>');
+            $('#socialMediaLinks').append('<a href="'+social_link+'" targe="_blank"><img src="'+social_image+'" style="width:40px;float: left;margin-right: 10px;" /></a>');
         }
         $('#social-link').val('');
     });
+    
     $('.video-images').on('change', function(){ //on file input change
         if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
         {
@@ -471,8 +498,11 @@ function handlePageBuilder() {
         $('.social').html($('#socialMediaWrapper').html()+'<br style="clear:both" />');
         $('#social-media').modal('hide');
     });
+    $('#some_text_box').on('input propertychange paste', function() {
+        // do your stuff
+    });
     $('#save-table').on('click', function() {
-        var tableHead = tableColumn = tableRow = '';
+        var tableHead = tableColumn = tableRow = tableLink = '';
         var tableTitle = $('.table-title').val();
         var tablePayButton = $('.pay-button').val();
         tableStyle = 'table-' + $('.table-style').val();
@@ -493,7 +523,9 @@ function handlePageBuilder() {
                 tableRow += '<td>' + 'Row ' + k + '</td>';
             }
             if($('.pay-button').is(':checked')){
-                tableRow += '<td> <a href="{link' + k + '}"><img src="builder/images/buy_now_button.jpg" style="width:100px;" /></a></td>';
+                linkj = j+1;
+                tableLink = $('.table-link'+linkj).val();
+                tableRow += '<td> <a href="' + tableLink + '"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
             }
             tableRow += '</tr>';
         }
@@ -506,29 +538,41 @@ function handlePageBuilder() {
         }
         $('.current-table').css('display', '').removeClass('current-table');
         $('.table-title').val('');
+        $('#linksBoxes').html('');
+        $('.table-columns').val('');
+        $('.table-rows').val('');
         $('#table').modal('hide');
     });
     $('#save-pay-link').on('click', function() {
         var link = $('.pay-link-button').val();
-        $('.linkButton').html('<a href="' + link + '"><img src="builder/images/buy_now_button.jpg" style="width:200px;" /></a>');
+        $('.linkButton').html('<a href="' + link + '"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a>');
         $('#payButtonPop').modal('hide');
     });
     
     $('#save-divider-color').on('click', function() {
-//        $('.colors-list li').removeClass('active');
-    var color = '';
-        $( ".colors-list li" ).each(function( index ) {
-            if(($( this).hasClass( "active" ))){
-               $(this).removeClass('active');
-               color = $(this).attr('class');
-            }
-        });
+        var color = $('.dividerColor').val();
         $('.divider').css('border-top', '1px solid '+color);
         $('.divider').css('width','100%');
         $('.divider').css('margin-top','12px');
         $('.divider').css('margin-botom','20px');
         $('.divider').css('height','0px;');
+        $('.dividerColor').val('')
         $('#color-picker').modal('hide');
+    });
+    
+    $('#save-row-background').on('click', function() {
+        var color = $('.selectedRowBg').val();
+        currentRow.find('.placeholder-container').removeClass('white primary dark red green blue aero gray orange pink purple');
+        currentRow.find('.placeholder-container .placeholder').removeClass('white primary dark red green blue aero gray orange pink purple');
+        currentRow.find('.placeholder-container .placeholder .placeholder-content').removeClass('white primary dark red green blue aero gray orange pink purple');
+        
+        currentRow.find('.placeholder-container').addClass(color);
+        currentRow.find('.placeholder-container .placeholder').addClass(color);
+        currentRow.find('.placeholder-container .placeholder .placeholder-content').addClass(color);
+//        currentRow.find('.placeholder-container .placeholder .placeholder-content .placeholder-content-area td').addClass(color);
+        currentRow.find('.placeholder-container .placeholder .placeholder-content .placeholder-content-area p').css('padding','20px');
+        $('.selectedRowBg').val('');
+        $('#change-row-background').modal('hide');
     });
 
     $('#save-video').on('click', function() {
@@ -537,7 +581,7 @@ function handlePageBuilder() {
         var videoImageSrc = $('#preview-image img').attr('src');
         $('.video-title').val('');
         $('.video-link').val('');
-        $('.current-youtube').append('<a href="'+videoLink+'" targe="_blank" class="videoLink"><img class="videoImage" border="0" src="'+videoImageSrc+'" label="Fallback Image"></a><br style="clear:both" />');
+        $('.current-youtube').append('<p><a href="'+videoLink+'" targe="_blank" class="videoLink"><img class="videoImage" border="0" src="'+videoImageSrc+'" label="Fallback Image"></a><br style="clear:both" /></p>');
         $('#preview-image').html('');
         
         $('.current-youtube').css('display', '').removeClass('current-youtube');
@@ -780,6 +824,7 @@ function handlePageBuilder() {
     draggableLayout();
     draggableElement();
     handleRemove();
+    changeBackground();
     createBuilderNotif();
 }
 
@@ -986,25 +1031,25 @@ function handleSortable() {
             ui.item.removeClass('ui-draggable');
             if (ui.item.hasClass('layout')) {
                 if (ui.item.data('layout') == 'one-column') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-12"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-12"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'two-column-50') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'two-column-33') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'two-column-66') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-8"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'three-column-33') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-4"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'three-column-25') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-6"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'four-column') {
-                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"> <table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
+                    $(this).children().not(".row").replaceWith(' <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" width="600" class="row" align="center" border="0" cellspacing="0" cellpadding="0"><tbody class="placeholder-container"><tr class="placeholder"><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"><table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td><td class="placeholder-content col-md-3"> <table style="width:100%" class="placeholder-content-area"><tr><td style="height: 40px"></td></tr></table></td></tr><tr class="placeholder-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table>');
                 }
                 if (ui.item.data('layout') == 'custom') {
                     // $this.append('<div class="current-layout"></div>');
@@ -1062,13 +1107,16 @@ function createEditor(element) {
         height: 'auto',
         airMode: false,
         toolbar: [
-            ["style", ["style"]],
-            ["style", ["bold", "italic", "underline", "clear"]],
-            ["fontsize", ["fontsize"]],
-            ["color", ["color"]],
-            ["para", ["ul", "ol", "paragraph"]],
-            ["height", ["height"]],
-            ['insert', ['picture']]
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'hr']],
+            ['view', ['fullscreen', 'codeview']],
+            ['help', ['help']]
         ]
     });
 }
@@ -1082,10 +1130,12 @@ function createEditorAirMode(element) {
             ["style", ["style"]],
             ['color', ['color']],
             ['font', ['bold', 'underline', 'clear']],
+            ['insert', ['link', 'picture', 'hr']],
             ['para', ['ul', 'paragraph']]
           ]
     });
 }
+
 
 function removeEditor(element) {
     $('.placeholder p, .placeholder h1, .placeholder h2, .placeholder h2, .placeholder h3, .placeholder label, .placeholder button, .placeholder th, .placeholder td, .placeholder li, .placeholder li a').removeClass('editing');
@@ -1120,6 +1170,23 @@ function handleRemove() {
                 }, 300);
             }
         });
+    });
+}
+
+function changeBackground() {
+    $('.page-content').on('click', '.handle-background', function() {
+        currentElement = $(this).parent().parent().parent().parent();
+        currentRow = currentElement;
+        $('#change-row-background').modal('show');
+//        console.log(currentElement);
+//        bootbox.confirm('Are you sure you want to remove this section?', function(result) {
+//            if (result === true) {
+//                currentElement.addClass("animated bounceOutRight");
+//                window.setTimeout(function() {
+//                    currentElement.remove();
+//                }, 300);
+//            }
+//        });
     });
 }
 
@@ -1201,9 +1268,14 @@ $('.page-content').on('shown.bs.modal', '#modal-export-page', function (e) {
     allContent.find('.main-content div.row').remove();
     allContent.find('#page-builder').remove();
     
-    allContent.find('.note-editor p').unwrap();
-    allContent.find('.note-editor img').unwrap();
-    allContent.find('.note-editor').remove();
+    allContent.find('.note-editor').children().unwrap();
+//    allContent.find('.note-editable span').unwrap();
+    allContent.find('.note-editable p').unwrap();
+    allContent.find('.note-editable a').unwrap();
+    allContent.find('.note-editable h1').unwrap();
+//    allContent.find('.note-editable h1').unwrap();
+////    allContent.find('.note-editable span').unwrap();
+//    allContent.find('.note-editor').remove();
     allContent.find('.placeholder-handle').remove();
     allContent.find('.form-sortable-btn').remove();
     allContent.find('.export-page').remove();

@@ -38,7 +38,7 @@
     <script src="{{url('builder/plugins/colorpicker')}}/spectrum.min.js"></script> <!-- Color Picker -->
     <script src="{{url('builder/plugins/touchspin')}}/jquery.bootstrap-touchspin.min.js"></script> <!-- A mobile and touch friendly input spinner component for Bootstrap -->
     <script src="{{url('builder/plugins/autosize')}}/autosize.min.js"></script> <!-- Textarea autoresize -->
-    <script src="{{url('builder/plugins/icheck')}}/icheck.min.js"></script> <!-- Icheck -->
+<!--    <script src="{{url('builder/plugins/icheck')}}/icheck.min.js"></script>  Icheck -->
     <script src="{{url('builder/plugins/bootstrap-editable/js')}}/bootstrap-editable.min.js"></script> <!-- Inline Edition X-editable -->
     <script src="{{url('builder/plugins/bootstrap-context-menu')}}/bootstrap-contextmenu.min.js"></script> <!-- File Upload and Input Masks -->
     <script src="{{url('builder/plugins/prettify')}}/prettify.min.js"></script> <!-- Show html code -->

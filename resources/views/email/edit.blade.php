@@ -57,9 +57,13 @@
                         </div>
                     </div>
                     <div class="form-group m-t-12">
-                        <label for="pay-button" class="control-label">Include Pay Button?
-                            &nbsp<input id="pay-button" value="1" type="checkbox" class="pay-button form-control form-white" />
-                        </label>
+                        <label style="cursor: pointer;float:left;" id="pay-button-label" for="pay-button" class="control-label">Include Pay Button?
+                            
+                        </label>&nbsp<input style="float: left;margin-left: 10px;" id="pay-button" value="1" type="checkbox" class="pay-button" />
+                        <div style="clear:both"></div>
+                    </div>
+                    <div id="linksBoxes">
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -141,39 +145,6 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal-export-page" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <!-- MODALS EXPORT PAGE -->
-        <form action="{{url('/email/save')}}" id="markupForm" method="post">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="markup" value="" id="markupField">
-            <input type="hidden" value="{{$template->id}}" name="id" >
-            <input type="hidden" value="{{$template->html_file}}" name="html_file" >
-            <div class="modal-dialog" style="width:500px">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="icons-office-52"></i></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Export My Email Template</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group m-t-10 form-link">
-                            <label class="control-label">Choose your Template Name:</label>
-                            <div class="append-icon">
-                                <input value="{{$template->title}}" required="" type="text" name="html-file-name" class="html-file-name form-control form-white required" />
-                                <i class="icon-pencil"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer t-center">
-                        <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary" id="save-export">Export my Email</button>
-                        <div class="alert alert-info m-t-20 p-10">
-                            <p class="f-13">After uploading your template, copy and past your file inside admin folder, with other admin pages.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
     <div class="modal fade" id="modal-background" tabindex="-1" role="dialog" aria-hidden="true">
         <!-- MODAL BACKGROUND COLOR -->
         <div class="modal-dialog">
@@ -199,8 +170,42 @@
                     </ul>
                 </div>
                 <div class="modal-footer">
+                <input type="hidden" name="colorsVal" value="" />
                     <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel</button>
                     <button type="button" id="save-bg-color" class="btn btn-primary btn-embossed">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="change-row-background" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- MODAL BACKGROUND COLOR -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icons-office-52"></i>
+                    </button>
+                    <h4 class="modal-title">Change <strong>Row Background</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="colors-list">
+                        <li onclick="changeColor('white')" class="white active"></li>
+                        <li onclick="changeColor('primary')" class="primary"></li>
+                        <li onclick="changeColor('dark')" class="dark"></li>
+                        <li onclick="changeColor('red')" class="red"></li>
+                        <li onclick="changeColor('green')" class="green"></li>
+                        <li onclick="changeColor('blue')" class="blue"></li>
+                        <li onclick="changeColor('aero')" class="aero"></li>
+                        <li onclick="changeColor('gray')" class="gray"></li>
+                        <li onclick="changeColor('orange')" class="orange"></li>
+                        <li onclick="changeColor('pink')" class="pink"></li>
+                        <li onclick="changeColor('purple')" class="purple"></li>
+                    </ul>
+                </div>
+                <input type="hidden" class="selectedRowBg" value="" />
+                <input class="current-row" type="hidden" name="current-row" value="" />
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="save-row-background" class="btn btn-primary btn-embossed">Save</button>
                 </div>
             </div>
         </div>
@@ -216,20 +221,20 @@
                 </div>
                 <div class="modal-body">
                     <ul class="colors-list">
-                        <li class="white active"></li>
-                        <li class="primary"></li>
-                        <li class="dark"></li>
-                        <li class="red"></li>
-                        <li class="green"></li>
-                        <li class="blue"></li>
-                        <li class="aero"></li>
-                        <li class="gray"></li>
-                        <li class="orange"></li>
-                        <li class="pink"></li>
-                        <li class="purple"></li>
+                        <li onclick="changeDividerColor('white')" class="white active"></li>
+                        <li onclick="changeDividerColor('primary')" class="primary"></li>
+                        <li onclick="changeDividerColor('dark')" class="dark"></li>
+                        <li onclick="changeDividerColor('red')" class="red"></li>
+                        <li onclick="changeDividerColor('green')" class="green"></li>
+                        <li onclick="changeDividerColor('blue')" class="blue"></li>
+                        <li onclick="changeDividerColor('aero')" class="aero"></li>
+                        <li onclick="changeDividerColor('gray')" class="gray"></li>
+                        <li onclick="changeDividerColor('orange')" class="orange"></li>
+                        <li onclick="changeDividerColor('pink')" class="pink"></li>
+                        <li onclick="changeDividerColor('purple')" class="purple"></li>
                     </ul>
                 </div>
-                <input type="hidden" name="colorsVal" value="" />
+                <input type="hidden" class="dividerColor" name="colorsVal" value="" />
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
                     <button type="button" id="save-divider-color" class="btn btn-primary btn-embossed">Save</button>
@@ -304,9 +309,9 @@
                         </div>
                     </div>
                     <div id="socialMediaWrapper">
-                        <ul id="socialMediaLinks" style="list-style:none;">
+                        <div id="socialMediaLinks" style="list-style:none;float: right;">
 
-                        </ul>
+                        </div>
                     </div>
                     <div style="clear:both"></div>
                 </div>
@@ -317,6 +322,36 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="modal fade" id="modal-export-page" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- MODALS EXPORT PAGE -->
+        <form action="{{url('/email/save')}}" target="_blank" id="markupForm" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="markup" value="" id="markupField">
+            <input type="hidden" value="{{$template->id}}" name="id" >
+            <input type="hidden" value="{{$template->html_file}}" name="html_file" >
+            <div class="modal-dialog" style="width:500px">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="icons-office-52"></i></span></button>
+                        <h4 class="modal-title" id="myModalLabel">Export My Email Template</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group m-t-10 form-link">
+                            <label class="control-label">Choose your Template Name:</label>
+                            <div class="append-icon">
+                                <input value="{{$template->title}}" required="" type="text" name="html-file-name" class="html-file-name form-control form-white required" />
+                                <i class="icon-pencil"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer t-center">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="save-export">Export my Email</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="export-page">
         <a href="#" id="export" class="btn btn-dark btn-square btn-embossed">Export Email Template</a>

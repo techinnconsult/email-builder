@@ -71,8 +71,8 @@ class HTMLController extends Controller{
                 }
                 $tag->setAttribute('src', $src);
             }else{
-                $old_src = $tag->getAttribute('src');
-                $tag->setAttribute('src', url()->to('/')."/".$old_src);
+//                $old_src = $tag->getAttribute('src');
+//                $tag->setAttribute('src', url()->to('/')."/".$old_src);
             }
         }
         $html =  $doc->saveHTML();
@@ -124,22 +124,16 @@ class HTMLController extends Controller{
             ->where('id', $single_template->id)
             ->update(['title' => "$title",'html_file' => "$folder_name",'updated_at' => date('Y-m-d H:i:s')]);
         }
-        $templates = DB::table('templates')
-            ->select('templates.*')
-            ->where('templates.visitor', $request->ip())
-            ->whereRaw('templates.html_file != "" ')
-            ->orderBy('templates.title', 'asc')
-            ->get();
-        return view('templates',['template' => $templates]);
+        return view('templates.email.'.$folder_name);
     }
     
     public function templates() {
         $templates = DB::table('templates')
             ->select('templates.*')
-            ->where('templates.visitor', Req::ip())
+//            ->where('templates.visitor', Req::ip())
             ->whereRaw('templates.html_file != "" ')
             ->orderBy('templates.title', 'asc')
-            ->get();
+            ->get(); 
         return view('templates',['template' => $templates]);
     }
     
@@ -147,7 +141,7 @@ class HTMLController extends Controller{
         $templates = DB::table('templates')
             ->select('templates.*')
             ->where('templates.html_file', $template_title)
-            ->where('templates.visitor', Req::ip())
+//            ->where('templates.visitor', Req::ip())
             ->whereRaw('templates.html_file != "" ')
             ->orderBy('templates.title', 'asc')
             ->get()->first();
@@ -163,7 +157,7 @@ class HTMLController extends Controller{
     public function delete($template_id){
         $single_template = DB::table('templates')
             ->select('templates.*')
-            ->where('templates.visitor', Req::ip())
+//            ->where('templates.visitor', Req::ip())
             ->where('templates.id', $template_id)
             ->whereRaw('templates.html_file != "" ')
             ->orderBy('templates.title', 'asc')
@@ -174,8 +168,8 @@ class HTMLController extends Controller{
         if(file_exists($resource_path_email.$single_template->html_file . '.blade.php')){
             unlink($resource_path_email.$single_template->html_file . '.blade.php');
         }
-        if(file_exists($resource_path_email_edit.$single_template->pdf_file . '.html')){
-            unlink($resource_path_email_edit.$single_template->pdf_file . '.html');
+        if(file_exists($resource_path_email_edit.$single_template->html_file . '.html')){
+            unlink($resource_path_email_edit.$single_template->html_file . '.html');
         }
         DB::table('templates')->where('id', $template_id)->delete();
         return redirect()->action('HTMLController@templates');

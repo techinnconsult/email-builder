@@ -2,10 +2,45 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link rel="shortcut icon" href="builder/images/favicon.png" type="image/png"><title>Make</title></head><body class="sidebar-top theme-sdtl color-default fixed-topbar"><table id="mainStructure" width="800" class="row" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#efefef; width:800px; max-width: 800px; margin: 0 auto;"><tbody><tr><td>
     
     
+    <div id="page-content">
+         
     <style type="text/css">
 
     
     /* Resets: see reset.css for details */
+    
+    .white{
+        background: white !important;
+    }
+    .primary{
+        background: #319db5 !important;
+    }
+    .dark{
+        background: #2B2E33 !important;
+    }
+    .red{
+        background: #C9625F !important;
+    }
+    .green{
+        background: #18a689 !important;
+    }
+    .blue{
+        background: #319DB5 !important;
+    }
+    .aero{
+        background: #B9D5DB !important;
+    }
+    .gray{
+        background: #82848A !important;
+    }
+    .orange{
+        background: #F2A057 !important;
+    }
+    .pink{
+        background: #DC88E6 !important;
+    }.purple{
+        background: #A58BD3 !important;
+    }
     .ReadMsgBody { width: 100%; background-color: #ffffff;}
     .ExternalClass {width: 100%; background-color: #ffffff;}
     .ExternalClass, .ExternalClass p, .ExternalClass span,
@@ -182,91 +217,91 @@
     height:auto !important;
     max-width:124px !important;
     }
-    </style><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-12">
-                        <table class="placeholder-content-area"><tbody><tr><td>
+    </style><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-3 primary"><h3 class="summernote note-air-editor note-editable" data-airmode="true" id="note-editor-1" contenteditable="true">I am a small Title</h3></td><td class="col-md-3 primary"><h2 class="summernote note-air-editor note-editable" data-airmode="true" id="note-editor-2" contenteditable="true">I am a medium Title</h2></td><td class="col-md-3 primary"><h1 class="summernote note-air-editor note-editable" data-airmode="true" id="note-editor-3" contenteditable="true">I am a big Title</h1></td><td class="col-md-3 primary"> <h2 class="summernote note-air-editor note-editable" data-airmode="true" id="note-editor-4" contenteditable="true">I am a medium Title</h2></td></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-3 dark"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="dark"></td></tr></tbody></table></td><td class="col-md-6 dark"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td><td class="col-md-3 dark"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="dark"></td></tr></tbody></table></td></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-4 red"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="red"></td></tr></tbody></table></td><td class="col-md-4 red"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td><td class="col-md-4 red"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="red"></td></tr></tbody></table></td></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-8 green"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="green"></td></tr></tbody></table></td><td class="col-md-4 green"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="green"></td></tr></tbody></table></td></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-4 ui-droppable-hover drop-hover blue"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="blue"></td></tr></tbody></table></td><td class="col-md-8 blue"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="blue"></td></tr></tbody></table></td></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-6 ui-droppable-hover drop-hover aero"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="aero"></td></tr></tbody></table></td><td class="col-md-6 aero"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="aero"></td></tr></tbody></table></td></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-12 gray"><table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="gray"></td></tr></tbody></table></td></table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-12 ui-droppable-hover drop-hover orange">
+                        <table class="placeholder-content-area"><tbody><tr><td class="orange" style="padding: 20px;">
                                     <h2>Email <strong>Builder</strong></h2>
-                                    <p style="display: block;">Welcome to Make Email builder! You can customize easily and quickly your page. Don't hesitate to send us suggestions to improve this tool.</p>
+                                    <p>Welcome to Make Email builder! You can customize easily and quickly your page. Don't hesitate to send us suggestions to improve this tool.</p>
                                 </td>
                             </tr></tbody></table></td>
                 
                 
             
-        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-6">
-                        <table class="placeholder-content-area"><tbody><tr><td>
+        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-6 aero">
+                        <table class="placeholder-content-area"><tbody><tr><td class="pink" style="padding: 20px;">
                                 </td>
                             </tr></tbody></table></td>
-                    <td class="col-md-6">
-                        <table class="placeholder-content-area"><tbody><tr><td>
-                                </td>
-                            </tr></tbody></table></td>
-                
-                
-            
-        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-8">
-                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
-                                </td>
-                            </tr></tbody></table></td>
-                    <td class="col-md-4">
-                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
+                    <td class="col-md-6 aero">
+                        <table class="placeholder-content-area"><tbody><tr><td class="pink" style="padding: 20px;">
                                 </td>
                             </tr></tbody></table></td>
                 
                 
             
-        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-4">
-                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
+        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-8 primary">
+                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="purple">
                                 </td>
                             </tr></tbody></table></td>
-                    <td class="col-md-8">
-                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
+                    <td class="col-md-4 primary">
+                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="purple">
                                 </td>
                             </tr></tbody></table></td>
                 
                 
             
-        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-4">
+        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-4 gray">
                         <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
                                 </td>
                             </tr></tbody></table></td>
-                    <td class="col-md-4">
-                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
-                                </td>
-                            </tr></tbody></table></td>
-                    <td class="col-md-4">
+                    <td class="col-md-8 gray">
                         <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
                                 </td>
                             </tr></tbody></table></td>
                 
                 
             
-        </table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-3">
+        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-4 orange">
                         <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
                                 </td>
                             </tr></tbody></table></td>
-                    <td class="col-md-6">
+                    <td class="col-md-4 orange">
                         <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
                                 </td>
                             </tr></tbody></table></td>
-                    <td class="col-md-3">
+                    <td class="col-md-4 orange">
                         <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
                                 </td>
                             </tr></tbody></table></td>
                 
                 
             
-        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-3">
+        </table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-3 pink">
                         <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
                                 </td>
                             </tr></tbody></table></td>
-                    <td class="col-md-3">
+                    <td class="col-md-6 pink">
                         <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
                                 </td>
                             </tr></tbody></table></td>
-                    <td class="col-md-3">
+                    <td class="col-md-3 pink">
                         <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
                                 </td>
                             </tr></tbody></table></td>
-                    <td class="col-md-3">
+                
+                
+            
+        </table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><td class="col-md-3 purple">
+                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
+                                </td>
+                            </tr></tbody></table></td>
+                    <td class="col-md-3 purple">
+                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
+                                </td>
+                            </tr></tbody></table></td>
+                    <td class="col-md-3 purple">
+                        <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
+                                </td>
+                            </tr></tbody></table></td>
+                    <td class="col-md-3 purple">
                         <table class="placeholder-content-area"><tbody><tr><td style="height: 40px">
                                 </td>
                             </tr></tbody></table></td>
@@ -274,6 +309,11 @@
                 
             
         </table><div style="clear: both;height: 100px;"></div>
+    </div>
+    
+    
+    
+    
     
     
     

@@ -11,7 +11,7 @@
     <meta http-equiv="Content-type"
           content="text/html; charset=utf-8">
     <meta name="description" content="Bill Maker">
-    
+    <base href="{{url('/')}}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
