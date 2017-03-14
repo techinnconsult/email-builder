@@ -27,6 +27,7 @@ Route::group(['middleware' => 'guest'], function () {
     //PDF
     Route::post('/save', 'PDFController@save'); // Save or update Template
     Route::get('/pdf/', 'PDFController@index'); // PDF Builder
+    Route::get('/pdf/preview/{template_title}', 'PDFController@preview');
     Route::get('/pdf/templates', 'PDFController@templatesPdf'); // Show All Templates
     Route::get('/pdf/edit/{template_id}', 'PDFController@edit'); // Show Edit PDF Builder
     Route::get('/pdf/delete/{template_id}', 'PDFController@delete'); // Delete PDF Template

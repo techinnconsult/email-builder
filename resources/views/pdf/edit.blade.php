@@ -52,9 +52,13 @@
                         </div>
                     </div>
                     <div class="form-group m-t-12">
-                        <label for="pay-button" class="control-label">Include Pay Button?
-                            &nbsp<input id="pay-button" value="1" type="checkbox" class="pay-button form-control form-white" />
-                        </label>
+                        <label style="cursor: pointer;float:left;" id="pay-button-label" for="pay-button" class="control-label">Include Pay Button?
+                            
+                        </label>&nbsp<input style="float: left;margin-left: 10px;" id="pay-button" value="1" type="checkbox" class="pay-button" />
+                        <div style="clear:both"></div>
+                    </div>
+                    <div id="linksBoxes">
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -96,7 +100,7 @@
     </div>
     <div style="display: none;" class="modal fade" id="modal-export-page" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <!-- MODALS EXPORT PAGE -->
-        <form action="{{url('/save')}}" target="_blank" id="markupForm" method="post">
+        <form action="{{url('/save')}}" id="markupForm" method="post">
             <input type="hidden" name="markup" value="" id="markupField">
             <input type="hidden" value="{{$template->id}}" name="id" >
             <input type="hidden" value="{{$template->pdf_file}}" name="pdf_file" >
@@ -1782,6 +1786,39 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="change-row-background" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- MODAL BACKGROUND COLOR -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icons-office-52"></i>
+                    </button>
+                    <h4 class="modal-title">Change <strong>Row Background</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="colors-list">
+                        <li onclick="changeColor('white')" class="white active"></li>
+                        <li onclick="changeColor('primary')" class="primary"></li>
+                        <li onclick="changeColor('dark')" class="dark"></li>
+                        <li onclick="changeColor('red')" class="red"></li>
+                        <li onclick="changeColor('green')" class="green"></li>
+                        <li onclick="changeColor('blue')" class="blue"></li>
+                        <li onclick="changeColor('aero')" class="aero"></li>
+                        <li onclick="changeColor('gray')" class="gray"></li>
+                        <li onclick="changeColor('orange')" class="orange"></li>
+                        <li onclick="changeColor('pink')" class="pink"></li>
+                        <li onclick="changeColor('purple')" class="purple"></li>
+                    </ul>
+                </div>
+                <input type="hidden" class="selectedRowBg" value="" />
+                <input class="current-row" type="hidden" name="current-row" value="" />
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="save-row-background" class="btn btn-primary btn-embossed">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="color-picker" tabindex="-1" role="dialog" aria-hidden="true">
         <!-- MODAL BACKGROUND COLOR -->
         <div class="modal-dialog">
@@ -1793,20 +1830,20 @@
                 </div>
                 <div class="modal-body">
                     <ul class="colors-list">
-                        <li class="white active"></li>
-                        <li class="primary"></li>
-                        <li class="dark"></li>
-                        <li class="red"></li>
-                        <li class="green"></li>
-                        <li class="blue"></li>
-                        <li class="aero"></li>
-                        <li class="gray"></li>
-                        <li class="orange"></li>
-                        <li class="pink"></li>
-                        <li class="purple"></li>
+                        <li onclick="changeDividerColor('white')" class="white active"></li>
+                        <li onclick="changeDividerColor('primary')" class="primary"></li>
+                        <li onclick="changeDividerColor('dark')" class="dark"></li>
+                        <li onclick="changeDividerColor('red')" class="red"></li>
+                        <li onclick="changeDividerColor('green')" class="green"></li>
+                        <li onclick="changeDividerColor('blue')" class="blue"></li>
+                        <li onclick="changeDividerColor('aero')" class="aero"></li>
+                        <li onclick="changeDividerColor('gray')" class="gray"></li>
+                        <li onclick="changeDividerColor('orange')" class="orange"></li>
+                        <li onclick="changeDividerColor('pink')" class="pink"></li>
+                        <li onclick="changeDividerColor('purple')" class="purple"></li>
                     </ul>
                 </div>
-                <input type="hidden" name="colorsVal" value="" />
+                <input type="hidden" class="dividerColor" name="colorsVal" value="" />
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
                     <button type="button" id="save-divider-color" class="btn btn-primary btn-embossed">Save</button>
@@ -1866,7 +1903,7 @@
                                     foreach($images as $curimg){
                                         if(!in_array($curimg, $ignore)) {
                                             ?>
-                                            <option value="<?php echo 'social-logos/'.$curimg; ?>">
+                                            <option value="<?php echo  url()->to('/').'/social-logos/'.$curimg; ?>">
                                                 <?php $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $curimg); echo $withoutExt; ?>
                                             </option>
                                 <?php
@@ -1938,8 +1975,9 @@
         </div>
     </div>
     <div class="export-page">
-        <a href="#" id="export" class="btn btn-dark btn-square btn-embossed">Preview PDF Template</a>
-        <a href="{{url('/pdf/download/'.$template->pdf_file)}}" id="export" class="btn btn-dark btn-square btn-embossed">Download PDF Template</a>
+        <a href="#" id="export" class="btn btn-dark btn-square btn-embossed">Update PDF Template</a>
+        <a target="_blank" href="{{url('/pdf/preview/'.$template->pdf_file)}}" class="btn btn-dark btn-square btn-embossed">Preview PDF</a>
+        <a href="{{url('/pdf/download/'.$template->pdf_file)}}" class="btn btn-dark btn-square btn-embossed">Download PDF</a>
     </div>
 </div>
 <!-- END PAGE CONTENT -->

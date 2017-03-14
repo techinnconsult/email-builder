@@ -16,17 +16,51 @@ var widgetProfile1 = '<div class="panel widget-member2"><div class="row"><div cl
 var widgetProfile2 = '<div class="panel panel-default"><div class="panel-body p-10"><div class="text-center col-xs-4"><img src="../public/builder/images/avatars/avatar4_big.png" class="img-responsive" alt="avatar 4"></div><div class="clearfix col-xs-8"><h2 class="c-dark w-600">Winston Bowman</h2><p class="c-gray f-16">Photographer</p><p class="c-gray"><i class="fa fa-map-marker p-r-10"></i> Trade Business Park, Ohio</p></div></div><div class="panel-footer p-t-0 p-b-0"><div class="row"><div class="col-xs-4 bg-blue p-20"><div class="text-center m-b-10"><i class="f-24 icon-speech"></i></div><div class="text-center f-16">1568</div></div><div class="col-xs-4 bg-purple p-20"><div class="text-center m-b-10"><i class="f-24 icon-users"></i></div><div class="text-center f-16">866</div></div><div class="col-xs-4 bg-primary p-20"><div class="text-center m-b-10"><i class="f-24 fa icon-heart"></i></div><div class="text-center f-16">254</div></div></div></div></div>';
 var widgetProfile3 = '<div class="panel panel-default hover-effect"><div class="panel-heading h-150 p-0"><img src="../public/builder/images/widgets/profil2.jpg" class="img-responsive hover-img" alt=""></div><div class="panel-body p-10"><div class="clearfix col-lg-6 col-md-12 col-sm-12"><h3 class="c-dark w-600 align-center">Anna Chain</h3><p class="c-gray f-16 align-center">Photographer</p></div><div class="col-lg-6 col-md-12 col-sm-12 p-t-20"><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-speech"></i></div><div class="text-center">1568</div></div><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-users"></i></div><div class="text-center">866</div></div><div class="col-xs-4 c-gray"><div class="text-center m-b-20"><i class="f-24 icon-heart c-red"></i></div><div class="text-center">254</div></div></div></div></div>';
 var widgetProfile4 = '<div class="panel panel-default"><div class="panel-heading h-150 p-0"><img src="../public/builder/images/widgets/mountain.jpg" class="img-responsive" alt=""><div class="profil-name-heading text-center w-700"><div class="f-24">John Snow</div><div class="f-16">photographer</div></div></div><div class="panel-body p-10"><div class="clearfix col-xs-4"><div class="text-center f-32 w-700">1758</div><div class="text-center c-gray w-700">PHOTOS</div></div><div class="col-xs-4"><img class="widget-profil-img-center img-responsive" src="../public/builder/images/widgets/profil3.jpg" alt=""></div><div class="col-xs-4"><div class="text-center f-32 w-700">4557</div><div class="text-center c-gray w-700">FOLLOWERS</div></div></div></div>';
+var currentRow = '';
 
 
+function changeColor(selectColor){
+    $('.selectedRowBg').val(selectColor);
+}
+function changeDividerColor(selectColor){
+    $('.dividerColor').val(selectColor);
+}
 
 $(document).ready(function() {
+    $("#pay-button").change(function(){
+        var tableRows = $('.table-rows').val();
+        if(tableRows > 0){
+            if($('#pay-button').is(':checked')){
+                for(var i = 1; i <= tableRows; i++){
+                    $('#linksBoxes').append('<div class="form-group m-t-6 col-md-6">\n\
+                                                <label class="control-label">Btton Link #'+i+' <small>optionnal</small></label>\n\
+                                                <div class="append-icon">\n\
+                                                    <input type="text" class="table-link'+i+' form-control form-white" /> \n\
+                                                    <i class="icon-pencil"></i>\n\
+                                                </div>\n\
+                                            </div>\n\
+                                            <div class="form-group m-t-6 col-md-6">\n\
+                                                <label class="control-label">Btton Text #'+i+' <small>optionnal</small></label>\n\
+                                                <div class="append-icon">\n\
+                                                    <input type="text" class="table-link-text'+i+' form-control form-white" /> \n\
+                                                    <i class="icon-pencil"></i>\n\
+                                                </div>\n\
+                                            </div>');
+                }
+            }else{
+                 $('#linksBoxes').html('');
+            }
+        }else{
+            $('#linksBoxes').html('');
+        }
+    });
     $(".add-more-social").on('click',function(){ 
         var social_link = $('#social-link').val();
         var social_image = $('#social-image').val();
         if(social_link == ''){
             alert('Please add link');
         }else{
-            $('#socialMediaLinks').append('<a href="'+social_link+'" targe="_blank"><img src="'+social_image+'" style="width:40px;margin-top:10px;margin-left: 20px" /></a>');
+            $('#socialMediaLinks').append('<a href="'+social_link+'" target="_blank"><img src="'+social_image+'" /></a>');
         }
         $('#social-link').val('');
     });
@@ -471,7 +505,7 @@ function handlePageBuilder() {
         }, 200);
     });
     $('#save-social-media').on('click', function() {
-        $('.social').html($('#socialMediaWrapper').html()+'<br style="clear:both" />');
+        $('.social').html($('#socialMediaWrapper').html());
         $('#social-media').modal('hide');
     });
     $('#save-video').on('click', function() {
@@ -480,13 +514,32 @@ function handlePageBuilder() {
         var videoImageSrc = $('#preview-image img').attr('src');
         $('.video-title').val('');
         $('.video-link').val('');
-        $('.current-youtube').append('<p><a href="'+videoLink+'" targe="_blank" class="videoLink"><img class="videoImage" border="0" src="'+videoImageSrc+'" label="Fallback Image"></p></a><br style="clear:both" />');
+        if(videoTitle == ''){
+            $('.current-youtube').append('<p><a href="'+videoLink+'" target="_blank" class="videoLink"><img class="videoImage" border="0" src="'+videoImageSrc+'" label="Fallback Image"></p></a><br style="clear:both;height:50px;" />');
+        }else{
+            $('.current-youtube').append('<p><a href="'+videoLink+'" target="_blank" class="videoLink">'+videoTitle+'</p></a><br style="clear:both;height:50px;" />');
+        }
         $('#preview-image').html('');
         
         $('.current-youtube').css('display', '').removeClass('current-youtube');
         
         $('#video').modal('hide');
     });
+    
+    $('#save-row-background').on('click', function() {
+        var color = $('.selectedRowBg').val();
+        currentRow.removeClass('white primary dark red green blue aero gray orange pink purple');
+        currentRow.find('.placeholder').removeClass('white primary dark red green blue aero gray orange pink purple');
+        currentRow.find('.placeholder .placeholder-content').removeClass('white primary dark red green blue aero gray orange pink purple');
+        currentRow.addClass(color);
+        currentRow.find('.placeholder').addClass(color);
+        currentRow.find('.placeholder .placeholder-content').addClass(color);
+//        currentRow.find('.placeholder-container .placeholder .placeholder-content .placeholder-content-area td').addClass(color);
+        currentRow.find('.placeholder .placeholder-content .placeholder-content-area p').css('padding','20px');
+        $('.selectedRowBg').val('');
+        $('#change-row-background').modal('hide');
+    });
+    
     $('#save-table').on('click', function() {
         var tableHead = tableColumn = tableRow = '';
         var tableTitle = $('.table-title').val();
@@ -509,14 +562,25 @@ function handlePageBuilder() {
                 tableRow += '<td>' + 'Row ' + k + '</td>';
             }
             if($('.pay-button').is(':checked')){
-                tableRow += '<td> <a href="{link' + k + '}"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
+                linkj = j+1;
+                tableLink = $('.table-link'+linkj).val();
+                tableLinkText = $('.table-link-text'+linkj).val();
+                if(tableLinkText == ''){
+                    tableRow += '<td> <a href="' + tableLink + '"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
+                }else{
+                    tableRow += '<td> <a href="' + tableLink + '">'+tableLinkText+'</a></td>';
+                }
             }
             tableRow += '</tr>';
         }
         if (tableStyle == 'table-default' || tableStyle == 'table-striped-cols') tableStyle = '';
         $('.current-table').before(tableTitle);
         $('.current-table').addClass(tableStyle);
-        $('.current-table').append('<thead><tr>' + tableHead + '</tr></thead><tbody>' + tableRow + '</tbody>');
+         if('table-striped-cols' == 'table-' + $('.table-style').val() || 'table-' + $('.table-style').val() == 'table-default' ){
+            $('.current-table').append('<tbody>' + tableRow + '</tbody>');
+        }else{
+            $('.current-table').append('<thead><tr>' + tableHead + '</tr></thead><tbody>' + tableRow + '</tbody>');
+        }
         if($('.current-table').hasClass('table-dynamic')){
           tableDynamic();
         }
@@ -781,6 +845,7 @@ function handlePageBuilder() {
     handleSortableForm();
     draggableLayout();
     draggableElement();
+    changeBackground();
     handleRemove();
     createBuilderNotif();
 }
@@ -985,25 +1050,25 @@ function handleSortable() {
             ui.item.removeClass('ui-draggable');
             if (ui.item.hasClass('layout')) {
                 if (ui.item.data('layout') == 'one-column') {
-                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-12"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-12"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
                 }
                 if (ui.item.data('layout') == 'two-column-50') {
-                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-6"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-6"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-6"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-6"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
                 }
                 if (ui.item.data('layout') == 'two-column-33') {
-                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-8"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div><div class="handle-options"><i class="fa fa-cog"></i></div></div></div><div style="clear:both"></div></div>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-8"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
                 }
                 if (ui.item.data('layout') == 'two-column-66') {
-                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-8"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div><div class="handle-options"><i class="fa fa-cog"></i></div></div></div><div style="clear:both"></div></div>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-8"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
                 }
                 if (ui.item.data('layout') == 'three-column-33') {
-                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-4"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
                 }
                 if (ui.item.data('layout') == 'three-column-25') {
-                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-6"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-6"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
                 }
                 if (ui.item.data('layout') == 'four-column') {
-                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
+                    $(this).children().not(".row").replaceWith('<div class="row"><div class="placeholder-container"><div class="placeholder"><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div><div class="placeholder-content col-md-3"><div class="placeholder-content-area"></div></div></div><div class="placeholder-handle"><div class="handle-move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove"><i class="fa fa-times"></i></div></div></div><div style="clear:both"></div></div>');
                 }
                 if (ui.item.data('layout') == 'custom') {
                     // $this.append('<div class="current-layout"></div>');
@@ -1113,7 +1178,7 @@ function createIcheckEditor() {
 
 function handleRemove() {
     $('.page-content').on('click', '.handle-remove', function() {
-        currentElement = $(this).parent().parent();
+        currentElement = $(this).parent().parent().parent();
         bootbox.confirm('Are you sure you want to remove this section?', function(result) {
             if (result === true) {
                 currentElement.addClass("animated bounceOutRight");
@@ -1122,6 +1187,14 @@ function handleRemove() {
                 }, 300);
             }
         });
+    });
+}
+
+function changeBackground() {
+    $('.page-content').on('click', '.handle-background', function() {
+        currentElement = $(this).parent().parent();
+        currentRow = currentElement;
+        $('#change-row-background').modal('show');
     });
 }
 

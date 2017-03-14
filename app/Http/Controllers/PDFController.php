@@ -72,7 +72,10 @@ class PDFController extends Controller{
                 $tag->setAttribute('src', $src);
             }else{
                 $old_src = $tag->getAttribute('src');
-                $tag->setAttribute('src', url()->to('/')."/".$old_src);
+                $parsed = parse_url($old_src);
+                if (empty($parsed['scheme'])) {
+                    $tag->setAttribute('src', url()->to('/')."/".$old_src);
+                }
             }
         }
         $html =  $doc->saveHTML();
@@ -96,22 +99,22 @@ class PDFController extends Controller{
         chmod($resource_path_pdf.$folder_name . '.blade.php', 0777);
         file_put_contents($resource_path_pdf_edit.$folder_name . '.html', $html_editor);
         chmod($resource_path_pdf_edit.$folder_name . '.html', 0777);
-        if( isset($input['html_file'])){
-            $update_folder_name =  $input['html_file'];
+        if( isset($input['pdf_file'])){
+            $update_folder_name =  $input['pdf_file'];
             $single_template = DB::table('templates')
                 ->select('templates.*')
-                ->where('templates.visitor', $request->ip())
+//                ->where('templates.visitor', $request->ip())
                 ->where('templates.id', $input['id'])
-                ->whereRaw('templates.html_file != "" ')
+                ->whereRaw('templates.pdf_file != "" ')
                 ->orderBy('templates.title', 'asc')
                 ->get()->first();
         }else{
             $update_folder_name = $folder_name;
             $single_template = DB::table('templates')
                 ->select('templates.*')
-                ->where('templates.visitor', $request->ip())
-                ->where('templates.html_file', $update_folder_name)
-                ->whereRaw('templates.html_file != "" ')
+//                ->where('templates.visitor', $request->ip())
+                ->where('templates.pdf_file', $update_folder_name)
+                ->whereRaw('templates.pdf_file != "" ')
                 ->orderBy('templates.title', 'asc')
                 ->get()->first();
         }
@@ -125,8 +128,9 @@ class PDFController extends Controller{
             ->where('id', $single_template->id)
             ->update(['title' => "$title",'pdf_file' => "$folder_name",'updated_at' => date('Y-m-d H:i:s')]);
         }
-        
-        return view('templates.pdf.'.$folder_name);
+        $resource_path_pdf_edit = storage_path() ."/edit-templates/pdf/";
+        $edit_html = file_get_contents($resource_path_pdf_edit.$single_template->pdf_file . '.html');
+        return view('pdf.edit',['template' => $single_template,'edit_html' => $edit_html]);
 //        $options = new Options();
 //        $options->set('defaultFont', 'Courier');
 //        $options->set('isRemoteEnabled', TRUE);
@@ -151,7 +155,7 @@ class PDFController extends Controller{
     public function templatesPdf() {
         $templates = DB::table('templates')
             ->select('templates.*')
-            ->where('templates.visitor', Req::ip())
+//            ->where('templates.visitor', Req::ip())
             ->whereRaw('templates.pdf_file != "" ')
             ->orderBy('templates.title', 'asc')
             ->get();
@@ -162,7 +166,7 @@ class PDFController extends Controller{
         $templates = DB::table('templates')
             ->select('templates.*')
             ->where('templates.pdf_file', $template_title)
-            ->where('templates.visitor', Req::ip())
+//            ->where('templates.visitor', Req::ip())
             ->whereRaw('templates.pdf_file != "" ')
             ->orderBy('templates.title', 'asc')
             ->get()->first();
@@ -175,10 +179,13 @@ class PDFController extends Controller{
         $pdf = PDF::loadView('templates.pdf.'.$template_title);
         return $pdf->download(uniqid().'.pdf');
     }
+    public function preview($template_title) {
+        return view('templates.pdf.'.$template_title);
+    }
     public function delete($template_id){
         $single_template = DB::table('templates')
             ->select('templates.*')
-            ->where('templates.visitor', Req::ip())
+//            ->where('templates.visitor', Req::ip())
             ->where('templates.id', $template_id)
             ->whereRaw('templates.pdf_file != "" ')
             ->orderBy('templates.title', 'asc')

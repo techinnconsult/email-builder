@@ -71,8 +71,11 @@ class HTMLController extends Controller{
                 }
                 $tag->setAttribute('src', $src);
             }else{
-//                $old_src = $tag->getAttribute('src');
-//                $tag->setAttribute('src', url()->to('/')."/".$old_src);
+                $old_src = $tag->getAttribute('src');
+                $parsed = parse_url($old_src);
+                if (empty($parsed['scheme'])) {
+                    $tag->setAttribute('src', url()->to('/')."/".$old_src);
+                }
             }
         }
         $html =  $doc->saveHTML();

@@ -31,10 +31,17 @@ $(document).ready(function() {
         if(tableRows > 0){
             if($('#pay-button').is(':checked')){
                 for(var i = 1; i <= tableRows; i++){
-                    $('#linksBoxes').append('<div class="form-group m-t-12">\n\
+                    $('#linksBoxes').append('<div class="form-group m-t-6 col-md-6">\n\
                                                 <label class="control-label">Btton Link #'+i+' <small>optionnal</small></label>\n\
                                                 <div class="append-icon">\n\
                                                     <input type="text" class="table-link'+i+' form-control form-white" /> \n\
+                                                    <i class="icon-pencil"></i>\n\
+                                                </div>\n\
+                                            </div>\n\
+                                            <div class="form-group m-t-6 col-md-6">\n\
+                                                <label class="control-label">Btton Text #'+i+' <small>optionnal</small></label>\n\
+                                                <div class="append-icon">\n\
+                                                    <input type="text" class="table-link-text'+i+' form-control form-white" /> \n\
                                                     <i class="icon-pencil"></i>\n\
                                                 </div>\n\
                                             </div>');
@@ -525,7 +532,12 @@ function handlePageBuilder() {
             if($('.pay-button').is(':checked')){
                 linkj = j+1;
                 tableLink = $('.table-link'+linkj).val();
-                tableRow += '<td> <a href="' + tableLink + '"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
+                tableLinkText = $('.table-link-text'+linkj).val();
+                if(tableLinkText == ''){
+                    tableRow += '<td> <a href="' + tableLink + '"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
+                }else{
+                    tableRow += '<td> <a href="' + tableLink + '">'+tableLinkText+'</a></td>';
+                }
             }
             tableRow += '</tr>';
         }
@@ -581,7 +593,11 @@ function handlePageBuilder() {
         var videoImageSrc = $('#preview-image img').attr('src');
         $('.video-title').val('');
         $('.video-link').val('');
-        $('.current-youtube').append('<p><a href="'+videoLink+'" targe="_blank" class="videoLink"><img class="videoImage" border="0" src="'+videoImageSrc+'" label="Fallback Image"></a><br style="clear:both" /></p>');
+        if(videoTitle == ''){
+            $('.current-youtube').append('<p><a href="'+videoLink+'" target="_blank" class="videoLink"><img class="videoImage" border="0" src="'+videoImageSrc+'" label="Fallback Image"></p></a><br style="clear:both;height:50px;" />');
+        }else{
+            $('.current-youtube').append('<p><a href="'+videoLink+'" target="_blank" class="videoLink">'+videoTitle+'</p></a><br style="clear:both;height:50px;" />');
+        }
         $('#preview-image').html('');
         
         $('.current-youtube').css('display', '').removeClass('current-youtube');
@@ -1178,15 +1194,6 @@ function changeBackground() {
         currentElement = $(this).parent().parent().parent().parent();
         currentRow = currentElement;
         $('#change-row-background').modal('show');
-//        console.log(currentElement);
-//        bootbox.confirm('Are you sure you want to remove this section?', function(result) {
-//            if (result === true) {
-//                currentElement.addClass("animated bounceOutRight");
-//                window.setTimeout(function() {
-//                    currentElement.remove();
-//                }, 300);
-//            }
-//        });
     });
 }
 

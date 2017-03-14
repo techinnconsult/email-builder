@@ -85,7 +85,38 @@
         </div>
     </div>
     <style type="text/css">
-                        
+                        .white{
+                            background: white !important;
+                        }
+                        .primary{
+                            background: #319db5 !important;
+                        }
+                        .dark{
+                            background: #2B2E33 !important;
+                        }
+                        .red{
+                            background: #C9625F !important;
+                        }
+                        .green{
+                            background: #18a689 !important;
+                        }
+                        .blue{
+                            background: #319DB5 !important;
+                        }
+                        .aero{
+                            background: #B9D5DB !important;
+                        }
+                        .gray{
+                            background: #82848A !important;
+                        }
+                        .orange{
+                            background: #F2A057 !important;
+                        }
+                        .pink{
+                            background: #DC88E6 !important;
+                        }.purple{
+                            background: #A58BD3 !important;
+                        }
                         html{background: #efefef !important; }
                         h1, h2, h3, h4, h5 {
                             font-weight: 100;
@@ -136,7 +167,9 @@
                             font-size: 24px;
                         }
                         td, th {
-                            padding: 0;
+                            /*padding: 0;*/
+                            padding-left: 5px;
+                            padding-right: 12px
                         }
                         .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
                             text-align: left;
@@ -146,10 +179,6 @@
                         }
                         .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
                             text-align: left;
-                        }
-                        .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
-                            display: block;
-                            height: auto;
                         }
                         .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
                             float: left;
@@ -196,14 +225,14 @@
                             max-width: 400px;
                         }
                         .col-md-4 {
-                            width: 30%;
+                            width: 28%;
                         }
                         .col-md-4 img {
                             max-width: 200px
                         }
 
                         .col-md-3 {
-                            width: 22.5%;
+                            width: 20.5%;
                         }
                         .col-md-3 img{
                             max-width: 150px;
@@ -219,6 +248,13 @@
                         img{
                             margin-top: 20px;
                             margin-bottom: 20px;
+                        }
+                        
+                        #socialMediaLinks{
+                             height:70px;
+                        }
+                        #socialMediaLinks img{
+                            width:40px !important;margin-top:10px !important;margin-left: 20px !important;margin-bottom: 10px !important;
                         }
                     </style> 
     <div class="builder-wrapper">
@@ -241,6 +277,7 @@
                 </div>
                 <div class="placeholder-handle">
                     <div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div>
+                        <div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div>
                     <div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div>
                 </div>
             </div>
@@ -260,6 +297,7 @@
                 </div>
                 <div class="placeholder-handle">
                     <div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div>
+                        <div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div>
                     <div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div>
                 </div>
             </div>
@@ -279,6 +317,7 @@
                 </div>
                 <div class="placeholder-handle">
                     <div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div>
+                        <div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div>
                     <div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div>
                 </div>
             </div>
@@ -294,6 +333,7 @@
                 </div>
                 <div class="placeholder-handle">
                     <div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div>
+                        <div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div>
                     <div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div>
                 </div>
             </div>
@@ -347,9 +387,13 @@
                         </div>
                     </div>
                     <div class="form-group m-t-12">
-                        <label for="pay-button" class="control-label">Include Pay Button?
-                            &nbsp<input id="pay-button" value="1" type="checkbox" class="pay-button form-control form-white" />
-                        </label>
+                        <label style="cursor: pointer;float:left;" id="pay-button-label" for="pay-button" class="control-label">Include Pay Button?
+                            
+                        </label>&nbsp<input style="float: left;margin-left: 10px;" id="pay-button" value="1" type="checkbox" class="pay-button" />
+                        <div style="clear:both"></div>
+                    </div>
+                    <div id="linksBoxes">
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -391,7 +435,7 @@
     </div>
     <div class="modal fade" id="modal-export-page" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <!-- MODALS EXPORT PAGE -->
-        <form action="{{url('/save')}}" target="_blank" id="markupForm" method="post">
+        <form action="{{url('/save')}}" id="markupForm" method="post">
             <input type="hidden" name="markup" value="" id="markupField">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="modal-dialog" style="width:500px">
@@ -2075,6 +2119,39 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="change-row-background" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- MODAL BACKGROUND COLOR -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icons-office-52"></i>
+                    </button>
+                    <h4 class="modal-title">Change <strong>Row Background</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="colors-list">
+                        <li onclick="changeColor('white')" class="white active"></li>
+                        <li onclick="changeColor('primary')" class="primary"></li>
+                        <li onclick="changeColor('dark')" class="dark"></li>
+                        <li onclick="changeColor('red')" class="red"></li>
+                        <li onclick="changeColor('green')" class="green"></li>
+                        <li onclick="changeColor('blue')" class="blue"></li>
+                        <li onclick="changeColor('aero')" class="aero"></li>
+                        <li onclick="changeColor('gray')" class="gray"></li>
+                        <li onclick="changeColor('orange')" class="orange"></li>
+                        <li onclick="changeColor('pink')" class="pink"></li>
+                        <li onclick="changeColor('purple')" class="purple"></li>
+                    </ul>
+                </div>
+                <input type="hidden" class="selectedRowBg" value="" />
+                <input class="current-row" type="hidden" name="current-row" value="" />
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="save-row-background" class="btn btn-primary btn-embossed">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="color-picker" tabindex="-1" role="dialog" aria-hidden="true">
         <!-- MODAL BACKGROUND COLOR -->
         <div class="modal-dialog">
@@ -2086,20 +2163,20 @@
                 </div>
                 <div class="modal-body">
                     <ul class="colors-list">
-                        <li class="white active"></li>
-                        <li class="primary"></li>
-                        <li class="dark"></li>
-                        <li class="red"></li>
-                        <li class="green"></li>
-                        <li class="blue"></li>
-                        <li class="aero"></li>
-                        <li class="gray"></li>
-                        <li class="orange"></li>
-                        <li class="pink"></li>
-                        <li class="purple"></li>
+                        <li onclick="changeDividerColor('white')" class="white active"></li>
+                        <li onclick="changeDividerColor('primary')" class="primary"></li>
+                        <li onclick="changeDividerColor('dark')" class="dark"></li>
+                        <li onclick="changeDividerColor('red')" class="red"></li>
+                        <li onclick="changeDividerColor('green')" class="green"></li>
+                        <li onclick="changeDividerColor('blue')" class="blue"></li>
+                        <li onclick="changeDividerColor('aero')" class="aero"></li>
+                        <li onclick="changeDividerColor('gray')" class="gray"></li>
+                        <li onclick="changeDividerColor('orange')" class="orange"></li>
+                        <li onclick="changeDividerColor('pink')" class="pink"></li>
+                        <li onclick="changeDividerColor('purple')" class="purple"></li>
                     </ul>
                 </div>
-                <input type="hidden" name="colorsVal" value="" />
+                <input type="hidden" class="dividerColor" name="colorsVal" value="" />
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-embossed color-close" data-dismiss="modal">Cancel</button>
                     <button type="button" id="save-divider-color" class="btn btn-primary btn-embossed">Save</button>
@@ -2159,7 +2236,7 @@
                                     foreach($images as $curimg){
                                         if(!in_array($curimg, $ignore)) {
                                             ?>
-                                            <option value="<?php echo 'social-logos/'.$curimg; ?>">
+                                            <option value="<?php echo  url()->to('/').'/social-logos/'.$curimg; ?>">
                                                 <?php $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $curimg); echo $withoutExt; ?>
                                             </option>
                                 <?php
@@ -2231,7 +2308,7 @@
         </div>
     </div>
     <div class="export-page">
-        <a href="#" id="export" class="btn btn-dark btn-square btn-embossed">Export PDF Template</a>
+        <a href="#" id="export" class="btn btn-dark btn-square btn-embossed">Save PDF Template</a>
     </div>
 </div>
 <!-- END PAGE CONTENT -->
