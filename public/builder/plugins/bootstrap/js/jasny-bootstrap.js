@@ -906,11 +906,29 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
       var reader = new FileReader()
       var preview = this.$preview
       var element = this.$element
-
+      
       reader.onload = function(re) {
         var $img = $('<img>')
-        $img[0].src = re.target.result
-        files[0].result = re.target.result
+//        console.log(re.target.result);
+        
+        var data = new FormData();
+        var csrf_token = $('meta[name=csrf-token]').attr('content');
+        var main_path = $('base').attr('href');
+        data.append('image', file);
+
+        data.append('_token', csrf_token);
+        $.ajax({
+              url: main_path+'/upload',
+              type: 'POST',
+              data: data,
+              cache: false,
+              processData: false, // Don't process the files
+              contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+              success: function(response){
+                  $img[0].src = response
+                  files[0].result = response
+              }
+        });
         
         element.find('.fileinput-filename').text(file.name)
         

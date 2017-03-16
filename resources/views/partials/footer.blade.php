@@ -29,7 +29,7 @@
     <script src="{{url('builder/plugins/charts-sparkline')}}/sparkline.min.js"></script> <!-- Charts Sparkline -->
     <script src="{{url('builder/plugins/retina')}}/retina.min.js"></script>  <!-- Retina Display -->
     <script src="{{url('builder/plugins/jquery-cookies')}}/jquery.cookies.js"></script> <!-- Jquery Cookies, for theme -->
-    <script src="{{url('builder/plugins/bootstrap/js')}}/jasny-bootstrap.min.js"></script> <!-- File Upload and Input Masks -->
+    <script src="{{url('builder/plugins/bootstrap/js')}}/jasny-bootstrap.js"></script> <!-- File Upload and Input Masks -->
     <script src="{{url('builder/plugins/select2/dist/js')}}/select2.full.min.js"></script> <!-- Select Inputs -->
     <script src="{{url('builder/plugins/bootstrap-tags-input')}}/bootstrap-tagsinput.min.js"></script> <!-- Select Inputs -->
     <script src="{{url('builder/plugins/bootstrap-loading')}}/lada.min.js"></script> <!-- Buttons Loading State -->

@@ -103,7 +103,7 @@ class HTMLController extends Controller{
             $update_folder_name =  $input['html_file'];
             $single_template = DB::table('templates')
                 ->select('templates.*')
-                ->where('templates.visitor', $request->ip())
+//                ->where('templates.visitor', $request->ip())
                 ->where('templates.id', $input['id'])
                 ->whereRaw('templates.html_file != "" ')
                 ->orderBy('templates.title', 'asc')
@@ -112,7 +112,7 @@ class HTMLController extends Controller{
             $update_folder_name = $folder_name;
             $single_template = DB::table('templates')
                 ->select('templates.*')
-                ->where('templates.visitor', $request->ip())
+//                ->where('templates.visitor', $request->ip())
                 ->where('templates.html_file', $update_folder_name)
                 ->whereRaw('templates.html_file != "" ')
                 ->orderBy('templates.title', 'asc')
@@ -176,5 +176,10 @@ class HTMLController extends Controller{
         }
         DB::table('templates')->where('id', $template_id)->delete();
         return redirect()->action('HTMLController@templates');
+    }
+    
+    public function uploadImage(Request $request){
+        print_r($request);
+         return response()->json(['success'=>'done']);
     }
 }

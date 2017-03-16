@@ -64,25 +64,34 @@ $(document).ready(function() {
         }
         $('#social-link').val('');
     });
-    $('.video-images').on('change', function(){ //on file input change
+    $('.video-images').on('change', function(e){ //on file input change
         if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
         {
             $('#preview-image').html(''); //clear html of output element
-            var data = $(this)[0].files; //this file data
-            
-            $.each(data, function(index, file){ //loop though each file
-                if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type
-                    var fRead = new FileReader(); //new filereader
-                    fRead.onload = (function(file){ //trigger function on successful read
-                    return function(e) {
-                        var img = $('<img/>').addClass('thumb').attr('src', e.target.result); //create image element 
+            var files = e.target.files === undefined ? (e.target && e.target.value ? [{ name: e.target.value.replace(/^.+\\/, '')}] : []) : e.target.files;
+            var file = files[0];
+
+            if ((typeof file.type !== "undefined" ? file.type.match(/^image\/(gif|png|jpeg)$/) : file.name.match(/\.(gif|png|jpe?g)$/i)) && typeof FileReader !== "undefined") {   
+                var data = new FormData();
+                var csrf_token = $('meta[name=csrf-token]').attr('content');
+                var main_path = $('base').attr('href');
+                data.append('image', file);
+
+                data.append('_token', csrf_token);
+                $.ajax({
+                      url: main_path+'/upload',
+                      type: 'POST',
+                      data: data,
+                      cache: false,
+                      processData: false, // Don't process the files
+                      contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+                      success: function(response){
+                        var img = $('<img/>').addClass('thumb').attr('src', response); //create image element 
                         $('#preview-image').append(img); //append image to output element
                         $('#preview-image img').css('width','100%');
-                    };
-                    })(file);
-                    fRead.readAsDataURL(file); //URL representing the file's data.
-                }
-            });
+                      }
+                });
+            }
             
         }else{
             alert("Your browser doesn't support File API!"); //if File API is absent
