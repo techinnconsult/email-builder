@@ -517,6 +517,13 @@ function handlePageBuilder() {
     $('#some_text_box').on('input propertychange paste', function() {
         // do your stuff
     });
+    
+    $('#save-button').on('click', function() {
+        var text = $('.button-title').val();
+        $('.Button').html('<button type="button" class="btn">'+text+'</button>');
+        $('#form-button').modal('hide');
+    });
+    
     $('#save-table').on('click', function() {
         var tableHead = tableColumn = tableRow = tableLink = '';
         var tableTitle = $('.table-title').val();
@@ -815,14 +822,22 @@ function handlePageBuilder() {
 
     $('.builder-wrapper').on('click', '.placeholder p', function() {
         removeEditor($(this));
-        createEditor($(this));
+        createEditorAirMode($(this));
     });
-    $('.builder-wrapper').on('click', '.placeholder h1, .placeholder h2, .placeholder h3,.placeholder h4, label,.placeholder button,.placeholder .table th,.placeholder .table td,.placeholder li,.placeholder li a,.placeholder .title, .placeholder .number, .placeholder small', function() {
+    $('.builder-wrapper').on('click', '.placeholder h1, .placeholder h2, .placeholder h3,.placeholder h4, label,.placeholder button,.placeholder th,.placeholder td,.placeholder li,.placeholder li a,.placeholder .title, .placeholder .number, .placeholder small', function() {
         /* Prevent to remove editor if toolbar button is clicked */
         if (!$(this).parent().parent().hasClass('note-toolbar')) {
             removeEditor($(this));
             createEditorAirMode($(this));
         }
+    });
+    $('.footer').on('click', 'p', function() {
+        removeEditor($(this));
+        createEditorAirMode($(this));
+    });
+    $('.placeholder-content').on('click', 'div', function() {
+        removeEditor($(this));
+        createEditorAirMode($(this));
     });
     $('.footer').on('click', 'p', function() {
         removeEditor($(this));
@@ -899,6 +914,10 @@ function handleDroppable() {
                 if (ui.draggable.data('element') == 'payButton') {
                     $this.append('<p class="linkButton">&nbsp</p>');
                     $('#payButtonPop').modal('show');
+                }
+                if (ui.draggable.data('element') == 'Button') {
+                    $this.append('<p class="Button">&nbsp</p>');
+                    $('#form-button').modal('show');
                 }
                 if (!$this.parent().hasClass('active')) {
                     if ($this.children().hasClass('select-image')) {

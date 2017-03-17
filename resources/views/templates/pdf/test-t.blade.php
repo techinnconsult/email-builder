@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body class="sidebar-top fixed-sidebar theme-sdtl color-default fixed-topbar">  <section><style>.main-content{width:800px;margin: auto;}</style><div class="container">    
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body class="sidebar-top theme-sdtl color-default fixed-topbar">  <section><style>.main-content{width:800px;margin: auto;}</style><div class="container">    
     <div class="main-content">
         <div class="row">
             <div class="col-md-12 intro">
@@ -94,7 +94,9 @@
                             font-size: 24px;
                         }
                         td, th {
-                            padding: 0;
+                            /*padding: 0;*/
+                            padding-left: 5px;
+                            padding-right: 12px
                         }
                         .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
                             text-align: left;
@@ -181,12 +183,92 @@
                         #socialMediaLinks img{
                             width:40px !important;margin-top:10px !important;margin-left: 20px !important;margin-bottom: 10px !important;
                         }
-                    </style><div class="row"><div class="col-md-3"></div><div class="col-md-6"></div><div class="col-md-3"></div><div style="clear:both"></div></div><div class="row"><div class="col-md-3"></div><div class="col-md-3"></div><div class="col-md-3"></div><div class="col-md-3"><img src="http://localhost/email-builder/public/templates/mtn/images/58cb7f728d528.png" class="img-responsive"></div><div style="clear:both"></div></div><div class="row"><div class="col-md-3"></div><div class="col-md-3"></div><div class="col-md-3"></div><div class="col-md-3"><p class="" style=""></p><p style="text-align: right;">Coremobile </p><p style="text-align: right;">Coremobile Address </p><p style="text-align: right;">billing@postpaidbills.com</p><p></p></div><div style="clear:both"></div></div><div class="row"><div class="col-md-12"><p class="" style=""></p><div style="text-align: center;"><span style="font-weight: bold;">Coremobile</span></div><p></p><p class="" style=""></p><div align="right"><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</b></div></div><div style="clear:both"></div></div><div class="row"><div class="col-md-4"><p class="" style=""></p><p><span style="font-weight: bold;">INVOICE INFORMATION</span> </p><p class="" style="">Invoice Date: 2017-02-24 17:19:30</p><p></p><p class="" style=""></p><p></p><p></p><p></p><p class="" style=""><span style="font-weight: bold;">CUSTOMER INFORMATION</span>  </p><p class="" style="">Email: eunushosen@gmail.com </p><p class="" style="">Phone: 8801937123726</p><p></p></div><div class="col-md-8"></div><div style="clear:both"></div></div><div class="row" style=""><div class="col-md-12"><p class="" style=""></p><div style="text-align: center;"><span style="font-weight: bold;">Postpaid Bill Statement</span><br></div><p></p></div><div style="clear:both"></div></div><div class="row"><div class="col-md-12"><table class="table table-bordered" style=""><thead><tr><th class="">Month</th><th class="">Email</th><th class="">Subscriber Number<br></th><th class="">Amount</th><th class="">VAT</th><th class="">Total</th><th class="">Details</th><th class="">Pay</th></tr></thead><tbody><tr><td class="">Julay</td><td class="">eunushosen@gmail.com</td><td class="">8801725588969</td><td class="">200.00</td><td class="">0.00</td><td class="">200.00</td><td class="">BDT</td><td> <a href="http://www.postpaidbills.dev/bills/14879567703083"><img src="http://localhost/email-builder/public/builder/images/pay-now-button.png" style="width:100px;"></a></td></tr><tr><td class="">August</td><td class="">eunushosen@gmail.com</td><td class="">8801725588969</td><td class="">200.00</td><td class="">0.00</td><td class="">200.00</td><td class="">BDT</td><td> <a href="http://www.postpaidbills.dev/bills/14879567703083"><img src="http://localhost/email-builder/public/builder/images/pay-now-button.png" style="width:100px;"></a></td></tr></tbody></table></div><div style="clear:both"></div></div><div class="row" style=""><div class="col-md-12"><table class="table" style=""><tbody><tr><td>Row 0</td><td>Row 1</td><td>Row 2</td><td>Row 3</td><td>Row 4</td><td>Row 5</td><td> <a href="http://test.com">test</a></td></tr><tr><td>Row 0</td><td>Row 1</td><td>Row 2</td><td>Row 3</td><td>Row 4</td><td>Row 5</td><td> <a href="http://test2.com">test2</a></td></tr><tr><td>Row 0</td><td>Row 1</td><td>Row 2</td><td>Row 3</td><td>Row 4</td><td>Row 5</td><td> <a href="http://test3.com">test3</a></td></tr></tbody></table></div><div style="clear:both"></div></div><div class="row" style=""><div class="col-md-12"><img src="http://localhost/email-builder/public/templates/mtn/images/58cb7f728e20b.png" class="img-responsive"></div><div style="clear:both"></div></div><div class="row"><div class="col-md-12"><div class="divider" style="border-top: 1px solid #FFF;width:100%;margin-top:12px;height:0px;"> </div></div><div style="clear:both"></div></div><div class="row"><div class="col-md-12"><p class="" style=""></p><div style="text-align: center;"><span style="font-weight: bold;">Field 1!</span><br></div><p></p></div><div style="clear:both"></div></div><div class="row"><div class="col-md-12"><div class="divider" style="border-top: 1px solid #FFF;width:100%;margin-top:12px;height:0px;"> </div></div><div style="clear:both"></div></div>
-        
-        
-        
+                        .btn{
+                            height:35px;
+                        }
+                        .btn:hover {
+                            color: #fff;
+                            outline: 0;
+                            outline: none;
+                        }
+                        .btn {
+                                display: inline-block;
+                                padding: 6px 12px;
+                                margin-bottom: 0;
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 1.42857143;
+                                text-align: center;
+                                white-space: nowrap;
+                                vertical-align: middle;
+                                cursor: pointer;
+                                background-image: none;
+                                border: 1px solid transparent;
+                                border-radius: 4px;
+                        }
+                    </style><div class="row">
+            
+                
+                    <div class="col-md-12">
+                        <div class="header">
+                            <h2>Admin PDF <strong>Builder</strong></h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb"><li class="c-primary">Make</li>
+                                    <li class="c-primary">Builder</li>
+                                    <li class="active">PDF Builder</li></ol><h1>
+                                
+                            
+                            </h1></div>
+                        </div>
+                    <p class="" style=""></p><div style="text-align: center;">Lorem ipsum dolor sit am<font color="#9C00FF"><b>et, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</b></font> proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div><p></p></div>
+                
+                
+            
+            <div style="clear:both"></div>
+        </div>
+        <div class="row">
+            
+                
+                    <div class="col-md-6">
+                        
+                    <p class="Button"><button type="button" class="btn">test</button></p><p class="" style=""></p><div style="text-align: center;"><span style="font-weight: bold;" class=""><div style="text-align: left;">Trdt</div></span></div><p></p></div>
+                    <div class="col-md-6">
+                        
+                    <p class="" style=""></p><div align="center"><b>Test</b></div><p></p><p class="" style=""></p><div style="text-align: center;"><span style="font-weight: bold;" class=""><div style="text-align: center;"><span style="font-weight: bold;" class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div></span></div><p></p></div>
+                
+                
+            
+            <div style="clear:both"></div>
+        </div>
+        <div class="row">
+            
+                
+                    <div class="col-md-8">
+                        
+                    <p class="" style=""></p><div style="text-align: center;"><span style="font-weight: bold;" class="">Test</span></div><p></p><p class="" style="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    <div class="col-md-4">
+                        
+                    <p class="" style=""></p><div style="text-align: center;"><span style="font-weight: bold;" class="">teunt mollit anim id est laborum.</span></div><p></p></div>
+                
+                
+            
+            <div style="clear:both"></div>
+        </div><div class="row"><div class="col-md-12"><p class="" style=""></p><div align="center"><b>Test</b><br></div><p></p></div><div style="clear:both"></div></div>
+        <div class="row">
+            
+                
+                    <div class="col-md-12 ui-droppable-hover drop-hover">
+                        
+                    <p class="" style=""></p><div style="text-align: center;"><span style="font-weight: bold;" class="">Test</span></div><p></p></div>
+                
+                
+            
+            <div style="clear:both"></div>
+        </div>
     
         </div>
+    
+    
     
     
     

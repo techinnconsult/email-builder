@@ -602,6 +602,11 @@ function handlePageBuilder() {
         $('.linkButton').html('<a href="' + link + '"><img src="builder/images/pay-now-button.png" style="width:200px;" /></a>');
         $('#payButtonPop').modal('hide');
     });
+    $('#save-button').on('click', function() {
+        var text = $('.button-title').val();
+        $('.Button').html('<button type="button" class="btn">'+text+'</button>');
+        $('#form-button').modal('hide');
+    });
     
     $('#save-divider-color').on('click', function() {
 //        $('.colors-list li').removeClass('active');
@@ -834,6 +839,10 @@ function handlePageBuilder() {
         removeEditor($(this));
         createEditorAirMode($(this));
     });
+    $('.placeholder-content').on('click', 'div span', function() {
+        removeEditor($(this));
+        createEditor($(this));
+    });
     $('.builder-wrapper').on('click', '.placeholder .select-image', function() {
         addImage();
     });
@@ -902,6 +911,10 @@ function handleDroppable() {
                 if (ui.draggable.data('element') == 'payButton') {
                     $this.append('<p class="linkButton">&nbsp</p>');
                     $('#payButtonPop').modal('show');
+                }
+                if (ui.draggable.data('element') == 'Button') {
+                    $this.append('<p class="Button">&nbsp</p>');
+                    $('#form-button').modal('show');
                 }
                 if (!$this.parent().hasClass('active')) {
                     if ($this.children().hasClass('select-image')) {
@@ -1165,9 +1178,9 @@ function createEditorAirMode(element) {
 }
 
 function removeEditor(element) {
-    $('.placeholder p, .placeholder h1, .placeholder h2, .placeholder h2, .placeholder h3, .placeholder label, .placeholder button, .placeholder th, .placeholder td, .placeholder li, .placeholder li a').removeClass('editing');
+    $('.placeholder div, .placeholder span, .placeholder p, .placeholder h1, .placeholder h2, .placeholder h2, .placeholder h3, .placeholder label, .placeholder button, .placeholder th, .placeholder td, .placeholder li, .placeholder li a').removeClass('editing');
     $(this).addClass('editing');
-    $('.placeholder p, .placeholder h1, .placeholder h2, .placeholder h2, .placeholder h3, .placeholder label, .placeholder button, .placeholder th, .placeholder td, .placeholder li, .placeholder li a').each(function() {
+    $('.placeholder div, .placeholder span,.placeholder p, .placeholder h1, .placeholder h2, .placeholder h2, .placeholder h3, .placeholder label, .placeholder button, .placeholder th, .placeholder td, .placeholder li, .placeholder li a').each(function() {
         if (!$(this).hasClass('editing')) {
             $(this).destroy();
         }

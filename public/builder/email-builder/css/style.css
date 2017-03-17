@@ -4073,7 +4073,7 @@ body:not(.fixed-sidebar):not(.fixed-topbar):not(.sidebar-top) .sidebar .logopane
   font-size: 15px;
   margin-bottom: 15px;
   margin-top: 25px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .main-content .page-content::after {
   clear: both;

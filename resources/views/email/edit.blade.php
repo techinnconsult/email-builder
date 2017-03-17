@@ -210,6 +210,32 @@
             </div>
         </div>
     </div>
+    
+    <div class="modal fade" id="form-button" tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- MODAL BUTTONS -->
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header bg-primary">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icons-office-52"></i>
+                  </button>
+                  <h4 class="modal-title"><strong>Add</strong> Buttons</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group m-t-10">
+                        <label class="control-label">Button Text </label>
+                        <div class="append-icon">
+                            <input type="text" class="button-title form-control form-white" />
+                            <i class="icon-pencil"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="save-button" class="btn btn-primary btn-embossed">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="color-picker" tabindex="-1" role="dialog" aria-hidden="true">
         <!-- MODAL BACKGROUND COLOR -->
         <div class="modal-dialog">
