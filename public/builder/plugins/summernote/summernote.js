@@ -2115,6 +2115,7 @@
           edit: 'Edit',
           textToDisplay: 'Text to display',
           url: 'To what URL should this link go?',
+          showLinkButon: 'Style as Link Button',
           openInNewWindow: 'Open in new window'
         },
         table: {
@@ -2984,6 +2985,7 @@
       var linkUrl = linkInfo.url;
       var linkText = linkInfo.text;
       var isNewWindow = linkInfo.newWindow;
+      var isNewClass = linkInfo.newClass;
       var rng = linkInfo.range;
 
       if (options.onCreateLink) {
@@ -2996,7 +2998,8 @@
       var anchor = rng.insertNode($('<A>' + linkText + '</A>')[0], true);
       $(anchor).attr({
         href: linkUrl,
-        target: isNewWindow ? '_blank' : ''
+        target: isNewWindow ? '_blank' : '',
+        class: isNewClass ? 'link-btn' : ''
       });
 
       range.createFromNode(anchor).select();
@@ -3556,7 +3559,8 @@
         var $linkText = $linkDialog.find('.note-link-text'),
         $linkUrl = $linkDialog.find('.note-link-url'),
         $linkBtn = $linkDialog.find('.note-link-btn'),
-        $openInNewWindow = $linkDialog.find('input[type=checkbox]');
+        $openInNewWindow = $linkDialog.find('#newWindow'),
+        $showLinkButon = $linkDialog.find('#linkButton');
 
         $linkDialog.one('shown.bs.modal', function () {
           $linkText.val(linkInfo.text);
@@ -3583,6 +3587,7 @@
           }).val(linkInfo.url).trigger('focus').trigger('select');
 
           $openInNewWindow.prop('checked', linkInfo.newWindow);
+          $showLinkButon.prop('checked', linkInfo.newClass);
 
           $linkBtn.one('click', function (event) {
             event.preventDefault();
@@ -3591,7 +3596,8 @@
               range: linkInfo.range,
               url: $linkUrl.val(),
               text: $linkText.val(),
-              newWindow: $openInNewWindow.is(':checked')
+              newWindow: $openInNewWindow.is(':checked'),
+              newClass: $showLinkButon.is(':checked')
             });
             $linkDialog.modal('hide');
           });
@@ -4938,8 +4944,11 @@
                    '</div>' +
                    (!options.disableLinkTarget ?
                      '<div class="checkbox">' +
-                       '<label>' + '<input type="checkbox" checked> ' +
+                       '<label>' + '<input id="newWindow" type="checkbox" checked> ' +
                          lang.link.openInNewWindow +
+                       '</label>' +
+                       '<label>' + '<input id="linkButton" type="checkbox" checked> ' +
+                         lang.link.showLinkButon +
                        '</label>' +
                      '</div>' : ''
                    );

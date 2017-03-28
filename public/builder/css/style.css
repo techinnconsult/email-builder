@@ -309,6 +309,11 @@ a.scrollup:hover {
     border: none;
   }
 }
+#newWindow, #linkButton{
+    margin-left: 5px;
+    position: relative;
+    margin-right: 5px;
+}
 .loader-overlay {
   -moz-opacity: 1;
   -moz-perspective: 10000;
