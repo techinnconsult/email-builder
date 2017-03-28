@@ -108,21 +108,19 @@ class PDFController extends Controller{
                 ->whereRaw('templates.pdf_file != "" ')
                 ->orderBy('templates.title', 'asc')
                 ->get()->first();
-        }else{
-            $update_folder_name = $folder_name;
-            $single_template = DB::table('templates')
-                ->select('templates.*')
-//                ->where('templates.visitor', $request->ip())
-                ->where('templates.pdf_file', $update_folder_name)
-                ->whereRaw('templates.pdf_file != "" ')
-                ->orderBy('templates.title', 'asc')
-                ->get()->first();
         }
         
-        if(count($single_template) == 0 && !isset($input['id'])){
+        if(!isset($single_template)){
             $html_id = DB::table('templates')->insertGetId(['title' => $title,
                 'html_file' => '', 'pdf_file' => $folder_name,
                 'visitor' => $request->ip(), 'created_at' => date('Y-m-d H:i:s')]);
+            $single_template = DB::table('templates')
+                ->select('templates.*')
+//                ->where('templates.visitor', $request->ip())
+                ->where('templates.id', $html_id)
+                ->whereRaw('templates.pdf_file != "" ')
+                ->orderBy('templates.title', 'asc')
+                ->get()->first();
         }else{
             DB::table('templates')
             ->where('id', $single_template->id)

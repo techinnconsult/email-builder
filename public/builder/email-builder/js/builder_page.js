@@ -31,19 +31,26 @@ $(document).ready(function() {
         if(tableRows > 0){
             if($('#pay-button').is(':checked')){
                 for(var i = 1; i <= tableRows; i++){
-                    $('#linksBoxes').append('<div class="form-group m-t-6 col-md-6">\n\
+                    $('#linksBoxes').append('<div class="form-group m-t-6 col-md-6" style="float:left;width: 275px;">\n\
                                                 <label class="control-label">Btton Link #'+i+' <small>optionnal</small></label>\n\
                                                 <div class="append-icon">\n\
                                                     <input type="text" class="table-link'+i+' form-control form-white" /> \n\
                                                     <i class="icon-pencil"></i>\n\
                                                 </div>\n\
                                             </div>\n\
-                                            <div class="form-group m-t-6 col-md-6">\n\
+                                            <div class="form-group m-t-6 col-md-6" style="float:left;width: 275px;">\n\
                                                 <label class="control-label">Btton Text #'+i+' <small>optionnal</small></label>\n\
                                                 <div class="append-icon">\n\
                                                     <input type="text" class="table-link-text'+i+' form-control form-white" /> \n\
                                                     <i class="icon-pencil"></i>\n\
                                                 </div>\n\
+                                            </div>\n\
+                                            <div class="form-group m-t-6 col-md-12">\n\
+                                                    <select id="button-type'+i+'" class="table-style form-control" data-placeholder="Choose Link style...">\n\
+                                                    \n\<option value="">Select Link Style</optopm>\n\
+                                                    \n\<option value="linkButton">Link Button</optopm>\n\
+                                                    \n\<option value="link">Link </optopm>\n\
+                                                    </select> \n\
                                             </div>');
                 }
             }else{
@@ -549,10 +556,17 @@ function handlePageBuilder() {
                 linkj = j+1;
                 tableLink = $('.table-link'+linkj).val();
                 tableLinkText = $('.table-link-text'+linkj).val();
-                if(tableLinkText == ''){
+                tableLinkType = $('#button-type'+linkj).val();
+                if(tableLinkText == '' && tableLink != ''){
                     tableRow += '<td> <a href="' + tableLink + '"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a></td>';
+                }else if(tableLinkType != ''){
+                    if(tableLinkType == 'linkButton'){
+                        tableRow += '<td> <a class="link-btn" href="' + tableLink + '">'+tableLinkText+'</a></td>';
+                    }else{
+                        tableRow += '<td> <a href="' + tableLink + '">'+tableLinkText+'</a></td>';
+                    }
                 }else{
-                    tableRow += '<td> <a href="' + tableLink + '">'+tableLinkText+'</a></td>';
+                        tableRow += '<td> </td>';
                 }
             }
             tableRow += '</tr>';
@@ -573,7 +587,8 @@ function handlePageBuilder() {
     });
     $('#save-pay-link').on('click', function() {
         var link = $('.pay-link-button').val();
-        $('.linkButton').html('<a href="' + link + '"><img src="builder/images/pay-now-button.png" style="width:100px;" /></a>');
+        var text = $('.pay-text').val();
+        $('.linkButton').html('<a class="link-btn" href="' + link + '">'+text+'</a>');
         $('#payButtonPop').modal('hide');
     });
     

@@ -260,11 +260,20 @@
                     </button>
                     <h4 class="modal-title">Add <strong>Pay Button</strong></h4>
                 </div>
-                <div class="form-group m-t-10 form-link">
-                    <label class="control-label">Pay Button Link:</label>
-                    <div class="append-icon">
-                        <input required="" type="text" name="pay-link-button" class="pay-link-button html-file-name form-control form-white required" />
-                        <i class="icon-link-url"></i>
+                <div class="modal-body">
+                    <div class="form-group m-t-10 form-link">
+                        <label class="control-label">Pay Button Text:</label>
+                        <div class="append-icon">
+                            <input required="" type="text" name="pay-text" class="pay-text html-file-name form-control form-white required" />
+                            <i class="icon-link-url"></i>
+                        </div>
+                    </div>
+                    <div class="form-group m-t-10 form-link">
+                        <label class="control-label">Pay Button Link:</label>
+                        <div class="append-icon">
+                            <input required="" type="text" name="pay-link-button" class="pay-link-button html-file-name form-control form-white required" />
+                            <i class="icon-link-url"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -76,7 +76,7 @@
                     <div data-element="divider" class="element">Divider</div>
                     <div data-element="social" class="element">Social Media</div>
                     <div data-element="payButton" class="element">Link Button</div>
-                    <div data-element="Button" class="element">Button</div>
+                    <!--<div data-element="Button" class="element">Button</div>-->
                 </div>
                 <div class="tab-pane fade" id="widgets">
                     <div data-widget="news" class="build-widget">News</div>
@@ -264,48 +264,26 @@
                             outline: 0;
                             outline: none;
                         }
-                        .btn {
-                                display: inline-block;
-                                padding: 6px 12px;
-                                margin-bottom: 0;
-                                font-size: 14px;
-                                font-weight: 400;
-                                line-height: 1.42857143;
-                                text-align: center;
-                                white-space: nowrap;
-                                vertical-align: middle;
-                                cursor: pointer;
-                                background-image: none;
-                                border: 1px solid transparent;
-                                border-radius: 4px;
+                        .link-btn {
+                            display: inline-block;
+                            padding: 10px 20px;
+                            margin-bottom: 0;
+                            font-size: 14px;
+                            font-weight: 600;
+                            line-height: 1.42857143;
+                            text-align: center;
+                            white-space: nowrap;
+                            vertical-align: middle;
+                            cursor: pointer;
+                            border: 1px solid #319DB5;
+                            border-radius: 4px;
+                            background: #319DB5 !important;
+                            color: #FFF;
+                            text-decoration: none !important;
+                            height: auto !important;
                         }
                     </style> 
     <div class="builder-wrapper">
-        <div class="row">
-            <div class="placeholder-container">
-                <div class="placeholder">
-                    <div class="placeholder-content col-md-12">
-                        <div class="header">
-                            <h2>Admin PDF <strong>Builder</strong></h2>
-                            <div class="breadcrumb-wrapper">
-                                <ol class="breadcrumb">
-                                    <li class="c-primary">Make</li>
-                                    <li class="c-primary">Builder</li>
-                                    <li class="active">PDF Builder</li>
-                                </ol>
-                            </div>
-                            <p>Welcome to Make page builder! You can customize easily and quickly your page. Don't hesitate to send us suggestions to improve this tool.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="placeholder-handle">
-                    <div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div>
-                        <div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div>
-                    <div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div>
-                </div>
-            </div>
-            <div style="clear:both"></div>
-        </div>
         <div class="row">
             <div class="placeholder-container">
                 <div class="placeholder">
@@ -583,11 +561,20 @@
                     </button>
                     <h4 class="modal-title">Add <strong>Pay Button</strong></h4>
                 </div>
-                <div class="form-group m-t-10 form-link">
-                    <label class="control-label">Pay Button Link:</label>
-                    <div class="append-icon">
-                        <input required="" type="text" name="pay-link-button" class="pay-link-button html-file-name form-control form-white required" />
-                        <i class="icon-link-url"></i>
+                <div class="modal-body">
+                    <div class="form-group m-t-10 form-link">
+                        <label class="control-label">Pay Button Text:</label>
+                        <div class="append-icon">
+                            <input required="" type="text" name="pay-text" class="pay-text html-file-name form-control form-white required" />
+                            <i class="icon-link-url"></i>
+                        </div>
+                    </div>
+                    <div class="form-group m-t-10 form-link">
+                        <label class="control-label">Pay Button Link:</label>
+                        <div class="append-icon">
+                            <input required="" type="text" name="pay-link-button" class="pay-link-button html-file-name form-control form-white required" />
+                            <i class="icon-link-url"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
