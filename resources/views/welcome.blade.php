@@ -115,7 +115,13 @@
     }.purple{
         background: #A58BD3 !important;
     }
-    
+    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+	border: 1px solid #ddd;
+    }
+    .table-bordered th{
+        background: #18a689 !important;
+        color: #FFF !important;
+    }
                         .btn{
                         }
                         .btn:hover {

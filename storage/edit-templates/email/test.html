@@ -2,38 +2,38 @@
         <div class="tabs tabs-linetriangle">
             <ul class="nav nav-tabs">
                 <li class="width-16p"><a href="#layout" data-toggle="tab" aria-expanded="false"><span class="text-center">Layout</span></a></li>
-                <li class="width-16p"><a href="#portlets" data-toggle="tab" aria-expanded="false"><span class="text-center">Panels</span></a></li>
-                <li class="width-16p active"><a href="#text" data-toggle="tab" aria-expanded="true"><span class="text-center">Text &amp; Images</span></a></li>
-                <li class="width-16p"><a href="#tables" data-toggle="tab"><span class="text-center">Tables</span></a></li>
+                <li class="width-16p"><a href="#portlets" data-toggle="tab"><span class="text-center">Panels</span></a></li>
+                <li class="width-16p"><a href="#text" data-toggle="tab"><span class="text-center">Text &amp; Images</span></a></li>
+                <li class="width-16p active"><a href="#tables" data-toggle="tab" aria-expanded="true"><span class="text-center">Tables</span></a></li>
                 <li class="width-16p"><a href="#misc" data-toggle="tab"><span class="text-center">Other Tags</span></a></li>
             </ul>
             <div class="tab-content clearfix">
                 <div class="tab-pane fade" id="layout">
-                    <div data-layout="one-column" class="layout ui-draggable-handle ui-draggable" style="">
+                    <div data-layout="one-column" class="layout ui-draggable ui-draggable-handle">
                         <p><strong>1 column</strong></p>
                         <p>100%</p>
                     </div>
-                    <div data-layout="two-column-50" class="layout ui-draggable-handle ui-draggable" style="">
+                    <div data-layout="two-column-50" class="layout ui-draggable ui-draggable-handle">
                         <p><strong>2 columns</strong></p>
                         <p>2 x 50%</p>
                     </div>
-                    <div data-layout="two-column-33" class="layout ui-draggable-handle ui-draggable" style="">
+                    <div data-layout="two-column-33" class="layout ui-draggable ui-draggable-handle">
                         <p><strong>2 columns</strong></p>
                         <p>33% + 66%</p>
                     </div>
-                    <div data-layout="two-column-66" class="layout ui-draggable-handle ui-draggable" style="">
+                    <div data-layout="two-column-66" class="layout ui-draggable ui-draggable-handle">
                         <p><strong>2 columns</strong></p>
                         <p>66% + 33%</p>
                     </div>
-                    <div data-layout="three-column-33" class="layout ui-draggable-handle ui-draggable" style="">
+                    <div data-layout="three-column-33" class="layout ui-draggable ui-draggable-handle">
                         <p><strong>3 columns</strong></p>
                         <p>3x 33%</p>
                     </div>
-                    <div data-layout="three-column-25" class="layout ui-draggable-handle ui-draggable" style="">
+                    <div data-layout="three-column-25" class="layout ui-draggable ui-draggable-handle">
                         <p><strong>3 columns</strong></p>
                         <p>25% + 50% + 25%</p>
                     </div>
-                    <div data-layout="four-column" class="layout ui-draggable-handle ui-draggable" style="">
+                    <div data-layout="four-column" class="layout ui-draggable ui-draggable-handle">
                         <p><strong>4 columns</strong></p>
                         <p>4 x 25%</p>
                     </div>
@@ -46,22 +46,23 @@
                     </div>
                     <div data-portlet="header-footer" class="portlet ui-draggable ui-draggable-handle">Header &amp; Footer</div>
                 </div>
-                <div class="tab-pane fade active in" id="text">
+                <div class="tab-pane fade" id="text">
                     <div data-element="image" class="element ui-draggable ui-draggable-handle">Image</div>
-                    <div data-element="paragraph" class="element ui-draggable-handle ui-draggable" style="">Paragraph</div>
-                    <div data-element="title-h1" class="element ui-draggable-handle ui-draggable" style="">Big Title h1</div>
-                    <div data-element="title-h2" class="element ui-draggable-handle ui-draggable" style="">Medium Title h2</div>
-                    <div data-element="title-h3" class="element ui-draggable-handle ui-draggable" style="">Small Title h3</div>
+                    <div data-element="paragraph" class="element ui-draggable ui-draggable-handle">Paragraph</div>
+                    <div data-element="title-h1" class="element ui-draggable ui-draggable-handle">Big Title h1</div>
+                    <div data-element="title-h2" class="element ui-draggable ui-draggable-handle">Medium Title h2</div>
+                    <div data-element="title-h3" class="element ui-draggable ui-draggable-handle">Small Title h3</div>
                     <div data-element="angular-title" class="element ui-draggable ui-draggable-handle">Angular Title %%%email_text%</div>
                     <div data-element="video" class="element build-video ui-draggable ui-draggable-handle">Video/Image with link</div>
                 </div>
-                <div class="tab-pane fade" id="tables">
-                    <div data-table="table" class="build-table ui-draggable ui-draggable-handle">Table Basic</div>
+                <div class="tab-pane fade active in" id="tables">
+                    <div data-table="table" class="build-table ui-draggable-handle" style="">Table Basic</div>
                 </div>
                 <div class="tab-pane fade" id="misc">
                     <div data-element="divider" class="element ui-draggable ui-draggable-handle">Divider</div>
                     <div data-element="social" class="element ui-draggable ui-draggable-handle">Social Media</div>
                     <div data-element="payButton" class="element ui-draggable ui-draggable-handle">Link Button</div>
+                    <!--<div data-element="Button" class="element">Button</div>-->
                 </div>
             </div>
         </div>
@@ -103,6 +104,35 @@
     }.purple{
         background: #A58BD3 !important;
     }
+    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+	border: 1px solid #ddd;
+    }
+    .table-bordered th{
+        background: #18a689 !important;
+        color: #FFF !important;
+    }
+                        .btn{
+                        }
+                        .btn:hover {
+                            color: #fff;
+                            outline: 0;
+                            outline: none;
+                        }
+                        .btn {
+                                display: inline-block;
+                                padding: 6px 12px;
+                                margin-bottom: 0;
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 1.42857143;
+                                text-align: center;
+                                white-space: nowrap;
+                                vertical-align: middle;
+                                cursor: pointer;
+                                background-image: none;
+                                border: 1px solid transparent;
+                                border-radius: 4px;
+                        }
     .ReadMsgBody { width: 100%; background-color: #ffffff;}
     .ExternalClass {width: 100%; background-color: #ffffff;}
     .ExternalClass, .ExternalClass p, .ExternalClass span,
@@ -279,47 +309,43 @@
     height:auto !important;
     max-width:124px !important;
     }
+    
+        .link-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid #319DB5;
+            border-radius: 4px;
+            background: #319DB5 !important;
+            color: #FFF;
+            text-decoration: none !important;
+            height: auto !important;
+        }
     </style>
     <div class="builder-wrapper ui-sortable">
-     
-               <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody class="placeholder-container primary active"><tr class="placeholder primary"><td class="placeholder-content col-md-3 ui-droppable primary"><h3 class="summernote note-air-editor note-editable" data-airmode="true" id="note-editor-1" contenteditable="true">I am a small Title</h3></td><td class="placeholder-content col-md-3 ui-droppable primary"><h2 class="summernote note-air-editor note-editable" data-airmode="true" id="note-editor-2" contenteditable="true">I am a medium Title</h2></td><td class="placeholder-content col-md-3 ui-droppable primary"><h1 class="summernote note-air-editor note-editable" data-airmode="true" id="note-editor-3" contenteditable="true">I am a big Title</h1></td><td class="placeholder-content col-md-3 ui-droppable primary"> <h2 class="summernote note-air-editor note-editable" data-airmode="true" id="note-editor-4" contenteditable="true">I am a medium Title</h2></td></tr><tr class="placeholder-handle ui-sortable-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody class="placeholder-container active dark"><tr class="placeholder dark"><td class="placeholder-content col-md-3 ui-droppable dark"><table style="width: 100%; height: 253px;" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="dark"></td></tr></tbody></table></td><td class="placeholder-content col-md-6 ui-droppable dark"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td><td class="placeholder-content col-md-3 ui-droppable dark"><table style="width: 100%; height: 253px;" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="dark"></td></tr></tbody></table></td></tr><tr class="placeholder-handle ui-sortable-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody class="placeholder-container red active"><tr class="placeholder red"><td class="placeholder-content col-md-4 ui-droppable red"><table style="width: 100%; height: 414px;" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="red"></td></tr></tbody></table></td><td class="placeholder-content col-md-4 ui-droppable red"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td><td class="placeholder-content col-md-4 ui-droppable red"><table style="width: 100%; height: 414px;" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="red"></td></tr></tbody></table></td></tr><tr class="placeholder-handle ui-sortable-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody class="placeholder-container green"><tr class="placeholder green"><td class="placeholder-content col-md-8 ui-droppable green"><table style="width:100%" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="green"></td></tr></tbody></table></td><td class="placeholder-content col-md-4 ui-droppable green"><table style="width:100%" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="green"></td></tr></tbody></table></td></tr><tr class="placeholder-handle ui-sortable-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody class="placeholder-container blue"><tr class="placeholder blue"><td class="placeholder-content col-md-4 ui-droppable ui-droppable-hover drop-hover blue"><table style="width:100%" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="blue"></td></tr></tbody></table></td><td class="placeholder-content col-md-8 ui-droppable blue"><table style="width:100%" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="blue"></td></tr></tbody></table></td></tr><tr class="placeholder-handle ui-sortable-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody class="placeholder-container aero"><tr class="placeholder aero"><td class="placeholder-content col-md-6 ui-droppable ui-droppable-hover drop-hover aero"><table style="width:100%" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="aero"></td></tr></tbody></table></td><td class="placeholder-content col-md-6 ui-droppable aero"><table style="width:100%" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="aero"></td></tr></tbody></table></td></tr><tr class="placeholder-handle ui-sortable-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table><table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center"><tbody class="placeholder-container gray"><tr class="placeholder gray"><td class="placeholder-content col-md-12 ui-droppable gray"><table style="width:100%" class="placeholder-content-area"><tbody><tr><td style="height: 40px; padding: 20px;" class="gray"></td></tr></tbody></table></td></tr><tr class="placeholder-handle ui-sortable-handle"><td><div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div><div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div><div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div></td></tr></tbody></table><table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-            <tbody class="placeholder-container orange">
-                <tr class="placeholder orange">
-                    <td class="placeholder-content col-md-12 ui-droppable ui-droppable-hover drop-hover orange">
-                        <table class="placeholder-content-area">
-                            <tbody><tr>
-                                <td class="orange" style="padding: 20px;">
-                                    <h2>Email <strong>Builder</strong></h2>
-                                    <p>Welcome to Make Email builder! You can customize easily and quickly your page. Don't hesitate to send us suggestions to improve this tool.</p>
-                                </td>
-                            </tr>
-                        </tbody></table>
-                    </td>
-                </tr>
-                <tr class="placeholder-handle ui-sortable-handle">
-                    <td>
-                        <div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div>
-                        <div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div>
-                        <div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-            <tbody class="placeholder-container aero">
-                <tr class="placeholder aero">
-                    <td class="placeholder-content col-md-6 ui-droppable aero">
+
+        <table style="margin: auto;" class="row" cellspacing="0" cellpadding="0" align="center" width="600" border="0">
+            <tbody class="placeholder-container">
+                <tr class="placeholder">
+                    <td class="placeholder-content col-md-6 ui-droppable">
                         <table style="width:100%;height:40px" class="placeholder-content-area">
                             <tbody><tr>
-                                <td class="pink" style="padding: 20px;">
+                                <td>
                                 </td>
                             </tr>
                         </tbody></table>
                     </td>
-                    <td class="placeholder-content col-md-6 ui-droppable aero">
+                    <td class="placeholder-content col-md-6 ui-droppable">
                         <table style="width:100%;height:40px" class="placeholder-content-area">
                             <tbody><tr>
-                                <td class="pink" style="padding: 20px;">
+                                <td>
                                 </td>
                             </tr>
                         </tbody></table>
@@ -334,47 +360,13 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-            <tbody class="placeholder-container primary">
-                <tr class="placeholder primary">
-                    <td class="placeholder-content col-md-8 ui-droppable primary">
-                        <table style="width:100%" class="placeholder-content-area">
-                            <tbody><tr>
-                                <td style="height: 40px; padding: 20px;" class="purple">
-                                </td>
-                            </tr>
-                        </tbody></table>
-                    </td>
-                    <td class="placeholder-content col-md-4 ui-droppable primary">
-                        <table style="width:100%" class="placeholder-content-area">
-                            <tbody><tr>
-                                <td style="height: 40px; padding: 20px;" class="purple">
-                                </td>
-                            </tr>
-                        </tbody></table>
-                    </td>
-                </tr>
-                <tr class="placeholder-handle ui-sortable-handle">
-                    <td>
-                        <div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div>
-                        <div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div>
-                        <div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-            <tbody class="placeholder-container gray">
-                <tr class="placeholder gray">
-                    <td class="placeholder-content col-md-4 ui-droppable gray">
-                        <table style="width:100%" class="placeholder-content-area">
-                            <tbody><tr>
-                                <td style="height: 40px">
-                                </td>
-                            </tr>
-                        </tbody></table>
-                    </td>
-                    <td class="placeholder-content col-md-8 ui-droppable gray">
+        <table style="margin: auto;" class="row" cellspacing="0" cellpadding="0" align="center" width="600" border="0">
+            <tbody class="placeholder-container active">
+                <tr class="placeholder">
+                    <td class="placeholder-content col-md-8 ui-droppable">
+                        
+                    <table class="table table-bordered" style=""><thead><tr><th>Head 0</th><th>Head 1</th><th>Head 2</th></tr></thead><tbody><tr><td>Row 0</td><td>Row 1</td><td>Row 2</td></tr><tr><td>Row 0</td><td>Row 1</td><td>Row 2</td></tr><tr><td>Row 0</td><td>Row 1</td><td>Row 2</td></tr></tbody></table></td>
+                    <td class="placeholder-content col-md-4 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
@@ -392,10 +384,10 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-            <tbody class="placeholder-container orange">
-                <tr class="placeholder orange">
-                    <td class="placeholder-content col-md-4 ui-droppable orange">
+        <table style="margin: auto;" class="row" cellspacing="0" cellpadding="0" align="center" width="600" border="0">
+            <tbody class="placeholder-container">
+                <tr class="placeholder">
+                    <td class="placeholder-content col-md-4 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
@@ -403,15 +395,7 @@
                             </tr>
                         </tbody></table>
                     </td>
-                    <td class="placeholder-content col-md-4 ui-droppable orange">
-                        <table style="width:100%" class="placeholder-content-area">
-                            <tbody><tr>
-                                <td style="height: 40px">
-                                </td>
-                            </tr>
-                        </tbody></table>
-                    </td>
-                    <td class="placeholder-content col-md-4 ui-droppable orange">
+                    <td class="placeholder-content col-md-8 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
@@ -429,10 +413,10 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-            <tbody class="placeholder-container pink">
-                <tr class="placeholder pink">
-                    <td class="placeholder-content col-md-3 ui-droppable pink">
+        <table style="margin: auto;" class="row" cellspacing="0" cellpadding="0" align="center" width="600" border="0">
+            <tbody class="placeholder-container">
+                <tr class="placeholder">
+                    <td class="placeholder-content col-md-4 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
@@ -440,7 +424,7 @@
                             </tr>
                         </tbody></table>
                     </td>
-                    <td class="placeholder-content col-md-6 ui-droppable pink">
+                    <td class="placeholder-content col-md-4 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
@@ -448,7 +432,7 @@
                             </tr>
                         </tbody></table>
                     </td>
-                    <td class="placeholder-content col-md-3 ui-droppable pink">
+                    <td class="placeholder-content col-md-4 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
@@ -466,10 +450,10 @@
                 </tr>
             </tbody>
         </table>
-        <table style="margin: auto;" class="row" width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-            <tbody class="placeholder-container purple">
-                <tr class="placeholder purple">
-                    <td class="placeholder-content col-md-3 ui-droppable purple">
+        <table style="margin: auto;margin-bottom: 20px;margin-top: 20px;" class="row" cellspacing="0" cellpadding="0" align="center" width="600" border="0">
+            <tbody class="placeholder-container">
+                <tr class="placeholder">
+                    <td class="placeholder-content col-md-3 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
@@ -477,7 +461,7 @@
                             </tr>
                         </tbody></table>
                     </td>
-                    <td class="placeholder-content col-md-3 ui-droppable purple">
+                    <td class="placeholder-content col-md-6 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
@@ -485,7 +469,7 @@
                             </tr>
                         </tbody></table>
                     </td>
-                    <td class="placeholder-content col-md-3 ui-droppable purple">
+                    <td class="placeholder-content col-md-3 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
@@ -493,7 +477,44 @@
                             </tr>
                         </tbody></table>
                     </td>
-                    <td class="placeholder-content col-md-3 ui-droppable purple">
+                </tr>
+                <tr class="placeholder-handle ui-sortable-handle">
+                    <td>
+                        <div class="handle-move" data-rel="tooltip" data-placement="right" data-original-title="Move"><i class="fa fa-bars"></i></div>
+                        <div class="handle-background" data-rel="tooltip" data-placement="right" data-original-title="Change Background"><i class="fa fa-eye"></i></div>
+                        <div class="handle-remove" data-rel="tooltip" data-placement="right" data-original-title="Remove"><i class="fa fa-times"></i></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="margin: auto;" class="row" cellspacing="0" cellpadding="0" align="center" width="600" border="0">
+            <tbody class="placeholder-container">
+                <tr class="placeholder">
+                    <td class="placeholder-content col-md-3 ui-droppable">
+                        <table style="width:100%" class="placeholder-content-area">
+                            <tbody><tr>
+                                <td style="height: 40px">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                    <td class="placeholder-content col-md-3 ui-droppable">
+                        <table style="width:100%" class="placeholder-content-area">
+                            <tbody><tr>
+                                <td style="height: 40px">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                    <td class="placeholder-content col-md-3 ui-droppable">
+                        <table style="width:100%" class="placeholder-content-area">
+                            <tbody><tr>
+                                <td style="height: 40px">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                    <td class="placeholder-content col-md-3 ui-droppable">
                         <table style="width:100%" class="placeholder-content-area">
                             <tbody><tr>
                                 <td style="height: 40px">
