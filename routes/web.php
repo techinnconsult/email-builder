@@ -20,8 +20,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::group(['middleware' => 'guest'], function () {
     //HTML
+    Route::get('/map', 'HomeController@map');
     Route::post('/email/save', 'HTMLController@save'); // 
     Route::get('/email/preview/{template_id}', 'HTMLController@previewHtml');
     Route::get('/html/templates', 'HTMLController@templates');
@@ -89,3 +91,4 @@ Route::post('/upload', function () {
 //    }
 });
 Route::get('/home', 'HomeController@index');
+Route::get('/home/map', 'HomeController@map');

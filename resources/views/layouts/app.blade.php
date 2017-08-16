@@ -21,6 +21,7 @@
             <div class="header-left">
                 <div class="topnav">
                     <ul class="header-menu nav navbar-nav">
+                        <li><a href="{{ URL::to('/map') }}"><i class="octicon octicon-browser"></i> Map Viewer</a></li>
                         <li><a href="{{ URL::to('/html/templates') }}"><i class="octicon octicon-mail-read"></i> Email Builder</a></li>
                         <li><a href="{{ URL::to('/pdf/templates') }}"><i class="octicon octicon-browser"></i> PDF Builder</a></li>
                     </ul>
